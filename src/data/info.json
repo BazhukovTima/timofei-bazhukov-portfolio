@@ -1,0 +1,31 @@
+{
+  "name": "Ваше Имя",
+  "role": "Frontend Developer",
+  "description": "Краткое описание или приветствие.",
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/yourusername"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/yourprofile"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/yourhandle"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Проект 1",
+      "description": "Описание проекта 1",
+      "url": "https://example.com/project1"
+    },
+    {
+      "title": "Проект 2",
+      "description": "Описание проекта 2",
+      "url": "https://example.com/project2"
+    }
+  ]
+}

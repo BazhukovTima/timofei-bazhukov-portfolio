@@ -1,0 +1,50 @@
+.social-links {
+  position: fixed;
+  bottom: 40px; /* увеличенный отступ */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  background: transparent;
+  z-index: 1001;
+  margin: 0;
+}
+
+.social-link {
+  background-color: transparent;
+  color: var(--color-social-link, #616161);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  border: 1px solid transparent; /* прозрачная граница */
+}
+
+.social-link:hover {
+  color: var(--color-primary, #1e88e5);
+  background-color: var(--color-primary-light, #e3f2fd);
+  border-color: transparent; /* убираем границу при ховере */
+  box-shadow: none;
+  transform: none;
+}
+
+.social-link:active {
+  background-color: var(--color-primary-active, #bbdefb);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.social-link svg,
+.social-link i {
+  pointer-events: none;
+  font-size: 22px;
+}
