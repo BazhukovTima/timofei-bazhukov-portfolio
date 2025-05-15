@@ -1,0 +1,144 @@
+@import "variables.modules";
+
+footer {
+  color: $dark;
+}
+
+
+/* Стиль для React */
+.react-style {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+.react-style button {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.react-style button:hover {
+  background-color: #3700b3;
+}
+
+/* Стиль для SAPUI5 */
+.sapui5-style {
+  background-color: #f2f2f2;
+  font-family: "SAPUI5", sans-serif;
+  color: #000;
+  padding: 20px;
+}
+
+.sapui5-style button {
+  padding: 10px 20px;
+  background-color: #005c8d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sapui5-style button:hover {
+  background-color: #003f5e;
+}
+footer {
+  color: $dark;
+}
+
+.dark {
+  background-color: $dark;
+  color: $white;
+  transition: all 400ms;
+
+  a, i, li {
+    color: $white;
+    transition: color 400ms;
+  }
+
+  a:visited {
+    color: $white;
+  }
+
+  footer {
+    color: $white;
+  }
+}
+
+.light {
+  background-color: $white;
+  color: $dark;
+  transition: all 400ms;
+}
+
+
+//.dark {
+//  background-color: $dark;
+//  color: $white;
+//  transition: all 400ms;
+//  a, i {
+//    color: $white;
+//    transition: color 400ms;
+//  }
+//  a:visited {
+//    color: $white;
+//  }
+//  i:hover {
+//    color: $purple;
+//  }
+//  footer {
+//    color: $white;
+//  }
+//
+//  nav {
+//    background-color: $dark;
+//    transition: $transition;
+//  }
+//
+//  div > section > div:first-child {
+//    background-color: #575e64;
+//    i:first-child {
+//      color: $red;
+//    }
+//    i:nth-child(2) {
+//      color: $yellow;
+//    }
+//    i:nth-child(3) {
+//      color: $green;
+//    }
+//  }
+//
+//
+//  & > div div {
+//    i {
+//      color: white;
+//    }
+//  }
+//}
+
+// .dark {
+//   background-color: $dark;
+//   color: $white;
+//   transition: all 400ms;
+
+//   a, i, li {
+//     color: $white;
+//     transition: color 400ms;
+//   }
+
+//   a:visited {
+//     color: $white;
+//   }
+
+//   footer {
+//     color: $white;
+//   }
+// }
+
+// .light {
+//   background-color: $white;
+//   color: $dark;
+//   transition: all 400ms;
+// }
