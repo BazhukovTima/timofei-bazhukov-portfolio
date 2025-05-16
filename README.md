@@ -74,5 +74,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- linear-gradient(to right, rgb(26, 139, 82), rgb(163, 203, 187)); -->
 <!-- linear-gradient(to right, rgb(224, 167, 226), rgb(53, 155, 174)); -->
 <!-- linear-gradient(to right, rgb(92, 122, 107), rgb(226, 219, 230)); -->
+<!-- linear-gradient(to right, rgb(177, 201, 171), rgb(86, 97, 95)); -->
 
 
