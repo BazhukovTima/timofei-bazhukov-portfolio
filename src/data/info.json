@@ -27,5 +27,12 @@
       "description": "Описание проекта 2",
       "url": "https://example.com/project2"
     }
-  ]
+  ],
+  "about": {
+    "expertise": "More than 10 years in SAP engineering roles, including senior and technical leadership positions. Deep expertise in SAP development, system integration, and fostering best coding practices within the SAP ecosystem.",
+    "technicalStack": "Advanced skills in SAP technologies: SAP Fiori, SAPUI5, ABAP (transactions, enhancements), OData/SOAP web services, SAP Business Technology Platform (BTP), and database management including HANA and MongoDB.",
+    "currentFocus": "Driving SAP governance, architecture, and cybersecurity initiatives, ensuring alignment with modern digital platform principles and enterprise standards.",
+    "mobileDevelopment": "Experienced in developing cross-platform mobile applications with React Native, Flutter, and Node.js, published on both App Store and Google Play.",
+    "softSkills": "Effective leader and collaborator, skilled in business analysis, project management, and technical architecture, with a strong background in Supply Chain and scalable solution design."
+  }
 }
