@@ -6,35 +6,52 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(70, 90, 130, 0.3); /* ещё светлее и прозрачнее */
-  backdrop-filter: saturate(180%) blur(8px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* backdrop-filter: saturate(150%) blur(10px); */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar ul {
   margin: 0;
-  padding: 0;
+  padding: 0 1.5rem; /* добавил отступы слева и справа */
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-grow: 1;
+  justify-content: center;
   height: 100%;
   align-items: center;
+  gap: 15rem; /* чуть больше расстояния между пунктами */
 }
 
 .navbar ul li {
   display: inline;
+  flex: initial;
+  text-align: center;
 }
 
 .navbar ul li a {
-  color: var(--color-text-header, #e0e6f0); /* светлый цвет текста */
+  color: var(--color-text-header);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  display: block;
+  padding: 0 0.5rem;
 }
 
 .navbar ul li a:hover {
-  color: var(--color-primary, #1e88e5);
+  color: var(--color-primary);
+}
+
+/* Логотип */
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-text-header, #222222);
+  text-decoration: none;
 }

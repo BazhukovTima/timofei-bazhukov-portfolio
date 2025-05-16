@@ -6,8 +6,6 @@ import Home from "./react/Home";
 import About from "./react/About";
 import Portfolio from "./react/Portfolio";
 
-import "../styles.css";
-
 const MainContainer = () => (
   <Router>
     <Navbar />

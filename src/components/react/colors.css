@@ -1,27 +1,31 @@
 :root {
-  --color-background: #f9f9f9;
-  --color-bg-light: #fafafa;
+  /* Градиент — оставим как есть, но используем в CSS через background-image, а не как цвет */
+  --color-background-start: rgb(92, 122, 107);
+  --color-background-end: rgb(226, 219, 230);
+  --color-background: linear-gradient(to right, var(--color-background-start), var(--color-background-end));
 
-  --color-text-primary: #333333;
-  --color-text-secondary: #616161;
-  --color-text-description: #444444;
-  --color-text-hover: #222222;
+  --color-bg-light: #f7f7f8; /* очень светлый серо-лавандовый */
 
-  --color-primary: #1e88e5;
-  --color-primary-light: #e3f2fd;
-  --color-primary-dark: #1976d2;
+  --color-text-primary: #3c3c36; /* темно-серый с зеленоватым подтоном */
+  --color-text-secondary: #6e6e65; /* более светлый серо-зеленоватый */
+  --color-text-description: #54544e; /* чуть темнее, для описаний */
+  --color-text-hover: #2a2a25; /* почти черный, для ховера */
 
-  --color-border-default: #cccccc;
-  --color-border-hover: #999999;
+  --color-primary: #5c7a6b; /* базовый зеленовато-серый (как старт градиента) */
+  --color-primary-light: #d9e3dd; /* очень светлый зеленоватый */
+  --color-primary-dark: #405445; /* темный зеленый для контраста */
+
+  --color-border-default: #b0b8af; /* мягкий серо-зеленоватый */
+  --color-border-hover: #8a9688; /* чуть темнее для ховера */
   --color-border: transparent;
 
-  --color-button-bg: #d0d7e7;
-  --color-button-bg-hover: #b3c3e0;
-  --color-button-border: #a3b1d1;
+  --color-button-bg: #d7dbd9; /* светлый серо-зеленоватый */
+  --color-button-bg-hover: #c3c9c4; /* чуть темнее */
+  --color-button-border: #a0aa9e; /* средний серо-зеленый */
 
-  --color-social-link: #616161;
-  --color-social-bg: #f5f5f5;
+  --color-social-link: #6e6e65; /* совпадает с secondary */
+  --color-social-bg: #f7f7f8; /* совпадает с bg-light */
   --color-social-border: var(--color-border-default);
-  --color-social-hover-bg: #dddddd;
+  --color-social-hover-bg: #e0e5df; /* светлый серо-зеленый */
   --color-social-hover-border: var(--color-border-hover);
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import profile from '../../assets/profile-no-bg.png';
 import info from '../../data/info.json';
 import SocialLinks from './SocialLinks';
+import './colors.css';
 import './Home.css';
 import './Avatar.css';
 
