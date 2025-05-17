@@ -5,6 +5,7 @@ import Navbar from "./react/Navbar";
 import Home from "./react/Home";
 import About from "./react/About";
 import Portfolio from "./react/Portfolio";
+import Tech from "./react/Tech";
 
 const MainContainer = () => (
   <Router>
@@ -13,6 +14,7 @@ const MainContainer = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/tech" element={<Tech />} />
         <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </main>

@@ -16,6 +16,21 @@
       "url": "https://twitter.com/yourhandle"
     }
   ],
+  "skills": {
+    "description": "Comprehensive expertise spanning SAP technologies, ABAP development, cloud platforms, and modern web/mobile frameworks. Skilled in delivering scalable solutions, integrating systems, and leveraging best practices across diverse technical stacks.",
+    "skills": [
+      "SAPUI5", "Fiori", "ABAP", "CAP", "RAP", "OData", "SOAP", "RFC",
+      "HANA", "CDS", "AMDP", "xsjs", "xsodata", "Flutter", "Node.js",
+      "React Native", "Redux", "GraphQL", "MongoDB", "SQL", "CI/CD",
+      "abapgit", "abaplint", "GitHub Actions", "Tosca", "BTP", "Kyma",
+      "Event Mesh", "Integration Suite", "API Mgmt", "OAuth2", "OIDC",
+      "SAML", "EntraID", "AWS", "Azure", "Eclipse", "BAS", "QUnit",
+      "SmartForms", "PDF Forms", "PostSharp", "Prism", "WPF", ".NET",
+      "MS Word", "MS Excel", "ECATT", "Elastic", "Kibana", "PagerDuty",
+      "VSC", "Launchpad", "IMG", "BCS", "SAP SD", "SAP MM", "SAP SCM",
+      "SAP PE", "SAP PLM", "SAP ETD", "SAP Basis"
+    ]
+  },
   "projects": [
     {
       "title": "Проект 1",
