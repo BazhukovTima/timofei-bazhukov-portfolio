@@ -1,7 +1,6 @@
 :root {
-  /* Градиент — оставим как есть, но используем в CSS через background-image, а не как цвет */
-  --color-background-start: rgb(92, 122, 107);
-  --color-background-end: rgb(226, 219, 230);
+  --color-background-start: rgb(224, 167, 226);
+  --color-background-end: rgb(53, 155, 174);
   --color-background: linear-gradient(to right, var(--color-background-start), var(--color-background-end));
 
   --color-bg-light: #f7f7f8; /* очень светлый серо-лавандовый */
@@ -11,9 +10,9 @@
   --color-text-description: #54544e; /* чуть темнее, для описаний */
   --color-text-hover: #2a2a25; /* почти черный, для ховера */
 
-  --color-primary: #5c7a6b; /* базовый зеленовато-серый (как старт градиента) */
-  --color-primary-light: #d9e3dd; /* очень светлый зеленоватый */
-  --color-primary-dark: #405445; /* темный зеленый для контраста */
+  --color-primary: #a882b4; /* базовый сиренево-голубой, близкий к старту градиента */
+  --color-primary-light: #d9c9e0; /* светлый сиреневый */
+  --color-primary-dark: #375f6e; /* темный голубой для контраста */
 
   --color-border-default: #b0b8af; /* мягкий серо-зеленоватый */
   --color-border-hover: #8a9688; /* чуть темнее для ховера */

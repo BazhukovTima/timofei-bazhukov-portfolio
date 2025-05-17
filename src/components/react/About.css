@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow-y: auto;  /* внутренний скролл */
+  overflow-y: auto;
   padding: 6rem 2rem 4rem;
   box-sizing: border-box;
   color: var(--color-text-primary);
@@ -24,14 +24,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  z-index: -1;  /* Чтобы фон был позади контента */
+  z-index: -1;
 }
 
 .about-title {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--color-text-header);
+  color: var(--color-text-primary);
   text-align: center;
   flex-shrink: 0;
 }
@@ -47,23 +47,22 @@
 }
 
 .about-grid {
-  display: flex;  /* в одну строку */
+  display: flex;
   gap: 2rem;
-  max-width: 90vw;  /* почти весь экран, отступы по краям */
+  max-width: 90vw;
   margin: 0 auto;
-  flex-wrap: nowrap;  /* не переносить */
+  flex-wrap: nowrap;
   justify-content: space-between;
   flex-shrink: 0;
 }
 
 .about-block {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  background: var(--color-background-light);
   border-radius: 1rem;
   padding: 1.8rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 23%; /* 4 блока в строку с небольшим зазором */
+  box-shadow: 0 4px 10px rgba(44, 62, 80, 0.05);
+  border: 1px solid var(--color-border-default);
+  width: 23%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -73,13 +72,13 @@
 .about-block h3 {
   margin-top: 0;
   font-size: 1.4rem;
-  color: var(--color-text-header);
-  min-height: 3.2rem; /* фиксируем высоту заголовка, чтобы все были равны */
+  color: var(--color-text-primary);
+  min-height: 3.2rem;
 }
 
 .about-block p {
   font-size: 1rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  flex-grow: 1;  /* чтобы тексты занимали одинаковое пространство */
+  flex-grow: 1;
 }

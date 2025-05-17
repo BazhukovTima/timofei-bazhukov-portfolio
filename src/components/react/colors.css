@@ -1,30 +1,26 @@
 :root {
-  --color-background-start: rgb(224, 167, 226);
-  --color-background-end: rgb(53, 155, 174);
-  --color-background: linear-gradient(to right, var(--color-background-start), var(--color-background-end));
+  --color-background: #ECF0F1;         /* основной фон — светлый и спокойный */
+  --color-background-light: #D8DEE1;  /* чуть затемнённый фон */
 
-  --color-bg-light: #f7f7f8; /* очень светлый серо-лавандовый */
+  --color-text-primary: #2C3E50;       /* основной текст — тёмный синий */
+  --color-text-secondary: #34495E;     /* подзаголовки и второстепенный текст */
+  --color-text-description: #7F8C8D;   /* описания и слабый текст */
+  --color-text-hover: #2C3E50;         /* при наведении — сохранить читаемость */
 
-  --color-text-primary: #3c3c36; /* темно-серый с зеленоватым подтоном */
-  --color-text-secondary: #6e6e65; /* более светлый серо-зеленоватый */
-  --color-text-description: #54544e; /* чуть темнее, для описаний */
-  --color-text-hover: #2a2a25; /* почти черный, для ховера */
+  --color-primary: #34495E;            /* основной акцент/цвет кнопок */
+  --color-primary-light: #BDC3C7;      /* заливка блоков, подсветка */
+  --color-primary-dark: #2C3E50;       /* альтернативный акцент/тени */
 
-  --color-primary: #a882b4; /* базовый сиренево-голубой, близкий к старту градиента */
-  --color-primary-light: #d9c9e0; /* светлый сиреневый */
-  --color-primary-dark: #375f6e; /* темный голубой для контраста */
+  --color-border-default: #D8DEE1;     /* стандартные границы */
+  --color-border-hover: #7F8C8D;       /* при наведении */
 
-  --color-border-default: #b0b8af; /* мягкий серо-зеленоватый */
-  --color-border-hover: #8a9688; /* чуть темнее для ховера */
-  --color-border: transparent;
+  --color-button-bg: #BDC3C7;          /* фон кнопок */
+  --color-button-bg-hover: #7F8C8D;    /* при наведении */
+  --color-button-border: #34495E;      /* контур кнопок */
 
-  --color-button-bg: #d7dbd9; /* светлый серо-зеленоватый */
-  --color-button-bg-hover: #c3c9c4; /* чуть темнее */
-  --color-button-border: #a0aa9e; /* средний серо-зеленый */
-
-  --color-social-link: #6e6e65; /* совпадает с secondary */
-  --color-social-bg: #f7f7f8; /* совпадает с bg-light */
-  --color-social-border: var(--color-border-default);
-  --color-social-hover-bg: #e0e5df; /* светлый серо-зеленый */
-  --color-social-hover-border: var(--color-border-hover);
+  --color-social-link: #34495E;
+  --color-social-bg: #ECF0F1;
+  --color-social-border: #BDC3C7;
+  --color-social-hover-bg: #BDC3C7;
+  --color-social-hover-border: #7F8C8D;
 }

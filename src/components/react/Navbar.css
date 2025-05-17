@@ -5,9 +5,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.2); /* всегда полупрозрачный */
+  background-color: rgba(236, 240, 241, 0.2); /* вар. от --color-background с прозрачностью */
   backdrop-filter: saturate(150%) blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
   z-index: 1000;
   box-sizing: border-box;
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.2); /* полупрозрачный */
+  background-color: rgba(236, 240, 241, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -39,7 +39,7 @@
 }
 
 .navbar ul li a {
-  color: var(--color-text-header);
+  color: var(--color-text-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -55,6 +55,6 @@
 .navbar .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  color: var(--color-text-header, #222222);
+  color: var(--color-text-primary);
   text-decoration: none;
 }

@@ -1,6 +1,6 @@
 .social-links {
   position: fixed;
-  bottom: 40px; /* увеличенный отступ */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -13,7 +13,7 @@
 
 .social-link {
   background-color: transparent;
-  color: var(--color-social-link, #616161);
+  color: var(--color-social-link);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -25,19 +25,19 @@
   cursor: pointer;
   text-decoration: none;
   user-select: none;
-  border: 1px solid transparent; /* прозрачная граница */
+  border: 1px solid transparent;
 }
 
 .social-link:hover {
-  color: var(--color-primary, #1e88e5);
-  background-color: var(--color-primary-light, #e3f2fd);
-  border-color: transparent; /* убираем границу при ховере */
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-color: transparent;
   box-shadow: none;
   transform: none;
 }
 
 .social-link:active {
-  background-color: var(--color-primary-active, #bbdefb);
+  background-color: var(--color-primary-light);
   border-color: transparent;
   box-shadow: none;
   transform: none;
