@@ -5,6 +5,7 @@ import SocialLinks from './SocialLinks';
 import './colors.css';
 import './Home.css';
 import './Avatar.css';
+import Footer from './Footer';
 
 const Home = () => {
   const { name, role, description, social } = info;
@@ -22,6 +23,7 @@ const Home = () => {
           <img class="avatar" src={profile} alt="Avatar" />
         </div>
       </div>
+      <Footer fixed={true} />
     </section>
   );
 };

@@ -1,14 +1,15 @@
 .social-links {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Убираем position: fixed и все связанное */
+  position: static; /* или просто убрать позиционирование */
+  margin: 0 left;   /* центрируем по горизонтали */
   display: flex;
   gap: 1.5rem;
   font-size: 1.5rem;
   background: transparent;
-  z-index: 1001;
-  margin: 0;
+  z-index: 1001;    /* можно оставить, не мешает */
+  justify-content: center; /* дополнительно центрируем иконки внутри контейнера */
+  padding-top: 1rem; /* небольшой отступ сверху */
+  width: fit-content; /* чтобы контейнер не растягивался на всю ширину */
 }
 
 .social-link {
