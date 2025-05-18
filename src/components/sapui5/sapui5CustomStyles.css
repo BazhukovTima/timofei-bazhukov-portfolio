@@ -30,3 +30,21 @@
   flex-direction: column;
   justify-content: flex-start !important;
 }
+
+.info-line {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.info-line .sapMObjStatusText {
+  color: var(--color-text-secondary);
+}
+
+.info-line .sapUiIcon {
+  color: var(--color-primary-dark);
+  margin-right: 0.5rem;
+  vertical-align: middle; /* это добавим */
+  position: relative;
+  top: -4px; /* и это для лёгкой коррекции */
+}

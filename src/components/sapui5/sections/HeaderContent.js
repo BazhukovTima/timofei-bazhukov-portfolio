@@ -4,34 +4,74 @@ import info from "../../../data/info.json";
 const createHeaderContent = (sap) => {
   const { name, role, location, description, social } = info;
 
-  return [
-    new sap.ui.layout.VerticalLayout({
-      content: [
-        new sap.m.Avatar({
-          src: profile,
-          displaySize: "Custom",
-          customDisplaySize: "15em",
-          displayShape: "Circle",
-          backgroundColor: sap.m.AvatarColor.TileIcon,
-          showBorder: true,
-        }),
-      ],
-    }),
-    new sap.ui.layout.VerticalLayout({
-      content: [
-        new sap.m.Label({ text: name, design: "Bold" }),
-        new sap.m.ObjectStatus({ text: role, icon: "sap-icon://suitcase" }),
-        new sap.m.ObjectStatus({ text: location, icon: "sap-icon://map" }),
-        new sap.m.Text({ width: "20em", text: description }),
-      ],
-    }),
-    ...social.map((item) =>
-      new sap.m.Link({
-        text: item.platform,
-        href: item.url,
-      })
-    ),
-  ];
+  return new sap.ui.layout.VerticalLayout({
+    width: "100%",
+    content: [
+      new sap.ui.layout.BlockLayout({
+        content: [
+          new sap.ui.layout.BlockLayoutRow({
+            content: [
+              new sap.ui.layout.BlockLayoutCell({
+                content: [
+                  new sap.m.Avatar({
+                    src: profile,
+                    displaySize: "Custom",
+                    customDisplaySize: "15em",
+                    displayShape: "Circle",
+                    backgroundColor: sap.m.AvatarColor.TileIcon,
+                    showBorder: true,
+                  }),
+                ],
+              }),
+              new sap.ui.layout.BlockLayoutCell({
+                title: name,
+                content: [
+                  new sap.m.ObjectStatus({
+                    text: role,
+                    icon: "sap-icon://suitcase",
+                  }).addStyleClass("info-line"),
+                  new sap.m.ObjectStatus({
+                    text: location,
+                    icon: "sap-icon://map",
+                  }).addStyleClass("info-line"),
+                  new sap.m.ObjectStatus({
+                    text: description,
+                    icon: "sap-icon://hint",
+                  }).addStyleClass("info-line"),
+                  new sap.m.HBox({
+                    alignItems: "Center",
+                    items: [
+                      new sap.m.ObjectStatus({
+                        icon: "sap-icon://chain-link",
+                      }),
+
+                      ...social.map((item, index) => {
+                        const link = new sap.m.Link({
+                          text: item.platform,
+                          href: item.url,
+                          target: "_blank",
+                          tooltip: item.platform,
+                        });
+
+                        // Добавляем отступ только начиная со второй ссылки
+                        if (index !== 0) {
+                          link.addStyleClass("sapUiTinyMarginBegin");
+                        }
+
+                        return link;
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              new sap.ui.layout.BlockLayoutCell({}),
+              new sap.ui.layout.BlockLayoutCell({}),
+            ],
+          }),
+        ],
+      }),
+    ],
+  });
 };
 
 export default createHeaderContent;
