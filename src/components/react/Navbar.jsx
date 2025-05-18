@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import FrameworkSelector from "../common/FrameworkSelector";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -26,7 +25,6 @@ const Navbar = () => {
         <li><Link to="/tech" className={isActive("/tech") ? "active" : ""}>Technologies</Link></li>
         <li><Link to="/experience" className={isActive("/experience") ? "active" : ""}>Experience</Link></li>
       </ul>
-      <FrameworkSelector />
     </nav>
   );
 };

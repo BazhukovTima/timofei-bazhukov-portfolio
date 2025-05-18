@@ -154,9 +154,21 @@
     }
   },
   "frameworks": [
-    "React",
-    "SAPUI5",
-    "Flutter",
-    "ABAPtoUI5"
+    {
+      "name": "React",
+      "logo": "react-logo.png"
+    },
+    {
+      "name": "SAPUI5",
+      "logo": "sap-ui5-logo.svg"
+    },
+    {
+      "name": "Flutter",
+      "logo": "flutter-logo.png"
+    },
+    {
+      "name": "ABAPtoUI5",
+      "logo": "abap2ui5-logo.png"
+    }
   ]
 }

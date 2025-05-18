@@ -1,0 +1,47 @@
+.floating-icon-selector {
+  position: fixed;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.framework-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-background-light);
+  border: 1px solid var(--color-border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.framework-icon:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-border-hover);
+  transform: scale(1.05);
+}
+
+.framework-icon.selected {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-dark);
+}
+
+.framework-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.placeholder {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
