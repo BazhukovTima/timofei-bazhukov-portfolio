@@ -1,0 +1,60 @@
+.navbar {
+  height: 70px;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(236, 240, 241, 0.2); /* вар. от --color-background с прозрачностью */
+  backdrop-filter: saturate(150%) blur(10px);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar.scrolled {
+  background-color: rgba(236, 240, 241, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  gap: 15rem;
+}
+
+.navbar ul li {
+  display: inline;
+  flex: initial;
+  text-align: center;
+}
+
+.navbar ul li a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0 0.5rem;
+}
+
+.navbar ul li a:hover {
+  color: var(--color-primary);
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}

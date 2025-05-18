@@ -1,0 +1,51 @@
+.social-links {
+  /* Убираем position: fixed и все связанное */
+  position: static; /* или просто убрать позиционирование */
+  margin: 0 left;   /* центрируем по горизонтали */
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  background: transparent;
+  z-index: 1001;    /* можно оставить, не мешает */
+  justify-content: center; /* дополнительно центрируем иконки внутри контейнера */
+  padding-top: 1rem; /* небольшой отступ сверху */
+  width: fit-content; /* чтобы контейнер не растягивался на всю ширину */
+}
+
+.social-link {
+  background-color: transparent;
+  color: var(--color-social-link);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.social-link:active {
+  background-color: var(--color-primary-light);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.social-link svg,
+.social-link i {
+  pointer-events: none;
+  font-size: 22px;
+}
