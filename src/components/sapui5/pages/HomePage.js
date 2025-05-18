@@ -2,6 +2,7 @@ import createAboutSection from "../sections/AboutSection";
 import createTechnologiesSection from "../sections/TechnologiesSection";
 import createHeaderContent from "../sections/HeaderContent";
 import createHeaderTitle from "../sections/HeaderTitle";
+import createExperienceSection from "../sections/ExperienceSection";
 
 let oPage = null;
 
@@ -19,6 +20,7 @@ const HomePage = (container) => {
     sections: [
       createAboutSection(sap),
       createTechnologiesSection(sap),
+      createExperienceSection(sap),
     ],
   });
 
