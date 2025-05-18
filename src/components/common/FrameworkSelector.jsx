@@ -2,20 +2,20 @@ import React, { useState, useRef, useEffect } from "react";
 import "./FrameworkSelector.css";
 import { ChevronDown } from "lucide-react";
 import info from '../../data/info.json';
+import { useFramework } from "../../frameworkContext";
 
 const frameworks = info.frameworks;
 
-const FrameworkSelector = ({ onChange }) => {
+const FrameworkSelector = () => {
+  const { framework, setFramework } = useFramework();
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(frameworks[0]);
   const ref = useRef();
 
   const toggleOpen = () => setOpen((prev) => !prev);
 
   const handleSelect = (fw) => {
-    setSelected(fw);
+    setFramework(fw);
     setOpen(false);
-    if (onChange) onChange(fw);
   };
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const FrameworkSelector = ({ onChange }) => {
   return (
     <div className="framework-dropdown-container" ref={ref}>
       <div className="framework-display" onClick={toggleOpen}>
-        <span>{selected}</span>
+        <span>{framework}</span>
         <ChevronDown size={16} className={`chevron ${open ? "rotate" : ""}`} />
       </div>
 
@@ -40,7 +40,7 @@ const FrameworkSelector = ({ onChange }) => {
           {frameworks.map((fw) => (
             <div
               key={fw}
-              className={`framework-list-item ${fw === selected ? "selected" : ""}`}
+              className={`framework-list-item ${fw === framework ? "selected" : ""}`}
               onClick={() => handleSelect(fw)}
             >
               {fw}

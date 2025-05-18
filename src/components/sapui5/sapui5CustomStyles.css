@@ -1,0 +1,12 @@
+.sapui5SkillPill {
+  background-color: #f0f4f8;
+  color: #333;
+  border: 1px solid #d0d7de;
+  border-radius: 16px;
+  padding: 6px 14px;
+  margin: 4px;
+  font-size: 0.95rem;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
