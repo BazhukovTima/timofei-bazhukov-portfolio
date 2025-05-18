@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./react/Navbar";
 import Home from "./react/Home";
 import About from "./react/About";
-import Portfolio from "./react/Portfolio";
+import Experience from "./react/Experience";
 import Tech from "./react/Tech";
 
 const MainContainer = () => (
@@ -15,7 +15,7 @@ const MainContainer = () => (
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/tech" element={<Tech />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/experience" element={<Experience />} />
       </Routes>
     </main>
   </Router>

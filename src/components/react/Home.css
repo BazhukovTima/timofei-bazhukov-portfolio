@@ -24,7 +24,7 @@ body {
 }
 
 /* Внутренний контейнер для контента */
-.container {
+.container-home {
   width: 100%;
   max-width: 1100px;
   padding: 3rem 2rem;

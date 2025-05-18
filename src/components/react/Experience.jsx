@@ -3,21 +3,21 @@ import TooltipIcon from "./TooltipIcon";
 import info from "../../data/info.json";
 
 import "./colors.css";
-import "./Portfolio.css";
+import "./Experience.css";
 
-const Portfolio = () => {
-  const projects = info.portfolio.projects;
+const Experience = () => {
+  const projects = info.experience.projects;
 
   return (
-    <div className="portfolio-page">
-      <section id="portfolio" className="portfolio-section">
-        <h2 className="portfolio-title">Portfolio</h2>
+    <div className="experience-page">
+      <section id="experience" className="experience-section">
+        <h2 className="experience-title">Experience</h2>
 
-        <p className="portfolio-intro">{info.portfolio.overview}</p>
+        <p className="experience-intro">{info.experience.overview}</p>
 
-        <div className="portfolio-grid">
+        <div className="experience-grid">
           {Object.entries(projects).map(([projectName, projectData]) => (
-            <div className="portfolio-item" key={projectName}>
+            <div className="experience-item" key={projectName}>
               <TooltipIcon description={projectData.details} />
 
               <div className="project-header">
@@ -35,4 +35,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Experience;

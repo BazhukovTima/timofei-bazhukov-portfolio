@@ -1,11 +1,13 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdEmail } from "react-icons/md";
 import './SocialLinks.css';
 
 const iconMap = {
-  github: <FaGithub />,
   linkedin: <FaLinkedin />,
-  twitter: <FaTwitter />
+  facebook: <FaFacebook />,
+  github: <FaGithub />,
+  email: <MdEmail />
 };
 
 const SocialLinks = ({ social }) => {

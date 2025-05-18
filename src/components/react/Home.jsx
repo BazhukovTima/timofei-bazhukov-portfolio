@@ -8,19 +8,20 @@ import './Avatar.css';
 import Footer from './Footer';
 
 const Home = () => {
-  const { name, role, description, social } = info;
+  const { name, role, description, location, social } = info;
 
   return (
     <section className="home-section">
-      <div className="container">
+      <div className="container-home">
+        <div class="avatar-container">
+          <img class="avatar" src={profile} alt="Avatar" />
+        </div>
         <div className="intro">
           <h1>{name}</h1>
           <div className="role">{role}</div>
           <p className="description">{description}</p>
+          <p className="description">{location}</p>
           <SocialLinks social={social} />
-        </div>
-        <div class="avatar-container">
-          <img class="avatar" src={profile} alt="Avatar" />
         </div>
       </div>
       <Footer fixed={true} />
