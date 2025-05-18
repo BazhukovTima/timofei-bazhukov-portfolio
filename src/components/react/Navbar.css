@@ -58,3 +58,9 @@
   color: var(--color-text-primary);
   text-decoration: none;
 }
+
+.navbar ul li a.active {
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  font-weight: 900;
+}

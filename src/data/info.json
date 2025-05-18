@@ -152,5 +152,11 @@
         "technologies": ""
       }
     }
-  }
+  },
+  "frameworks": [
+    "React",
+    "SAPUI5",
+    "Flutter",
+    "ABAPtoUI5"
+  ]
 }

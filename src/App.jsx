@@ -1,6 +1,6 @@
 import React from "react";
-import MainContainer from "./components/MainContainer";
+import ReactContainer from "./components/react/ReactContainer";
 
-const App = () => <MainContainer />;
+const App = () => <ReactContainer />;
 
 export default App;

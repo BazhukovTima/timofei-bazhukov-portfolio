@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./react/Navbar";
-import Home from "./react/Home";
-import About from "./react/About";
-import Experience from "./react/Experience";
-import Tech from "./react/Tech";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import About from "./About";
+import Experience from "./Experience";
+import Tech from "./Tech";
 
-const MainContainer = () => (
+const ReactContainer = () => (
   <Router>
     <Navbar />
     <main>
@@ -21,4 +21,4 @@ const MainContainer = () => (
   </Router>
 );
 
-export default MainContainer;
+export default ReactContainer;

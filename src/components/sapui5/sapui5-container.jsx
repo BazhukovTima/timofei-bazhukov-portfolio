@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import '@ui5/webcomponents/dist/Button.js';
 
 const SAPUI5Component = () => {
