@@ -31,6 +31,9 @@ yarn-error.log*
 /flutter_ui/.flutter-plugins
 /flutter_ui/.flutter-plugins-dependencies
 /flutter_ui/.idea/
+/flutter_ui/android/
+/flutter_ui/ios/
+/flutter_ui/macos/
 
 # Flutter build moved to public
 /public/flutter/
