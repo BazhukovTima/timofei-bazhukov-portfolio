@@ -1,6 +1,5 @@
-// lib/app.dart
 import 'package:flutter/material.dart';
-import 'router.dart'; // импорт роутера
+import 'router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: router, // подключаем go_router
+      routerConfig: router,
       title: 'Timofei Bazhukov Portfolio',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),

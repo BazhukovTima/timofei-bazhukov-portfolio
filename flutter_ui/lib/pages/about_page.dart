@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '../widgets/web_layout.dart';
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+class AboutPageContent extends StatelessWidget {
+  const AboutPageContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const WebLayout(
-      child: Center(
-        child: Text("AboutPage"),
+    return Center(
+      child: Text(
+        'About Page',
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
     );
   }

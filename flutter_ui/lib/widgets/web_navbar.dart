@@ -1,4 +1,3 @@
-// lib/widgets/web_navbar.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,8 +7,8 @@ class WebNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
       color: Colors.blueGrey.shade900,
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

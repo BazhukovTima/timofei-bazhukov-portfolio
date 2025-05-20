@@ -1,15 +1,14 @@
-// lib/pages/tech_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/widgets/web_layout.dart';
 
-class TechPage extends StatelessWidget {
-  const TechPage({super.key});
+class TechPageContent extends StatelessWidget {
+  const TechPageContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const WebLayout(
-      child: Center(
-        child: Text("TechPage"),
+    return Center(
+      child: Text(
+        'Technologies Page',
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
     );
   }

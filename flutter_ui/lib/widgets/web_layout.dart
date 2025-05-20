@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'web_navbar.dart';
+import 'footer.dart';
 
 class WebLayout extends StatelessWidget {
   final Widget child;
@@ -8,11 +9,24 @@ class WebLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const WebNavbar(), // всегда сверху
-        Expanded(child: child), // контент страницы
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          const WebNavbar(),
+          Expanded(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: child,
+              switchInCurve: Curves.easeIn,
+              switchOutCurve: Curves.easeOut,
+              transitionBuilder: (child, animation) {
+                return FadeTransition(opacity: animation, child: child);
+              },
+            ),
+          ),
+          const Footer(),
+        ],
+      ),
     );
   }
 }
