@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import '../styles/app_styles.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final currentYear = DateTime.now().year;
+
     return Container(
       width: double.infinity,
-      color: Colors.blueGrey.shade50,
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      color: AppStyles.footerBackgroundColor,
+      padding: AppStyles.footerPadding,
       child: Text(
-        '© 2025 Timofei Bazhukov. Все права защищены.',
+        '© $currentYear Timofei Bazhukov. All rights reserved.',
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.blueGrey.shade700,
-          fontSize: 14,
-        ),
+        style: AppStyles.footerTextStyle,
       ),
     );
   }

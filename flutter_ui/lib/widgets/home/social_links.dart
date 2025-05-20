@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../helpers/info_data.dart';
-import '../styles/colors.dart';
+import '../../helpers/info_data.dart';
+import '../../styles/colors.dart';
 
 class SocialLinks extends StatelessWidget {
   final List<SocialLink> social;
