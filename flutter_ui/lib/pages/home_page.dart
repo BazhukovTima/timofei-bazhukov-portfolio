@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../helpers/info_data.dart';
 import '../widgets/social_links.dart';
+import '../styles/home_styles.dart';
+import '../styles/colors.dart';
 
 class HomePageContent extends StatefulWidget {
   const HomePageContent({super.key});
@@ -31,59 +33,119 @@ class _HomePageContentState extends State<HomePageContent> {
         }
         final info = snapshot.data!;
         return Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                // Основной блок с аватаром и текстом
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Аватарка
-                    Container(
-                      width: 120,
-                      height: 120,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('profile-no-bg.png'),
-                          fit: BoxFit.cover,
+          padding: HomeStyles.contentPadding,
+          child: Center(
+            child: SingleChildScrollView(
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final isNarrow = constraints.maxWidth < 900;
+                  if (isNarrow) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: HomeStyles.avatarSizeSmall,
+                          height: HomeStyles.avatarSizeSmall,
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryLight,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: AppColors.primaryDark,
+                              width: 3,
+                            ),
+                            image: const DecorationImage(
+                              image: AssetImage('profile-no-bg.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(width: 24),
-                    // Текстовый блок
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        const SizedBox(height: 24),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: HomeStyles.maxTextWidth),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                info.name,
+                                style: HomeStyles.nameTextStyle(context),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                info.role,
+                                style: HomeStyles.roleTextStyle(context),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 16),
+                              Text(
+                                info.description,
+                                style: HomeStyles.descriptionTextStyle(context),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                info.location,
+                                style: HomeStyles.descriptionTextStyle(context),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 16),
+                              SocialLinks(social: info.social),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  } else {
+                    return ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 1200),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center, // <-- Центрируем по вертикали
                         children: [
-                          Text(
-                            info.name,
-                            style: Theme.of(context).textTheme.headlineMedium,
+                          Container(
+                            width: HomeStyles.avatarSize,
+                            height: HomeStyles.avatarSize,
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryLight,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColors.primaryDark,
+                                width: 3,
+                              ),
+                              image: const DecorationImage(
+                                image: AssetImage('assets/profile-no-bg.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            info.role,
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[700]),
+                          SizedBox(width: HomeStyles.horizontalSpacing),
+                          Flexible(
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: HomeStyles.maxTextWidth),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min, // чтобы не растягиваться по вертикали
+                                children: [
+                                  Text(info.name, style: HomeStyles.nameTextStyle(context)),
+                                  const SizedBox(height: 8),
+                                  Text(info.role, style: HomeStyles.roleTextStyle(context)),
+                                  const SizedBox(height: 16),
+                                  Text(info.description, style: HomeStyles.descriptionTextStyle(context)),
+                                  const SizedBox(height: 8),
+                                  Text(info.location, style: HomeStyles.descriptionTextStyle(context)),
+                                  const SizedBox(height: 16),
+                                  SocialLinks(social: info.social),
+                                ],
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 16),
-                          Text(
-                            info.description,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            info.location,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          const SizedBox(height: 16),
-                          SocialLinks(social: info.social),
                         ],
                       ),
-                    )
-                  ],
-                ),
-              ],
+                    );
+                  }
+                },
+              ),
             ),
           ),
         );

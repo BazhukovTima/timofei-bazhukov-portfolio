@@ -29,7 +29,7 @@ class InfoData {
   }
 
   static Future<InfoData> load() async {
-    final data = await rootBundle.loadString('info.json');
+    final data = await rootBundle.loadString('assets/info.json');
     final jsonResult = json.decode(data);
     return InfoData.fromJson(jsonResult);
   }
