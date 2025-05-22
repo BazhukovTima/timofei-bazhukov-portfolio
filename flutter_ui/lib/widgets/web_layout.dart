@@ -19,7 +19,7 @@ class WebLayout extends StatelessWidget {
         children: [
           const WebNavbar(),
           Expanded(
-            child: child,  // Просто показываем child без анимации
+            child: child,
           ),
           if (showFooter) const Footer(),
         ],
@@ -27,4 +27,3 @@ class WebLayout extends StatelessWidget {
     );
   }
 }
-

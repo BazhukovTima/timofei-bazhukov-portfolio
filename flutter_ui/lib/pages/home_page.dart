@@ -32,7 +32,7 @@ class _HomePageContentState extends State<HomePageContent> {
         }
         final info = snapshot.data!;
         return Padding(
-          padding: HomeStyles.contentPadding,
+          padding: HomeStyles.contentPadding(context),
           child: Center(
             child: SingleChildScrollView(
               child: ResponsiveLayout(info: info),

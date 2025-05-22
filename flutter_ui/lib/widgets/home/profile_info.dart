@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../helpers/info_data.dart';
 import '../../styles/home_styles.dart';
-import 'social_links.dart';
+import '../home/social_links.dart';
 
 class ProfileInfo extends StatelessWidget {
   final InfoData info;
@@ -19,7 +19,7 @@ class ProfileInfo extends StatelessWidget {
     final crossAxisAlign = isCentered ? CrossAxisAlignment.center : CrossAxisAlignment.start;
 
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: HomeStyles.maxTextWidth),
+      constraints: BoxConstraints(maxWidth: HomeStyles.maxTextWidth(context)),
       child: Column(
         crossAxisAlignment: crossAxisAlign,
         mainAxisSize: MainAxisSize.min,
