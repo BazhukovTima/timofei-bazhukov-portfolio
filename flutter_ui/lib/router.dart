@@ -9,7 +9,13 @@ final GoRouter router = GoRouter(
   routes: [
     ShellRoute(
       builder: (context, state, child) {
-        return WebLayout(child: child);
+        final currentPath = state.uri.path;
+        final showFooter = currentPath != '/experience';
+
+        return WebLayout(
+          child: child,
+          showFooter: showFooter,
+        );
       },
       routes: [
         GoRoute(

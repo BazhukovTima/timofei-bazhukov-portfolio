@@ -26,21 +26,26 @@ class InfoData {
 
   factory InfoData.fromJson(Map<String, dynamic> json) {
     return InfoData(
-      name: json['name'],
-      role: json['role'],
-      description: json['description'],
-      location: json['location'],
-      social: (json['social'] as List).map((s) => SocialLink.fromJson(s)).toList(),
-      skills: SkillsSection.fromJson(json['skills']),
-      about: AboutSection.fromJson(json['about']),
-      experience: ExperienceSection.fromJson(json['experience']),
-      frameworks: (json['frameworks'] as List).map((f) => Framework.fromJson(f)).toList(),
+      name: json['name'] ?? '',
+      role: json['role'] ?? '',
+      description: json['description'] ?? '',
+      location: json['location'] ?? '',
+      social: (json['social'] as List<dynamic>? ?? [])
+          .map((s) => SocialLink.fromJson(s))
+          .toList(),
+      skills: SkillsSection.fromJson(json['skills'] ?? {}),
+      about: AboutSection.fromJson(json['about'] ?? {}),
+      experience: ExperienceSection.fromJson(json['experience'] ?? {}),
+      frameworks: (json['frameworks'] as List<dynamic>? ?? [])
+          .map((f) => Framework.fromJson(f))
+          .toList(),
     );
   }
 
+  // Загрузка из assets/info.json
   static Future<InfoData> load() async {
     final data = await rootBundle.loadString('assets/info.json');
-    final jsonResult = json.decode(data);
+    final jsonResult = json.decode(data) as Map<String, dynamic>;
     return InfoData.fromJson(jsonResult);
   }
 }
@@ -53,8 +58,8 @@ class SocialLink {
 
   factory SocialLink.fromJson(Map<String, dynamic> json) {
     return SocialLink(
-      platform: json['platform'],
-      url: json['url'],
+      platform: json['platform'] ?? '',
+      url: json['url'] ?? '',
     );
   }
 }
@@ -67,8 +72,8 @@ class SkillsSection {
 
   factory SkillsSection.fromJson(Map<String, dynamic> json) {
     return SkillsSection(
-      description: json['description'],
-      skills: List<String>.from(json['skills']),
+      description: json['description'] ?? '',
+      skills: List<String>.from(json['skills'] ?? []),
     );
   }
 }
@@ -92,12 +97,12 @@ class AboutSection {
 
   factory AboutSection.fromJson(Map<String, dynamic> json) {
     return AboutSection(
-      header: json['header'],
-      expertise: ExpertiseSection.fromJson(json['expertise']),
-      technicalStack: AboutItem.fromJson(json['technicalStack']),
-      currentFocus: AboutItem.fromJson(json['currentFocus']),
-      mobileDevelopment: AboutItem.fromJson(json['mobileDevelopment']),
-      softSkills: AboutItem.fromJson(json['softSkills']),
+      header: json['header'] ?? '',
+      expertise: ExpertiseSection.fromJson(json['expertise'] ?? {}),
+      technicalStack: AboutItem.fromJson(json['technicalStack'] ?? {}),
+      currentFocus: AboutItem.fromJson(json['currentFocus'] ?? {}),
+      mobileDevelopment: AboutItem.fromJson(json['mobileDevelopment'] ?? {}),
+      softSkills: AboutItem.fromJson(json['softSkills'] ?? {}),
     );
   }
 }
@@ -113,8 +118,8 @@ class ExpertiseSection {
 
   factory ExpertiseSection.fromJson(Map<String, dynamic> json) {
     return ExpertiseSection(
-      header: json['header'],
-      description: json['description'],
+      header: json['header'] ?? '',
+      description: json['description'] ?? '',
     );
   }
 }
@@ -130,8 +135,8 @@ class AboutItem {
 
   factory AboutItem.fromJson(Map<String, dynamic> json) {
     return AboutItem(
-      header: json['header'],
-      description: json['description'],
+      header: json['header'] ?? '',
+      description: json['description'] ?? '',
     );
   }
 }
@@ -146,12 +151,13 @@ class ExperienceSection {
   });
 
   factory ExperienceSection.fromJson(Map<String, dynamic> json) {
-    final projectMap = (json['projects'] as Map<String, dynamic>).map(
+    final Map<String, dynamic> rawProjects = json['projects'] ?? {};
+    final projectMap = rawProjects.map(
       (key, value) => MapEntry(key, ExperienceProject.fromJson(value)),
     );
 
     return ExperienceSection(
-      overview: json['overview'],
+      overview: json['overview'] ?? '',
       projects: projectMap,
     );
   }
@@ -174,11 +180,11 @@ class ExperienceProject {
 
   factory ExperienceProject.fromJson(Map<String, dynamic> json) {
     return ExperienceProject(
-      company: json['company'],
-      role: json['role'],
-      period: json['period'],
-      details: json['details'],
-      technologies: json['technologies'],
+      company: json['company'] ?? '',
+      role: json['role'] ?? '',
+      period: json['period'] ?? '',
+      details: json['details'] ?? '',
+      technologies: json['technologies'] ?? '',
     );
   }
 }
@@ -194,8 +200,8 @@ class Framework {
 
   factory Framework.fromJson(Map<String, dynamic> json) {
     return Framework(
-      name: json['name'],
-      logo: json['logo'],
+      name: json['name'] ?? '',
+      logo: json['logo'] ?? '',
     );
   }
 }

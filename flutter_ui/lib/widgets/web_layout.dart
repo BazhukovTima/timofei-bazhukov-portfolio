@@ -4,8 +4,13 @@ import 'footer.dart';
 
 class WebLayout extends StatelessWidget {
   final Widget child;
+  final bool showFooter;
 
-  const WebLayout({super.key, required this.child});
+  const WebLayout({
+    super.key,
+    required this.child,
+    this.showFooter = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class WebLayout extends StatelessWidget {
               child: child,
             ),
           ),
-          const Footer(),
+          if (showFooter) const Footer(),
         ],
       ),
     );

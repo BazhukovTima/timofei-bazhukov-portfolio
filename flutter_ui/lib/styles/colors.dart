@@ -25,4 +25,6 @@ class AppColors {
   static const socialBorder = Color(0xFFBDC3C7);
   static const socialHoverBg = Color(0xFFBDC3C7);
   static const socialHoverBorder = Color(0xFF7F8C8D);
+
+  static const textTertiary = Color(0xFF999999);
 }
