@@ -82,8 +82,8 @@ class ExperienceStyles {
 
   static TextStyle projectTechnologies(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    double fontSize = 16;
-    if (width < 600) fontSize = 14;
+    double fontSize = 14;
+    if (width < 600) fontSize = 12;
     return TextStyle(
       fontSize: fontSize,
       fontFamily: 'Roboto',
