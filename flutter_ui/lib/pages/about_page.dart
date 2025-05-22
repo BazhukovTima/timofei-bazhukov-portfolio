@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -44,55 +43,50 @@ class _AboutPageContentState extends State<AboutPageContent> {
       aboutData!['softSkills'],
     ];
 
-    return Padding(
-      padding: AboutStyles.contentPadding,
+    return SingleChildScrollView(
+      padding: AboutStyles.contentPadding(context),
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 900),
+          constraints: BoxConstraints(maxWidth: AboutStyles.maxContentWidth(context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('About', style: AboutStyles.mainHeader),
-              const SizedBox(height: 16),
+              Text(AboutStyles.aboutHeaderText, style: AboutStyles.mainHeader(context)),
+              SizedBox(height: AboutStyles.verticalSpacingSmall(context)),
               ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 600),
+                constraints: BoxConstraints(maxWidth: AboutStyles.maxExpertiseTextWidth(context)),
                 child: Text(
                   expertiseDescription,
-                  style: AboutStyles.expertiseDescription,
+                  style: AboutStyles.expertiseDescription(context),
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 40),
+              SizedBox(height: AboutStyles.verticalSpacingLarge(context)),
               Wrap(
-                spacing: 30,      // горизонтальный отступ между плашками
-                runSpacing: 30,   // вертикальный отступ между плашками
-                alignment: WrapAlignment.center,
+                spacing: AboutStyles.wrapSpacing(context),
+                runSpacing: AboutStyles.wrapRunSpacing(context),
+                alignment: AboutStyles.wrapAlignment,
                 children: sections.map<Widget>((section) {
                   return SizedBox(
-                    width: 420,
-                    height: 220,  // фиксированная высота для всех плашек
+                    width: AboutStyles.cardWidth(context),
+                    // убираем фиксированную высоту, чтобы карточка подстраивалась под текст
                     child: Container(
                       decoration: AboutStyles.cardDecoration,
-                      padding: AboutStyles.sectionPadding,
+                      padding: AboutStyles.sectionPadding(context),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             section['header'],
-                            style: AboutStyles.cardHeader,
+                            style: AboutStyles.cardHeader(context),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 12),
-                          Expanded(
-                            child: SingleChildScrollView(
-                              physics: const NeverScrollableScrollPhysics(),
-                              child: Text(
-                                section['description'],
-                                style: AboutStyles.cardDescription,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
+                          Text(
+                            section['description'],
+                            style: AboutStyles.cardDescription(context),
+                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),
