@@ -27,6 +27,12 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
     });
   }
 
+  int _calculateColumns(double width) {
+    if (width < 600) return 1;
+    if (width < 900) return 2;
+    return 2; // 2 колонки на больших экранах
+  }
+
   @override
   Widget build(BuildContext context) {
     if (info == null) {
@@ -34,57 +40,58 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
     }
 
     final experience = info!.experience;
+    final width = MediaQuery.of(context).size.width;
+    final columns = _calculateColumns(width);
+
+    const maxContentWidth = 1300.0;
+    final effectiveWidth = width > maxContentWidth ? maxContentWidth : width;
+
+    final horizontalPadding = ExperienceStyles.contentPadding(context).horizontal;
+    final spacing = 24.0;
+
+    final cardWidth = (effectiveWidth - horizontalPadding - (columns - 1) * spacing) / columns;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+      padding: ExperienceStyles.contentPadding(context),
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1300), // расширено с 900
+          constraints: const BoxConstraints(maxWidth: maxContentWidth),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Experience',
-                style: ExperienceStyles.mainHeader,
+                style: ExperienceStyles.mainHeader(context),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: ExperienceStyles.verticalSpacingSmall(context)),
               Text(
                 experience.overview,
-                style: ExperienceStyles.descriptionText,
+                style: ExperienceStyles.descriptionText(context),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 32),
-              GridView.builder(
-                itemCount: experience.projects.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 24,
-                  mainAxisSpacing: 24,
-                  childAspectRatio: 2.2, // увеличено в 2 раза (ширина / высота)
-                ),
-                itemBuilder: (context, index) {
-                  final entry = experience.projects.entries.elementAt(index);
+              SizedBox(height: ExperienceStyles.verticalSpacingLarge(context)),
+              Wrap(
+                spacing: spacing,
+                runSpacing: spacing,
+                children: experience.projects.entries.map((entry) {
                   final project = entry.value;
-                  return ExperienceItem(
-                    title: entry.key,
-                    role: project.role,
-                    company: project.company,
-                    period: project.period,
-                    details: project.details,
-                    technologies: project.technologies,
+                  return SizedBox(
+                    width: cardWidth,
+                    child: ExperienceItem(
+                      title: entry.key,
+                      role: project.role,
+                      company: project.company,
+                      period: project.period,
+                      details: project.details,
+                      technologies: project.technologies,
+                    ),
                   );
-                },
+                }).toList(),
               ),
-
-              // Отступ перед футером
               const SizedBox(height: 40),
-
-              // Футер, который идет после контента и прокручивается вместе с ним
               Transform.translate(
-                offset: const Offset(0, 32), // сдвинуть вверх на 20 пикселей
+                offset: const Offset(0, 32),
                 child: const Footer(),
               ),
             ],

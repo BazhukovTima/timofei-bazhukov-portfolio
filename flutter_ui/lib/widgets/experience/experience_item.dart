@@ -40,26 +40,23 @@ class ExperienceItem extends StatelessWidget {
     return Container(
       decoration: ExperienceStyles.cardDecoration,
       padding: const EdgeInsets.all(16),
-      constraints: const BoxConstraints(
-        // убрал фиксированные размеры
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             '$title — $role',
-            style: ExperienceStyles.projectTitle,
+            style: ExperienceStyles.projectTitle(context),
           ),
-          const SizedBox(height: 8),
-          _buildRow(Icons.business_outlined, company, ExperienceStyles.projectCompany),
-          const SizedBox(height: 4),
-          _buildRow(Icons.calendar_today_outlined, period, ExperienceStyles.projectPeriod),
-          const SizedBox(height: 12),
-          _buildRow(Icons.code_outlined, technologies, ExperienceStyles.projectTechnologies),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
+          _buildRow(Icons.business_outlined, company, ExperienceStyles.projectCompany(context)),
+          SizedBox(height: 4),
+          _buildRow(Icons.calendar_today_outlined, period, ExperienceStyles.projectPeriod(context)),
+          SizedBox(height: 12),
+          _buildRow(Icons.code_outlined, technologies, ExperienceStyles.projectTechnologies(context)),
+          SizedBox(height: 8),
           Text(
             details,
-            style: ExperienceStyles.projectDetails,
+            style: ExperienceStyles.projectDetails(context),
           ),
         ],
       ),
