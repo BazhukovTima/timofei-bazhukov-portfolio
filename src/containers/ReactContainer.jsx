@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./Navbar";
-import Home from "./Home";
-import About from "./About";
-import Experience from "./Experience";
-import Tech from "./Tech";
+import Navbar from "../components/common/Navbar";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Experience from "../pages/Experience";
+import Tech from "../pages/Tech";
 
 const ReactContainer = () => (
   <Router>

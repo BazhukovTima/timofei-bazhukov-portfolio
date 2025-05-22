@@ -1,4 +1,4 @@
-import info from "../../../data/info.json";
+import info from "../../data/info.json";
 
 const createTechnologiesSection = (sap) => {
   const skillBox = new sap.m.FlexBox({

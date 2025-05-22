@@ -1,5 +1,5 @@
 import React from "react";
-import "./Skills.css";
+import "../../styles/Skills.css";
 import info from "../../data/info.json";
 
 const Skills = () => {

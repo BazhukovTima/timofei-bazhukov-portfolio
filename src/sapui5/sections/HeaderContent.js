@@ -1,5 +1,5 @@
-import profile from "../../../assets/profile-no-bg.png";
-import info from "../../../data/info.json";
+import profile from "../../assets/profile-no-bg.png";
+import info from "../../data/info.json";
 
 const createHeaderContent = (sap) => {
   const { name, role, location, description, social } = info;

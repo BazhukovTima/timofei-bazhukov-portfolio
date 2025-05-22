@@ -1,9 +1,9 @@
 import React from "react";
-import TooltipIcon from "./TooltipIcon";
-import info from "../../data/info.json";
+import TooltipIcon from "../components/common/TooltipIcon";
+import info from "../data/info.json";
 
-import "./colors.css";
-import "./Experience.css";
+import "../styles/colors.css";
+import "../styles/Experience.css";
 
 const Experience = () => {
   const projects = info.experience.projects;

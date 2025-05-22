@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md";
-import './SocialLinks.css';
+import '../../styles/SocialLinks.css';
 
 const iconMap = {
   linkedin: <FaLinkedin />,

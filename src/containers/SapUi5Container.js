@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import HomePage from "../sapui5/pages/HomePage";
-import "./sapui5CustomStyles.css";
+import "../sapui5/sapui5CustomStyles.css";
 
 const SapUi5Container = () => {
   const containerRef = useRef(null);

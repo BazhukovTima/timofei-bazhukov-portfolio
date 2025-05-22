@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaInfoCircle } from "react-icons/fa";
-import "./TooltipIcon.css";
+import "../../styles/TooltipIcon.css";
 
 const TooltipIcon = ({ description }) => {
   const [visible, setVisible] = useState(false);

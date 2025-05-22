@@ -1,4 +1,4 @@
-import info from "../../../data/info.json";
+import info from "../../data/info.json";
 
 const createExperienceSection = (sap) => {
   const projects = info.experience.projects;

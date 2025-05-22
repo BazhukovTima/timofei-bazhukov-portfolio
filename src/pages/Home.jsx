@@ -1,11 +1,11 @@
 import React from 'react';
-import profile from '../../assets/profile-no-bg.png';
-import info from '../../data/info.json';
-import SocialLinks from './SocialLinks';
-import './colors.css';
-import './Home.css';
-import './Avatar.css';
-import Footer from './Footer';
+import profile from '../assets/profile-no-bg.png';
+import info from '../data/info.json';
+import SocialLinks from '../components/home/SocialLinks';
+import '../styles/colors.css';
+import '../styles/Home.css';
+import '../styles/Avatar.css';
+import Footer from '../components/common/Footer';
 
 const Home = () => {
   const { name, role, description, location, social } = info;

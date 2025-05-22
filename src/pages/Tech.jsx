@@ -1,9 +1,9 @@
 import React from "react";
-import "./colors.css";
-import "./Tech.css";
-import Footer from './Footer';
-import Skills from './Skills';
-import info from "../../data/info.json";
+import "../styles/colors.css";
+import "../styles/Tech.css";
+import Footer from '../components/common/Footer';
+import Skills from '../components/tech/Skills';
+import info from "../data/info.json";
 
 const Tech = () => (
   <section id="tech" className="tech-section">
