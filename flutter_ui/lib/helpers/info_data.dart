@@ -7,6 +7,10 @@ class InfoData {
   final String description;
   final String location;
   final List<SocialLink> social;
+  final SkillsSection skills;
+  final AboutSection about;
+  final ExperienceSection experience;
+  final List<Framework> frameworks;
 
   InfoData({
     required this.name,
@@ -14,6 +18,10 @@ class InfoData {
     required this.description,
     required this.location,
     required this.social,
+    required this.skills,
+    required this.about,
+    required this.experience,
+    required this.frameworks,
   });
 
   factory InfoData.fromJson(Map<String, dynamic> json) {
@@ -22,9 +30,11 @@ class InfoData {
       role: json['role'],
       description: json['description'],
       location: json['location'],
-      social: (json['social'] as List)
-          .map((s) => SocialLink.fromJson(s))
-          .toList(),
+      social: (json['social'] as List).map((s) => SocialLink.fromJson(s)).toList(),
+      skills: SkillsSection.fromJson(json['skills']),
+      about: AboutSection.fromJson(json['about']),
+      experience: ExperienceSection.fromJson(json['experience']),
+      frameworks: (json['frameworks'] as List).map((f) => Framework.fromJson(f)).toList(),
     );
   }
 
@@ -45,6 +55,147 @@ class SocialLink {
     return SocialLink(
       platform: json['platform'],
       url: json['url'],
+    );
+  }
+}
+
+class SkillsSection {
+  final String description;
+  final List<String> skills;
+
+  SkillsSection({required this.description, required this.skills});
+
+  factory SkillsSection.fromJson(Map<String, dynamic> json) {
+    return SkillsSection(
+      description: json['description'],
+      skills: List<String>.from(json['skills']),
+    );
+  }
+}
+
+class AboutSection {
+  final String header;
+  final ExpertiseSection expertise;
+  final AboutItem technicalStack;
+  final AboutItem currentFocus;
+  final AboutItem mobileDevelopment;
+  final AboutItem softSkills;
+
+  AboutSection({
+    required this.header,
+    required this.expertise,
+    required this.technicalStack,
+    required this.currentFocus,
+    required this.mobileDevelopment,
+    required this.softSkills,
+  });
+
+  factory AboutSection.fromJson(Map<String, dynamic> json) {
+    return AboutSection(
+      header: json['header'],
+      expertise: ExpertiseSection.fromJson(json['expertise']),
+      technicalStack: AboutItem.fromJson(json['technicalStack']),
+      currentFocus: AboutItem.fromJson(json['currentFocus']),
+      mobileDevelopment: AboutItem.fromJson(json['mobileDevelopment']),
+      softSkills: AboutItem.fromJson(json['softSkills']),
+    );
+  }
+}
+
+class ExpertiseSection {
+  final String header;
+  final String description;
+
+  ExpertiseSection({
+    required this.header,
+    required this.description,
+  });
+
+  factory ExpertiseSection.fromJson(Map<String, dynamic> json) {
+    return ExpertiseSection(
+      header: json['header'],
+      description: json['description'],
+    );
+  }
+}
+
+class AboutItem {
+  final String header;
+  final String description;
+
+  AboutItem({
+    required this.header,
+    required this.description,
+  });
+
+  factory AboutItem.fromJson(Map<String, dynamic> json) {
+    return AboutItem(
+      header: json['header'],
+      description: json['description'],
+    );
+  }
+}
+
+class ExperienceSection {
+  final String overview;
+  final Map<String, ExperienceProject> projects;
+
+  ExperienceSection({
+    required this.overview,
+    required this.projects,
+  });
+
+  factory ExperienceSection.fromJson(Map<String, dynamic> json) {
+    final projectMap = (json['projects'] as Map<String, dynamic>).map(
+      (key, value) => MapEntry(key, ExperienceProject.fromJson(value)),
+    );
+
+    return ExperienceSection(
+      overview: json['overview'],
+      projects: projectMap,
+    );
+  }
+}
+
+class ExperienceProject {
+  final String company;
+  final String role;
+  final String period;
+  final String details;
+  final String technologies;
+
+  ExperienceProject({
+    required this.company,
+    required this.role,
+    required this.period,
+    required this.details,
+    required this.technologies,
+  });
+
+  factory ExperienceProject.fromJson(Map<String, dynamic> json) {
+    return ExperienceProject(
+      company: json['company'],
+      role: json['role'],
+      period: json['period'],
+      details: json['details'],
+      technologies: json['technologies'],
+    );
+  }
+}
+
+class Framework {
+  final String name;
+  final String logo;
+
+  Framework({
+    required this.name,
+    required this.logo,
+  });
+
+  factory Framework.fromJson(Map<String, dynamic> json) {
+    return Framework(
+      name: json['name'],
+      logo: json['logo'],
     );
   }
 }

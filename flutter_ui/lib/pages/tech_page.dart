@@ -1,14 +1,58 @@
 import 'package:flutter/material.dart';
+import '../helpers/info_data.dart';
+import '../styles/tech_styles.dart';
+import '../widgets/tech/skills_grid.dart';
 
-class TechPageContent extends StatelessWidget {
+class TechPageContent extends StatefulWidget {
   const TechPageContent({super.key});
 
   @override
+  State<TechPageContent> createState() => _TechPageContentState();
+}
+
+class _TechPageContentState extends State<TechPageContent> {
+  InfoData? info;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadInfo();
+  }
+
+  Future<void> _loadInfo() async {
+    final loadedInfo = await InfoData.load();
+    setState(() {
+      info = loadedInfo;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Technologies Page',
-        style: Theme.of(context).textTheme.headlineMedium,
+    if (info == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    final skills = info!.skills;
+    return SingleChildScrollView(
+      padding: TechStyles.contentPadding,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('Technologies and Frameworks', style: TechStyles.sectionTitle),
+              const SizedBox(height: 16),
+              Text(
+                skills.description,
+                style: TechStyles.descriptionText,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 32),
+              SkillsGrid(skills: skills.skills),
+            ],
+          ),
+        ),
       ),
     );
   }
