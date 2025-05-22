@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/widgets/footer/footer.dart';
 import '../helpers/info_data.dart';
 import '../styles/experience_styles.dart';
 import '../widgets/experience/experience_item.dart';
@@ -126,12 +125,6 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
               SizedBox(height: ExperienceStyles.verticalSpacingLarge(context)),
 
               ..._buildRows(items, columns, spacing, cardWidth),
-
-              const SizedBox(height: 40),
-              Transform.translate(
-                offset: const Offset(0, 32),
-                child: const Footer(),
-              ),
             ],
           ),
         ),

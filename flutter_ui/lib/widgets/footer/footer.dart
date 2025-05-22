@@ -10,12 +10,11 @@ class Footer extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      // color: AppStyles.footerBackgroundColor, // Убрали фон
       padding: AppStyles.footerPadding,
       child: Text(
         '© $currentYear Timofei Bazhukov. All rights reserved.',
         textAlign: TextAlign.center,
-        style: AppStyles.footerTextStyle,
+        style: AppStyles.footerTextStyle(context),
       ),
     );
   }

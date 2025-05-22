@@ -21,7 +21,7 @@ class ResponsiveLayout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProfileAvatar(imagePath: 'profile-no-bg.png', isLarge: false),
+              ProfileAvatar(imagePath: 'assets/profile-no-bg.png', isLarge: false),
               const SizedBox(height: 24),
               ProfileInfo(info: info, isCentered: true),
             ],
@@ -32,7 +32,7 @@ class ResponsiveLayout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProfileAvatar(imagePath: 'profile-no-bg.png', isLarge: true),
+              ProfileAvatar(imagePath: 'assets/profile-no-bg.png', isLarge: true),
               const SizedBox(height: 24),
               ProfileInfo(info: info, isCentered: true),
             ],

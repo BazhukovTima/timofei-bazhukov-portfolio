@@ -3,11 +3,15 @@ import 'colors.dart';
 
 class AppStyles {
   // Текстовые стили
-  static const TextStyle footerTextStyle = TextStyle(
-    fontSize: 14,
-    color: AppColors.textSecondary, // темно-серый / синий для футера
-    fontFamily: 'Roboto', // классический шрифт Flutter, если хочешь
-  );
+  static TextStyle footerTextStyle(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return TextStyle(
+      fontSize: width < 600 ? 12 : 14,
+      color: Colors.grey[500], // светло-серый
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w400,
+    );
+  }
 
   static const EdgeInsets footerPadding = EdgeInsets.symmetric(vertical: 16);
 
@@ -23,8 +27,10 @@ class AppStyles {
     fontFamily: 'Roboto',
   );
 
-  static const EdgeInsets navbarPadding =
-      EdgeInsets.symmetric(horizontal: 32, vertical: 16);
+  static const EdgeInsets navbarPadding = EdgeInsets.symmetric(
+    horizontal: 32,
+    vertical: 16,
+  );
 
   // Общие текстовые стили для сайта
   static const TextStyle baseTextStyle = TextStyle(
