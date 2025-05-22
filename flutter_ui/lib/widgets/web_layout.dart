@@ -19,15 +19,7 @@ class WebLayout extends StatelessWidget {
         children: [
           const WebNavbar(),
           Expanded(
-            child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              switchInCurve: Curves.easeIn,
-              switchOutCurve: Curves.easeOut,
-              transitionBuilder: (child, animation) {
-                return FadeTransition(opacity: animation, child: child);
-              },
-              child: child,
-            ),
+            child: child,  // Просто показываем child без анимации
           ),
           if (showFooter) const Footer(),
         ],
@@ -35,3 +27,4 @@ class WebLayout extends StatelessWidget {
     );
   }
 }
+
