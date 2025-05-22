@@ -16,12 +16,12 @@ class WebLayout extends StatelessWidget {
           Expanded(
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
-              child: child,
               switchInCurve: Curves.easeIn,
               switchOutCurve: Curves.easeOut,
               transitionBuilder: (child, animation) {
                 return FadeTransition(opacity: animation, child: child);
               },
+              child: child,
             ),
           ),
           const Footer(),

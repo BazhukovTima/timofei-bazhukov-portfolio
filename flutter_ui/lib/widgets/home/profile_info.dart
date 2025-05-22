@@ -8,10 +8,10 @@ class ProfileInfo extends StatelessWidget {
   final bool isCentered;
 
   const ProfileInfo({
-    Key? key,
+    super.key,
     required this.info,
     this.isCentered = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

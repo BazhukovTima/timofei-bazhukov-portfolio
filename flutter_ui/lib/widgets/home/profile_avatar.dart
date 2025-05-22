@@ -7,10 +7,10 @@ class ProfileAvatar extends StatelessWidget {
   final bool isLarge;
 
   const ProfileAvatar({
-    Key? key,
+    super.key,
     required this.imagePath,
     this.isLarge = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ProfileAvatar extends StatelessWidget {
         color: AppColors.primaryLight,
         shape: BoxShape.circle,
         border: Border.all(
-          color: AppColors.primaryDark.withOpacity(0.5), // более прозрачный
+          color: AppColors.primaryDark.withValues(alpha: 0.5), // более прозрачный
           width: 2, // тоньше рамка
         ),
         image: DecorationImage(

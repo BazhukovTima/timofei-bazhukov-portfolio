@@ -7,7 +7,7 @@ import 'profile_info.dart';
 class ResponsiveLayout extends StatelessWidget {
   final InfoData info;
 
-  const ResponsiveLayout({Key? key, required this.info}) : super(key: key);
+  const ResponsiveLayout({super.key, required this.info});
 
   @override
   Widget build(BuildContext context) {
