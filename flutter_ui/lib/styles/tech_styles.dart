@@ -2,31 +2,64 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class TechStyles {
-  static const EdgeInsets contentPadding = EdgeInsets.symmetric(horizontal: 24, vertical: 32);
+  static EdgeInsets contentPadding(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    if (width < 600) return const EdgeInsets.symmetric(horizontal: 16, vertical: 24);
+    if (width < 900) return const EdgeInsets.symmetric(horizontal: 24, vertical: 32);
+    return const EdgeInsets.symmetric(horizontal: 48, vertical: 48);
+  }
 
-  static const TextStyle sectionTitle = TextStyle(
-    fontSize: 32, // совпадает с mainHeader в AboutStyles
-    fontWeight: FontWeight.bold,
-    fontFamily: 'Roboto',
-    color: AppColors.textPrimary,
-  );
+  static TextStyle sectionTitle(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    double fontSize = 32;
+    if (width < 600) fontSize = 24;
+    else if (width < 900) fontSize = 28;
+    return TextStyle(
+      fontSize: fontSize,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Roboto',
+      color: AppColors.textPrimary,
+    );
+  }
 
-  static const TextStyle descriptionText = TextStyle(
-    fontSize: 18, // совпадает с expertiseDescription
-    fontFamily: 'Roboto',
-    color: AppColors.textSecondary,
-    height: 1.5,
-  );
+  static TextAlign sectionTitleAlign(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return width < 600 ? TextAlign.left : TextAlign.center;
+  }
 
-  static const EdgeInsets gridPadding = EdgeInsets.symmetric(vertical: 24);
+  static TextStyle descriptionText(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    double fontSize = 18;
+    if (width < 600) fontSize = 14;
+    else if (width < 900) fontSize = 16;
+    return TextStyle(
+      fontSize: fontSize,
+      fontFamily: 'Roboto',
+      color: AppColors.textSecondary,
+      height: 1.5,
+    );
+  }
 
-  static const TextStyle skillItem = TextStyle(
-    fontSize: 16, // совпадает с cardDescription
-    fontFamily: 'Roboto',
-    color: AppColors.textPrimary,
-  );
+  static EdgeInsets gridPadding(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    if (width < 600) return const EdgeInsets.symmetric(vertical: 16);
+    if (width < 900) return const EdgeInsets.symmetric(vertical: 24);
+    return const EdgeInsets.symmetric(vertical: 32);
+  }
 
-  static const BoxDecoration skillBoxDecoration = BoxDecoration(
+  static TextStyle skillItem(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    double fontSize = 16;
+    if (width < 600) fontSize = 14;
+    else if (width < 900) fontSize = 15;
+    return TextStyle(
+      fontSize: fontSize,
+      fontFamily: 'Roboto',
+      color: AppColors.textPrimary,
+    );
+  }
+
+  static BoxDecoration skillBoxDecoration = const BoxDecoration(
     color: AppColors.backgroundLight,
     borderRadius: BorderRadius.all(Radius.circular(8)),
     boxShadow: [
@@ -37,4 +70,11 @@ class TechStyles {
       ),
     ],
   );
+
+  static double maxContentWidth(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    if (width < 600) return width * 0.95;
+    if (width < 900) return 700;
+    return 900;
+  }
 }

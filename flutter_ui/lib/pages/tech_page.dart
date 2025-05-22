@@ -33,22 +33,29 @@ class _TechPageContentState extends State<TechPageContent> {
     }
 
     final skills = info!.skills;
+
     return SingleChildScrollView(
-      padding: TechStyles.contentPadding,
+      padding: TechStyles.contentPadding(context),
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 900),
+          constraints: BoxConstraints(
+            maxWidth: TechStyles.maxContentWidth(context),
+          ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center, // <-- тут исправил
             children: [
-              Text('Technologies and Frameworks', style: TechStyles.sectionTitle),
-              const SizedBox(height: 16),
               Text(
-                skills.description,
-                style: TechStyles.descriptionText,
+                'Technologies and Frameworks',
+                style: TechStyles.sectionTitle(context),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 32),
+              SizedBox(height: 16),
+              Text(
+                skills.description,
+                style: TechStyles.descriptionText(context),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 32),
               SkillsGrid(skills: skills.skills),
             ],
           ),

@@ -9,7 +9,7 @@ class SkillsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: TechStyles.gridPadding,
+      padding: TechStyles.gridPadding(context),
       child: Wrap(
         spacing: 16,
         runSpacing: 16,
@@ -18,7 +18,7 @@ class SkillsGrid extends StatelessWidget {
           return Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: TechStyles.skillBoxDecoration,
-            child: Text(skill, style: TechStyles.skillItem),
+            child: Text(skill, style: TechStyles.skillItem(context)),
           );
         }).toList(),
       ),
