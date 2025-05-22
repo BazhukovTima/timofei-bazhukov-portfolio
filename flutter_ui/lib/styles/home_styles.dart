@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
 class HomeStyles {
-  // Метод для аватара
   static double avatarSize(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    if (width < 600) return 250; // увеличил с 120 до 180
-    if (width < 900) return 280; // увеличил с 200 до 250
+    if (width < 600) {
+      // на очень маленьких экранах делаем размер адаптивным, например, 40% ширины экрана
+      return width * 0.8;
+    }
+    if (width < 900) return 280;
     return 480;
   }
 
   static double avatarSizeSmall(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    if (width < 600) return 110; // увеличил с 60 до 90
-    if (width < 900) return 120; // увеличил с 90 до 110
+    if (width < 600) {
+      // мелкий аватар тоже масштабируем по ширине мобильника
+      return width * 0.5;
+    }
+    if (width < 900) return 120;
     return 160;
   }
 

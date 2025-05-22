@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/widgets/footer.dart';
+import 'package:flutter_ui/widgets/footer/footer.dart';
 import '../helpers/info_data.dart';
 import '../styles/experience_styles.dart';
 import '../widgets/experience/experience_item.dart';

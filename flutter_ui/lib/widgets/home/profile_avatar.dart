@@ -1,3 +1,4 @@
+// profile_avatar.dart
 import 'package:flutter/material.dart';
 import '../../styles/colors.dart';
 import '../../styles/home_styles.dart';
@@ -14,7 +15,9 @@ class ProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = isLarge ? HomeStyles.avatarSize(context) : HomeStyles.avatarSizeSmall(context);
+    final size = isLarge
+        ? HomeStyles.avatarSize(context)
+        : HomeStyles.avatarSizeSmall(context);
 
     return Container(
       width: size,
@@ -23,8 +26,8 @@ class ProfileAvatar extends StatelessWidget {
         color: AppColors.primaryLight,
         shape: BoxShape.circle,
         border: Border.all(
-          color: AppColors.primaryDark.withOpacity(0.5), // поправил метод .withOpacity()
-          width: 2,
+          color: AppColors.primaryDark.withOpacity(0.15), // мягче обводка
+          width: 1,
         ),
         image: DecorationImage(
           image: AssetImage(imagePath),

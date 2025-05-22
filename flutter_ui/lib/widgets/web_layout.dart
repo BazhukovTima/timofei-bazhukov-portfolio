@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'web_navbar.dart';
-import 'footer.dart';
+import 'navbar/navbar.dart';
+import 'footer/footer.dart';
 
 class WebLayout extends StatelessWidget {
   final Widget child;
@@ -14,16 +14,29 @@ class WebLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const WebNavbar(),
-          Expanded(
-            child: child,
-          ),
-          if (showFooter) const Footer(),
-        ],
-      ),
-    );
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 600;
+
+    if (isMobile) {
+      return Scaffold(
+        body: Column(
+          children: [
+            Expanded(child: child),
+            if (showFooter) const Footer(),
+            const Navbar(),
+          ],
+        ),
+      );
+    } else {
+      return Scaffold(
+        body: Column(
+          children: [
+            const Navbar(),
+            Expanded(child: child),
+            if (showFooter) const Footer(),
+          ],
+        ),
+      );
+    }
   }
 }
