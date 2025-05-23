@@ -1,9 +1,4 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
+/* Базовые стили */
 
 .experience-section {
   position: fixed;
@@ -62,6 +57,10 @@ html, body {
   text-align: left;
 }
 
+.project-header {
+  margin-bottom: 0.7rem;
+}
+
 .project-title {
   margin: 0;
   font-size: 1.4rem;
@@ -69,8 +68,15 @@ html, body {
   line-height: 1.3;
 }
 
+.project-details {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
 .project-company {
-  margin: 0.3rem 0 1.2rem;
+  margin: 0 0 0.8rem;
   font-size: 1rem;
   color: var(--color-text-description);
 }
@@ -80,4 +86,70 @@ html, body {
   color: var(--color-text-description);
   line-height: 1.4;
   margin-top: auto;
+}
+
+/* === Адаптив для мобилки === */
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .experience-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-intro {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr; /* одна колонка */
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .experience-item {
+    padding: 1.8rem 1.2rem 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-details {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-company {
+    font-size: 0.9rem;
+  }
+
+  .project-tech {
+    font-size: 0.9rem;
+  }
+}
+.project-company,
+.project-tech,
+.project-details {
+  /* Убираем flex, возвращаем блочно-строчное поведение */
+  display: inline; /* или block, если нужно */
+  line-height: 1.4; /* для удобства */
+}
+
+.project-company .icon,
+.project-tech .icon,
+.project-details .icon {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 0.6rem;
+  color: var(--color-text-description);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  min-width: 18px;
+  min-height: 18px;
 }

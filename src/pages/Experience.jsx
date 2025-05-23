@@ -1,9 +1,10 @@
 import React from "react";
-import TooltipIcon from "../components/common/TooltipIcon";
 import info from "../data/info.json";
 
+import { FaBuilding, FaTools, FaFileAlt } from "react-icons/fa";
+
 import "../styles/colors.css";
-import "../styles/Experience.css";
+import "../styles/ResponsiveExperience.css";
 
 const Experience = () => {
   const projects = info.experience.projects;
@@ -18,15 +19,26 @@ const Experience = () => {
         <div className="experience-grid">
           {Object.entries(projects).map(([projectName, projectData]) => (
             <div className="experience-item" key={projectName}>
-              <TooltipIcon description={projectData.details} />
-
               <div className="project-header">
                 <h3 className="project-title">
                   {projectName} — {projectData.role}
                 </h3>
               </div>
-              <p className="project-company">{projectData.company}</p>
-              <p className="project-tech">{projectData.technologies}</p>
+
+              <p className="project-company">
+                <FaBuilding className="icon" />
+                {projectData.company}
+              </p>
+
+              <p className="project-tech">
+                <FaTools className="icon" />
+                {projectData.technologies}
+              </p>
+
+              <p className="project-details">
+                <FaFileAlt className="icon" />
+                {projectData.details}
+              </p>
             </div>
           ))}
         </div>
