@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/colors.css";
 import "../styles/Tech.css";
-import Footer from '../components/common/Footer';
 import Skills from '../components/tech/Skills';
 import info from "../data/info.json";
 
@@ -15,7 +14,6 @@ const Tech = () => (
     <div className="tech-grid">
         <Skills />
     </div>
-    <Footer fixed={true} />
   </section>
 );
 

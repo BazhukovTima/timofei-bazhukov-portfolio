@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/colors.css";
 import "../styles/About.css";
-import Footer from '../components/common/Footer';
 import info from "../data/info.json";
 
 const About = () => (
@@ -29,7 +28,6 @@ const About = () => (
         <p>{info.about.softSkills.description}</p>
       </div>
     </div>
-    <Footer fixed={true} />
   </section>
 );
 
