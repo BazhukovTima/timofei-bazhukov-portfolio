@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/colors.css";
-import "../styles/TechResponsive.css";
+import "../styles/ResponsiveTech.css";
 import Skills from '../components/tech/Skills';
 import info from "../data/info.json";
 
