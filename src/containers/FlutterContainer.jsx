@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 
-// eslint-disable-next-line no-unused-vars
 let flutterApp = null;
 
 const FlutterContainer = () => {
@@ -9,8 +8,11 @@ const FlutterContainer = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // При переходе на Flutter всегда сбрасываем URL на корень
-    window.history.replaceState({}, '', '/');
+    // Берём текущий путь, добавляем завершающий слеш, если его нет
+    let currentPath = window.location.pathname;
+    if (!currentPath.endsWith('/')) {
+      currentPath += '/';
+    }
 
     const script = document.createElement("script");
     script.src = "/flutter/flutter.js";
@@ -19,7 +21,8 @@ const FlutterContainer = () => {
     script.onload = () => {
       if (window._flutter && window._flutter.loader) {
         window._flutter.loader.loadEntrypoint({
-          entryPointBaseUrl: '/flutter/',
+          // Передаём currentPath как базовый URL — чтобы base href совпадал с ним
+          entryPointBaseUrl: currentPath,
           entrypointUrl: "/flutter/main.dart.js",
           onEntrypointLoaded: async (engineInitializer) => {
             const engine = await engineInitializer.initializeEngine();
