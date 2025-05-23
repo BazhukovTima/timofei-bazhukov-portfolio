@@ -15,11 +15,11 @@
   },
   "scripts": {
     "start-clean": "react-scripts start",
-    "start": "npm run flutter-build && npm run flutter-fix-base && npm run flutter-relocate && react-scripts start",
+    "start": "npm run flutter-build && npm run flutter-relocate && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flutter-build": "cd flutter_ui && flutter build web",
+    "flutter-build": "cd flutter_ui && flutter build web --base-href /flutter/",
     "flutter-fix-base": "node flutter_ui/scripts/fix-flutter-base.js",
     "flutter-relocate": "mkdir -p public/flutter && cp -r flutter_ui/build/web/* public/flutter/"
   },

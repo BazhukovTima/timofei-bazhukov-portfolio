@@ -1,17 +1,62 @@
+import React, { useEffect, useRef } from "react";
+
+// eslint-disable-next-line no-unused-vars
+let flutterApp = null;
+
 const FlutterContainer = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // При переходе на Flutter всегда сбрасываем URL на корень
+    window.history.replaceState({}, '', '/');
+
+    const script = document.createElement("script");
+    script.src = "/flutter/flutter.js";
+    script.async = true;
+
+    script.onload = () => {
+      if (window._flutter && window._flutter.loader) {
+        window._flutter.loader.loadEntrypoint({
+          entryPointBaseUrl: '/flutter/',
+          entrypointUrl: "/flutter/main.dart.js",
+          onEntrypointLoaded: async (engineInitializer) => {
+            const engine = await engineInitializer.initializeEngine();
+            flutterApp = engine;
+            engine.runApp();
+          },
+        });
+      } else {
+        console.error("Flutter loader не найден");
+      }
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+      document.querySelectorAll('flt-glass-pane, flt-scene-host, canvas')
+        .forEach(el => el.remove());
+      const flutterRoot = document.getElementById('flutter-root');
+      if (flutterRoot) flutterRoot.innerHTML = '';
+      flutterApp = null;
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
-    <iframe
-      src="/flutter/index.html"
+    <div
+      ref={containerRef}
+      id="flutter-root"
       style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
         width: "100vw",
         height: "100vh",
-        border: "none",
-        zIndex: 1000,
+        position: "relative",
+        overflow: "hidden",
       }}
-      title="Flutter Web App"
     />
   );
 };

@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <section className="home-section">
       <div className="container-home">
-        <div class="avatar-container">
-          <img class="avatar" src={profile} alt="Avatar" />
+        <div className="avatar-container">
+          <img className="avatar" src={profile} alt="Avatar" />
         </div>
         <div className="intro">
           <h1>{name}</h1>
