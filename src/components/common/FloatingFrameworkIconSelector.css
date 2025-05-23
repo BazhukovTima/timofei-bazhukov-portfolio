@@ -1,12 +1,54 @@
+:root {
+  --fw-icon-size: 40px; /* 32px иконка + 4px паддинг * 2 */
+  --fw-icon-gap: 8px; /* 0.5rem */
+}
+
+/* === Toggle button === */
+.floating-icon-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem; /* ВСЕГДА снизу */
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Скрыть кнопку на десктопе */
+@media (min-width: 769px) {
+  .floating-icon-toggle {
+    display: none;
+  }
+}
+
+/* === Icon list === */
 .floating-icon-selector {
   position: fixed;
-  top: 50%;
-  right: 0.75rem;
-  transform: translateY(-50%);
+  right: 1rem;
+  bottom: calc(1rem + 40px + 8px); /* Сверху от кнопки: отступ + размер кнопки + gap */
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--fw-icon-gap);
   z-index: 1000;
+}
+
+/* На десктопе вернуть на прежнее место */
+@media (min-width: 769px) {
+  .floating-icon-selector {
+    top: 50%;
+    right: 0.75rem;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
 }
 
 .framework-icon {
@@ -44,14 +86,4 @@
 .placeholder {
   font-size: 16px;
   color: var(--color-text-secondary);
-}
-
-/* ===== Mobile adaptation: slightly above the bottom nav (4rem offset) ===== */
-@media (max-width: 768px) {
-  .floating-icon-selector {
-    top: auto;
-    bottom: 4rem; /* instead of 1rem */
-    right: 1rem;
-    transform: none;
-  }
 }

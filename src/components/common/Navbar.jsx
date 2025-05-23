@@ -41,27 +41,12 @@ const Navbar = () => {
         >
           ☰
         </button>
+
         <ul className="nav-links">
-          <li>
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>
-              Technologies
-            </Link>
-          </li>
-          <li>
-            <Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>
-              Experience
-            </Link>
-          </li>
+          <li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link></li>
+          <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
+          <li><Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>Technologies</Link></li>
+          <li><Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>Experience</Link></li>
         </ul>
       </nav>
 
@@ -71,26 +56,10 @@ const Navbar = () => {
         aria-hidden={!menuOpen}
       >
         <ul>
-          <li>
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>
-              Technologies
-            </Link>
-          </li>
-          <li>
-            <Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>
-              Experience
-            </Link>
-          </li>
+          <li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link></li>
+          <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
+          <li><Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>Technologies</Link></li>
+          <li><Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>Experience</Link></li>
         </ul>
       </div>
     </>

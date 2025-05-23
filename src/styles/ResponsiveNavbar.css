@@ -1,17 +1,18 @@
-/* ResponsiveNavbar.css */
-
 .navbar {
   height: 70px;
   padding: 0 1.5rem;
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(236, 240, 241, 0.2);
   backdrop-filter: saturate(150%) blur(10px);
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
   z-index: 1100;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* чтобы кнопка была слева */
+  justify-content: flex-start;
+  gap: 2rem;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
@@ -21,7 +22,7 @@
 }
 
 .navbar.menu-open {
-  background-color: rgba(236, 240, 241, 0.4); /* чуть более заметный при открытом меню */
+  background-color: rgba(236, 240, 241, 0.4);
 }
 
 .menu-toggle {
@@ -31,16 +32,19 @@
   color: var(--color-text-primary);
   cursor: pointer;
   padding: 0.5rem 1rem;
-  z-index: 1200; /* выше чем у меню */
+  z-index: 1200;
+  display: none;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6rem;
+  justify-content: center;
+  flex: 1;
+  gap: 5rem;
   list-style: none;
   padding: 0;
-  margin-left: 2rem;
+  margin: 0 auto;
 }
 
 .nav-links li a {
@@ -61,17 +65,15 @@
   font-weight: 900;
 }
 
-/* === Side menu (выезжающее меню слева) === */
-
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px; /* изначально спрятано слева */
+  left: -250px;
   width: 250px;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 2px 0 12px rgba(0,0,0,0.15);
-  padding-top: 70px; /* чтоб не заехать на navbar */
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  padding-top: 70px;
   transition: left 0.3s ease;
   z-index: 1150;
   overflow-y: auto;
@@ -110,9 +112,11 @@
   font-weight: 900;
 }
 
-/* === Mobile adaptations === */
-
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links {
     display: none;
   }
