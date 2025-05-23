@@ -3,8 +3,7 @@ import profile from '../assets/profile-no-bg.png';
 import info from '../data/info.json';
 import SocialLinks from '../components/home/SocialLinks';
 import '../styles/colors.css';
-import '../styles/Home.css';
-import '../styles/Avatar.css';
+import '../styles/ResponsiveHome.css';
 import Footer from '../components/common/Footer';
 
 const Home = () => {

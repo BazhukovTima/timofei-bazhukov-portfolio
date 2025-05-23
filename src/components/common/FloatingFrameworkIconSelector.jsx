@@ -8,7 +8,7 @@ const importLogo = (logoFileName) => {
   try {
     return require(`../../assets/${logoFileName}`);
   } catch (error) {
-    return null; // если файла нет, можно вернуть null или заглушку
+    return null;
   }
 };
 

@@ -45,3 +45,13 @@
   font-size: 16px;
   color: var(--color-text-secondary);
 }
+
+/* ===== Mobile adaptation: slightly above the bottom nav (4rem offset) ===== */
+@media (max-width: 768px) {
+  .floating-icon-selector {
+    top: auto;
+    bottom: 4rem; /* instead of 1rem */
+    right: 1rem;
+    transform: none;
+  }
+}
