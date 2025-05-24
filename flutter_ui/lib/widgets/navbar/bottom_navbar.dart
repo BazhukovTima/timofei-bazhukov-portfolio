@@ -15,7 +15,6 @@ class BottomNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentRoute = GoRouterState.of(context).uri.path;
-    final width = MediaQuery.of(context).size.width;
 
     int currentIndex = routes.indexWhere((r) => r['path'] == currentRoute);
     if (currentIndex == -1) currentIndex = 0;

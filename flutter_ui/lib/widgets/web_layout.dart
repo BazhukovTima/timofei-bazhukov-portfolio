@@ -14,7 +14,7 @@ class WebLayout extends StatelessWidget {
 
     double topInset = MediaQuery.of(context).viewPadding.top;
     if (topInset < 8 && isMobile) {
-      topInset = 75; // fallback для мобильных браузеров
+      // topInset = 75; // fallback для мобильных браузеров
     }
 
     if (isMobile) {

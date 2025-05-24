@@ -73,7 +73,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-start;
+  justify-content: center; /* ← Центрируем плашки */
 }
 
 .skill-item {
@@ -89,6 +89,7 @@
   flex-shrink: 0;
   box-sizing: border-box;
   width: auto;
+  text-align: center; /* ← Центрируем текст в плашке */
 }
 
 /* === Адаптив === */

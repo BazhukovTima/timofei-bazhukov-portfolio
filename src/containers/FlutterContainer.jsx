@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
+// eslint-disable-next-line no-unused-vars
 let flutterApp = null;
 
 const FlutterContainer = () => {
@@ -19,9 +20,8 @@ const FlutterContainer = () => {
     script.async = true;
 
     script.onload = () => {
-      if (window._flutter && window._flutter.loader) {
+      if (window._flutter?.loader) {
         window._flutter.loader.loadEntrypoint({
-          // Передаём currentPath как базовый URL — чтобы base href совпадал с ним
           entryPointBaseUrl: currentPath,
           entrypointUrl: "/flutter/main.dart.js",
           onEntrypointLoaded: async (engineInitializer) => {
@@ -38,13 +38,20 @@ const FlutterContainer = () => {
     document.body.appendChild(script);
 
     return () => {
+      // Удаляем flutter.js
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }
-      document.querySelectorAll('flt-glass-pane, flt-scene-host, canvas')
+
+      // Удаляем все возможные Flutter-элементы
+      document.querySelectorAll('flutter-view, flt-glass-pane, flt-scene-host, canvas, flt-semantics-host')
         .forEach(el => el.remove());
+
+      // Очищаем flutter-root
       const flutterRoot = document.getElementById('flutter-root');
       if (flutterRoot) flutterRoot.innerHTML = '';
+
+      // Сброс ссылок/стилей
       flutterApp = null;
       document.body.style.overflow = '';
     };

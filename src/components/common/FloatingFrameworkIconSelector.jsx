@@ -18,6 +18,10 @@ const FloatingFrameworkIconSelector = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [expanded, setExpanded] = useState(true);
 
+  const isFlutter = framework === "Flutter";
+  const bottomOffset = isFlutter ? "4.5rem" : "1rem";
+  const iconSelectorOffset = isFlutter ? "calc(4.5rem + 40px + 8px)" : "calc(1rem + 40px + 8px)";
+
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
@@ -35,13 +39,17 @@ const FloatingFrameworkIconSelector = () => {
           className={`floating-icon-toggle ${expanded ? "above" : "below"}`}
           onClick={() => setExpanded((prev) => !prev)}
           aria-label="Toggle frameworks"
+          style={{ bottom: bottomOffset }}
         >
           <span className="arrow-icon">{expanded ? "↓" : "↑"}</span>
         </button>
       )}
 
       {expanded && (
-        <div className="floating-icon-selector">
+        <div
+          className="floating-icon-selector"
+          style={{ bottom: iconSelectorOffset }}
+        >
           {frameworks.map((fw) => {
             const logoSrc = importLogo(fw.logo);
             return (

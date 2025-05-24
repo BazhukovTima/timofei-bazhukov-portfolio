@@ -1,13 +1,12 @@
 :root {
-  --fw-icon-size: 40px; /* 32px иконка + 4px паддинг * 2 */
-  --fw-icon-gap: 8px; /* 0.5rem */
+  --fw-icon-size: 40px;
+  --fw-icon-gap: 8px;
 }
 
 /* === Toggle button === */
 .floating-icon-toggle {
   position: fixed;
   right: 1rem;
-  bottom: 1rem; /* ВСЕГДА снизу */
   background-color: var(--color-primary);
   color: white;
   border: none;
@@ -34,19 +33,18 @@
 .floating-icon-selector {
   position: fixed;
   right: 1rem;
-  bottom: calc(1rem + 40px + 8px); /* Сверху от кнопки: отступ + размер кнопки + gap */
   display: flex;
   flex-direction: column;
   gap: var(--fw-icon-gap);
   z-index: 1000;
 }
 
-/* На десктопе вернуть на прежнее место */
+/* На десктопе — сбоку по центру */
 @media (min-width: 769px) {
   .floating-icon-selector {
     top: 50%;
     right: 0.75rem;
-    bottom: auto;
+    bottom: auto !important;
     transform: translateY(-50%);
   }
 }
