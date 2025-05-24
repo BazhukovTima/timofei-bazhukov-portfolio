@@ -8,6 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const menuRef = useRef(null);
 
+  // Обработка скролла для изменения внешнего вида
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -16,9 +17,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Закрытие меню при клике вне
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
         setMenuOpen(false);
       }
     };
@@ -26,13 +32,25 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
+  // Закрытие меню при смене маршрута
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
+  // Сброс фокуса при закрытии меню
+  useEffect(() => {
+    if (!menuOpen && menuRef.current?.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+  }, [menuOpen]);
+
   return (
     <>
-      <nav className={`navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
+      <nav
+        className={`navbar ${scrolled ? "scrolled" : ""} ${
+          menuOpen ? "menu-open" : ""
+        }`}
+      >
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -43,23 +61,73 @@ const Navbar = () => {
         </button>
 
         <ul className="nav-links">
-          <li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link></li>
-          <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
-          <li><Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>Technologies</Link></li>
-          <li><Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>Experience</Link></li>
+          <li>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={location.pathname === "/about" ? "active" : ""}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/tech"
+              className={location.pathname === "/tech" ? "active" : ""}
+            >
+              Technologies
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/experience"
+              className={location.pathname === "/experience" ? "active" : ""}
+            >
+              Experience
+            </Link>
+          </li>
         </ul>
       </nav>
 
       <div
         ref={menuRef}
         className={`side-menu ${menuOpen ? "open" : ""}`}
-        aria-hidden={!menuOpen}
+        inert={!menuOpen}
       >
         <ul>
-          <li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link></li>
-          <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
-          <li><Link to="/tech" className={location.pathname === "/tech" ? "active" : ""}>Technologies</Link></li>
-          <li><Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>Experience</Link></li>
+          <li>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={location.pathname === "/about" ? "active" : ""}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/tech"
+              className={location.pathname === "/tech" ? "active" : ""}
+            >
+              Technologies
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/experience"
+              className={location.pathname === "/experience" ? "active" : ""}
+            >
+              Experience
+            </Link>
+          </li>
         </ul>
       </div>
     </>
