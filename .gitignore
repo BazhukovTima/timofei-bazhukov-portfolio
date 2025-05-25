@@ -45,3 +45,6 @@ yarn-error.log*
 /abap2ui5/downport
 /abap2ui5/output
 /abap2ui5/build
+
+
+/public/abap2ui5/
