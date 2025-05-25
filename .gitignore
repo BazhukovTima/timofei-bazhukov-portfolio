@@ -39,3 +39,9 @@ yarn-error.log*
 
 # Flutter build moved to public
 /public/flutter/
+
+/abap2ui5/node_modules
+/abap2ui5/abap2UI5
+/abap2ui5/downport
+/abap2ui5/output
+/abap2ui5/build
