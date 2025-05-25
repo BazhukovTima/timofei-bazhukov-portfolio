@@ -19,7 +19,7 @@ CLASS zcl_main_page IMPLEMENTATION.
 
       client->view_display( z2ui5_cl_xml_view=>factory(
         )->shell(
-        )->page( title = 'abap2UI5 - Hello World'
+        )->page( title = 'abap2UI5 - Hello World 12312312'
         )->simple_form( editable = abap_true
             )->content( ns = `form`
                 )->title( 'Make an input here and send it to the server...'

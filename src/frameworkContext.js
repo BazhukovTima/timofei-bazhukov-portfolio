@@ -3,7 +3,6 @@ import React, { createContext, useContext, useState } from "react";
 const FrameworkContext = createContext();
 
 export const FrameworkProvider = ({ children }) => {
-  // const [framework, setFramework] = useState("Flutter");
   const [framework, setFramework] = useState("React");
   return (
     <FrameworkContext.Provider value={{ framework, setFramework }}>
