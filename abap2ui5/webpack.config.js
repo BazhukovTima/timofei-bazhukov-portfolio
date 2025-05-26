@@ -19,6 +19,7 @@ module.exports = ({mode} = {mode: "development"}) => ({
     filename: "[name].bundle.js",
     globalObject: "self",
     clean: true,
+    publicPath: "/abap2ui5/",
   },
   devServer: {
     open: true,
