@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/timofei-bazhukov-portfolio/static/css/main.fb298157.css",
-    "main.js": "/timofei-bazhukov-portfolio/static/js/main.45472754.js",
-    "static/media/profile-no-bg.png": "/timofei-bazhukov-portfolio/static/media/profile-no-bg.97b62774267e63ebf1b3.png",
-    "static/media/abap2ui5-logo.png": "/timofei-bazhukov-portfolio/static/media/abap2ui5-logo.6f3568ea55186d7c8c2e.png",
-    "static/media/react-logo.png": "/timofei-bazhukov-portfolio/static/media/react-logo.2a0cac33f155e4a27216.png",
-    "static/media/sap-ui5-logo.svg": "/timofei-bazhukov-portfolio/static/media/sap-ui5-logo.d10ae193826b1be1c80b.svg",
-    "index.html": "/timofei-bazhukov-portfolio/index.html",
-    "main.fb298157.css.map": "/timofei-bazhukov-portfolio/static/css/main.fb298157.css.map",
-    "main.45472754.js.map": "/timofei-bazhukov-portfolio/static/js/main.45472754.js.map"
+    "main.css": "/static/css/main.fb298157.css",
+    "main.js": "/static/js/main.b8cf4caf.js",
+    "static/media/profile-no-bg.png": "/static/media/profile-no-bg.97b62774267e63ebf1b3.png",
+    "static/media/abap2ui5-logo.png": "/static/media/abap2ui5-logo.6f3568ea55186d7c8c2e.png",
+    "static/media/react-logo.png": "/static/media/react-logo.2a0cac33f155e4a27216.png",
+    "static/media/sap-ui5-logo.svg": "/static/media/sap-ui5-logo.d10ae193826b1be1c80b.svg",
+    "index.html": "/index.html",
+    "main.fb298157.css.map": "/static/css/main.fb298157.css.map",
+    "main.b8cf4caf.js.map": "/static/js/main.b8cf4caf.js.map"
   },
   "entrypoints": [
     "static/css/main.fb298157.css",
-    "static/js/main.45472754.js"
+    "static/js/main.b8cf4caf.js"
   ]
 }
