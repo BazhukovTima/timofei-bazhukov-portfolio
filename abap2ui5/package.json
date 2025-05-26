@@ -1,0 +1,40 @@
+{
+  "name": "abap2ui5-minimal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "init": "rm -rf src && rm -rf abap2UI5 &&  mkdir src && git clone --depth=1 https://github.com/abap2UI5/abap2UI5.git && cp -r abap2UI5/src/* src/",
+    "syfixes": "find . -type f -name '*.abap' -exec sed -i -e 's/ RAISE EXCEPTION TYPE cx_sy_itab_line_not_found/ ASSERT 1 = 0/g' {} + ",
+    "syfixes-mac": "find . -type f -name '*.abap' -exec sed -i '' -e 's/ RAISE EXCEPTION TYPE cx_sy_itab_line_not_found/ ASSERT 1 = 0/g' {} +",
+    "downport2": "rm -rf downport && mkdir downport && cp -r src/* downport/ && cp -r lib/* downport/ && abaplint --fix ./ci/abaplint-downport.jsonc",
+    "downport": "rm -rf downport && mkdir downport && cp -r src/* downport/ && cp -r lib/* downport/ && abaplint --fix ./ci/abaplint-downport.jsonc && npm run syfixes-mac",
+    "transpile": "rm -rf output && abap_transpile ./ci/abap_transpile.json",
+    "build": "npm install && npm run downport && npm run transpile && rm -rf src && rm -rf downport && rm -rf abap2UI5",
+    "clean": "rm -rf src && rm -rf abap2UI5 && rm -rf downport && rm -rf output && rm -rf node_modules",
+    "start": "node srv/abap2ui5Server.js",
+    "all": "npm run init && npm run build && npm run start",
+    "webpack:build": "webpack --mode development --env development",
+    "webpack:run": "webpack serve --mode development --env development",
+    "wp-all": "npm run clean && npm run init && npm run build && npm run webpack:build && npm run webpack:run",
+    "wp-build": "npm run clean && npm run init && npm run build && npm run webpack:build"
+  },
+  "dependencies": {
+    "@abaplint/cli": "^2.113.118",
+    "@abaplint/database-sqlite": "^2.10.24",
+    "@abaplint/runtime": "^2.10.55",
+    "@abaplint/transpiler-cli": "^2.10.55",
+    "@types/node": "^22.15.19",
+    "copy-webpack-plugin": "^12.0.2",
+    "express": "^4.21.2",
+    "html-webpack-plugin": "^5.6.3",
+    "path-browserify": "^1.0.1",
+    "sql.js": "1.11.0",
+    "web-encoding": "^1.1.5",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10"
+  }
+}
