@@ -2,7 +2,10 @@
   "name": "timofei-bazhukov-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://BazhukovTima.github.io/timofei-bazhukov-portfolio",
+  "description": "Timofei Bazhukov's Portfolio",
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.510.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -16,14 +19,18 @@
   "scripts": {
     "start-clean": "react-scripts start",
     "start": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build && npm run abap2ui5-relocate && react-scripts start",
-    "build-all": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build && npm run abap2ui5-relocate && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "flutter-build": "cd flutter_ui && flutter build web --base-href /flutter/",
     "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r flutter_ui/build/web/* public/flutter/ && cp -r flutter_ui/build/web/assets/* public/assets/",
+    "abap2ui5-build-prod": "cd abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio npm run wp-build",
     "abap2ui5-build": "cd abap2ui5 && npm run wp-build",
-    "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r abap2ui5/build/* public/abap2ui5/"
+    "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r abap2ui5/build/* public/abap2ui5/",
+    
+    "build-prod": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build-prod && npm run abap2ui5-relocate && npm run build",
+    "predeploy": "npm run build-prod",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +52,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
     "postcss": "^8.5.3"
   }
 }

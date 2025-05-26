@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-
 import Navbar from "../components/common/Navbar";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -9,11 +7,6 @@ import Tech from "../pages/Tech";
 import NotFound from "../pages/NotFound";
 
 const ReactContainer = () => {
-  useEffect(() => {
-    // При загрузке ReactContainer сбрасываем URL на корень
-    // window.history.replaceState({}, '', '/');
-  }, []);
-
   return (
     <Router>
       <Navbar />
