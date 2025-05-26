@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/timofei-bazhukov-portfolio/static/css/main.fb298157.css",
-    "main.js": "/timofei-bazhukov-portfolio/static/js/main.6818b65f.js",
+    "main.js": "/timofei-bazhukov-portfolio/static/js/main.2777cd56.js",
     "static/media/profile-no-bg.png": "/timofei-bazhukov-portfolio/static/media/profile-no-bg.97b62774267e63ebf1b3.png",
     "static/media/abap2ui5-logo.png": "/timofei-bazhukov-portfolio/static/media/abap2ui5-logo.6f3568ea55186d7c8c2e.png",
     "static/media/react-logo.png": "/timofei-bazhukov-portfolio/static/media/react-logo.2a0cac33f155e4a27216.png",
     "static/media/sap-ui5-logo.svg": "/timofei-bazhukov-portfolio/static/media/sap-ui5-logo.d10ae193826b1be1c80b.svg",
     "index.html": "/timofei-bazhukov-portfolio/index.html",
     "main.fb298157.css.map": "/timofei-bazhukov-portfolio/static/css/main.fb298157.css.map",
-    "main.6818b65f.js.map": "/timofei-bazhukov-portfolio/static/js/main.6818b65f.js.map"
+    "main.2777cd56.js.map": "/timofei-bazhukov-portfolio/static/js/main.2777cd56.js.map"
   },
   "entrypoints": [
     "static/css/main.fb298157.css",
-    "static/js/main.6818b65f.js"
+    "static/js/main.2777cd56.js"
   ]
 }
