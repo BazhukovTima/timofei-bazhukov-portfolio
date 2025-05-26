@@ -11,7 +11,7 @@ const Abap2ui5Container = () => {
   return (
     <iframe
       ref={iframeRef}
-      src="/abap2ui5/build/index.html"  // путь к сгенерированному бандлу вне src
+      src="/abap2ui5/index.html"  // путь к сгенерированному бандлу вне src
       style={{
         width: "100vw",
         height: "100vh",

@@ -15,7 +15,8 @@
     "all": "npm run init && npm run build && npm run start",
     "webpack:build": "webpack --mode development --env development",
     "webpack:run": "webpack serve --mode development --env development",
-    "wp-all": "npm run clean && npm run init && npm run build && npm run webpack:build && npm run webpack:run"
+    "wp-all": "npm run clean && npm run init && npm run build && npm run webpack:build && npm run webpack:run",
+    "wp-build": "npm run clean && npm run init && npm run build && npm run webpack:build"
   },
   "dependencies": {
     "@abaplint/cli": "^2.113.118",
