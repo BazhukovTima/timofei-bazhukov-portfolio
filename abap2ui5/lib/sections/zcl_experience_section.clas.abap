@@ -19,16 +19,17 @@ CLASS zcl_experience_section IMPLEMENTATION.
     " EXPERIENCE
     DATA(experience) = zcl_info=>get_experience( ).
     DATA(experience_header) = zcl_info=>get_experience_h( ).
-    DATA(exp_section_blocks) = sections->object_page_section( id             = `experienceSection`
-                                  importance     = `Medium`
-                                  title          = `Experience`
-                                  titlelevel     = 2
+    DATA(exp_section_blocks) = sections->object_page_section( 
+                                  id             = 'experienceSection'
+                                  importance     = 'Medium'
+                                  title          = 'Experience'
+                                  titlelevel     = '2'
                                   titleuppercase = abap_false
         )->sub_sections(
-            )->object_page_sub_section( id = `experienceSectionSub1`
+            )->object_page_sub_section( id = 'experienceSectionSub1'
                 )->text( width = '100%' text = experience_header class = 'sapUiResponsiveMargin sapUiContentPadding'
                 )->get_parent(
-            )->object_page_sub_section( id             = `experienceSectionSub2`
+            )->object_page_sub_section( id             = 'experienceSectionSub2'
                                         showtitle      = abap_false
                                         titlevisible   = abap_false
                 )->blocks(

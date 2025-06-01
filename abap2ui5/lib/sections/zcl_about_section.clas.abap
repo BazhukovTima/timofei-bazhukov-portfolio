@@ -27,23 +27,23 @@ CLASS zcl_about_section IMPLEMENTATION.
     DATA(mobile) = zcl_info=>get_about_mobile( ).
     DATA(soft_skills) = zcl_info=>get_about_soft_skills( ).
     
-    sections->object_page_section( id             = `aboutSection`
-                                  importance     = `Medium`
-                                  title          = `About`
-                                  titlelevel     = 2
+    sections->object_page_section( id            = 'aboutSection'
+                                  importance     = 'Medium'
+                                  title          = 'About'
+                                  titlelevel     = '2'
                                   titleuppercase = abap_false
         )->sub_sections(
-            )->object_page_sub_section( id = `aboutSectionSub1`
+            )->object_page_sub_section( id = 'aboutSectionSub1'
                 )->blocks(
                     )->vbox(
                         )->text( text = expertise class = 'sapUiResponsiveMargin sapUiContentPadding'
                         )->simple_form( editable   = abap_false
-                                        layout     = `ColumnLayout`
-                                        width      = `100%`
-                                        columnsm   = `2`
-                                        columnsl   = `3`
-                                        columnsxl  = `4`
-                                        labelspanl = `12`
+                                        layout     = 'ColumnLayout'
+                                        width      = '100%'
+                                        columnsm   = '2'
+                                        columnsl   = '3'
+                                        columnsxl  = '4'
+                                        labelspanl = '12'
                             )->label( text = about_focus_header
                             )->text( text = about_focus
                             )->label( text = technical_stack_header

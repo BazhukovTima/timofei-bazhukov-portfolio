@@ -3,11 +3,19 @@
 ## Getting started
 
 ### Start local
-1. Create `.env.development.local` file with content `PUBLIC_URL=/`
-2. ``` npm run start ```
+1. Create `.env.development.local` file with content:
+``` 
+PUBLIC_URL=/
+``` 
+2. 
+``` 
+npm run start 
+```
 
 ### Deploy to github pages
-``` npm run deploy ```
+``` 
+npm run deploy 
+```
 
 ### abap2ui5 standalone
 
