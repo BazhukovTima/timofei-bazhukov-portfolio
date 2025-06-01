@@ -159,12 +159,12 @@
       "logo": "react-logo.png"
     },
     {
-      "name": "SAPUI5",
-      "logo": "sap-ui5-logo.svg"
-    },
-    {
       "name": "Flutter",
       "logo": "flutter-logo.png"
+    },
+    {
+      "name": "SAPUI5",
+      "logo": "sap-ui5-logo.svg"
     },
     {
       "name": "abap2ui5",

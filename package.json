@@ -23,9 +23,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
 
-    "flutter-start-local": "cd flutter_ui && flutter run",
-    "flutter-build": "cd flutter_ui && flutter build web --base-href /flutter/",
-    "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r flutter_ui/build/web/* public/flutter/ && cp -r flutter_ui/build/web/assets/* public/assets/",
+    "flutter-start-local": "cd src/flutter_ui && flutter run",
+    "flutter-build": "cd src/flutter_ui && flutter build web --base-href /flutter/",
+    "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r src/flutter_ui/build/web/* public/flutter/ && cp -r src/flutter_ui/build/web/assets/* public/assets/",
     
     "abap2ui5-start-local": "cd abap2ui5 && npm run all",
     "abap2ui5-start-webpack": "cd abap2ui5 && npm run wp-all",
