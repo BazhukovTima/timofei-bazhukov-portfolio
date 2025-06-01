@@ -1,17 +1,14 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 const Abap2ui5Container = () => {
   const iframeRef = useRef(null);
 
-  useEffect(() => {
-    // Можно добавить коммуникацию с iframe, если нужно
-    // Например, через postMessage
-  }, []);
+  const basePath = process.env.PUBLIC_URL || "";
 
   return (
     <iframe
       ref={iframeRef}
-      src="/abap2ui5/index.html"  // путь к сгенерированному бандлу вне src
+      src={`${basePath}/abap2ui5/index.html`}
       style={{
         width: "100vw",
         height: "100vh",

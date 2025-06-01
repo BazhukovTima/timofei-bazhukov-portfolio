@@ -5,21 +5,22 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 
-module.exports = ({mode} = {mode: "development"}) => ({
+module.exports = ({ mode } = { mode: "development" }) => ({
   entry: {
-    "app": "./app/web.mjs",
+    app: "./app/web.mjs",
   },
   mode,
   devtool: "nosources-source-map",
   experiments: {
-    topLevelAwait: true
+    topLevelAwait: true,
   },
   output: {
     path: path.join(__dirname, "build"),
     filename: "[name].bundle.js",
+    chunkFilename: 'chunk_[name].bundle.js',
     globalObject: "self",
     clean: true,
-    publicPath: "/abap2ui5/",
+    publicPath: (process.env.PUBLIC_URL || "") + "/abap2ui5/",
   },
   devServer: {
     open: true,
@@ -28,27 +29,26 @@ module.exports = ({mode} = {mode: "development"}) => ({
   resolve: {
     fallback: {
       "./%23ui2%23cl_json.clas.mjs": false,
-      "crypto": false,
-      "path": require.resolve("path-browserify"),
-      "buffer": require.resolve("buffer/"),
+      crypto: false,
+      path: require.resolve("path-browserify"),
+      buffer: require.resolve("buffer/"),
       "util/types": false,
-      "util": require.resolve("web-encoding"),
-      "zlib": false,
-      "stream": false,
-      "process": false,
-      "http": false,
-      "url": false,
-      "fs": false,
-      "tls": false,
-      "https": false,
-      "vm": false,
-      "net": false,
+      util: require.resolve("web-encoding"),
+      zlib: false,
+      stream: false,
+      process: false,
+      http: false,
+      url: false,
+      fs: false,
+      tls: false,
+      https: false,
+      vm: false,
+      net: false,
     },
     extensions: [".mjs", ".js"],
   },
   module: {
-    rules: [
-    ]
+    rules: [],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -57,14 +57,14 @@ module.exports = ({mode} = {mode: "development"}) => ({
     }),
     new CopyPlugin({
       patterns: [
-        { from: './node_modules/sql.js/dist/sql-wasm.wasm', to: "./" },
-        { from: './node_modules/sql.js/dist/sql-wasm-debug.wasm', to: "./" },
-        { from: './node_modules/sql.js/dist/sql-wasm-debug.js', to: "./" },
+        { from: "./node_modules/sql.js/dist/sql-wasm.wasm", to: "./" },
+        { from: "./node_modules/sql.js/dist/sql-wasm-debug.wasm", to: "./" },
+        { from: "./node_modules/sql.js/dist/sql-wasm-debug.js", to: "./" },
       ],
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser',
-      Buffer: ['buffer', 'Buffer'],
+      process: "process/browser",
+      Buffer: ["buffer", "Buffer"],
     }),
   ],
 });

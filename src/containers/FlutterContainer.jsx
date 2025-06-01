@@ -11,19 +11,20 @@ const FlutterContainer = () => {
 
     // Берём текущий путь, добавляем завершающий слеш, если его нет
     let currentPath = window.location.pathname;
-    if (!currentPath.endsWith('/')) {
-      currentPath += '/';
+    if (!currentPath.endsWith("/")) {
+      currentPath += "/";
     }
 
+    const basePath = process.env.PUBLIC_URL || "";
     const script = document.createElement("script");
-    script.src = "/flutter/flutter.js";
+    script.src = `${basePath}/flutter/flutter.js`;
     script.async = true;
 
     script.onload = () => {
       if (window._flutter?.loader) {
         window._flutter.loader.loadEntrypoint({
-          entryPointBaseUrl: currentPath,
-          entrypointUrl: "/flutter/main.dart.js",
+          entryPointBaseUrl: `${basePath}/`,
+          entrypointUrl: `${basePath}/flutter/main.dart.js`,
           onEntrypointLoaded: async (engineInitializer) => {
             const engine = await engineInitializer.initializeEngine();
             flutterApp = engine;
@@ -44,16 +45,19 @@ const FlutterContainer = () => {
       }
 
       // Удаляем все возможные Flutter-элементы
-      document.querySelectorAll('flutter-view, flt-glass-pane, flt-scene-host, canvas, flt-semantics-host')
-        .forEach(el => el.remove());
+      document
+        .querySelectorAll(
+          "flutter-view, flt-glass-pane, flt-scene-host, canvas, flt-semantics-host"
+        )
+        .forEach((el) => el.remove());
 
       // Очищаем flutter-root
-      const flutterRoot = document.getElementById('flutter-root');
-      if (flutterRoot) flutterRoot.innerHTML = '';
+      const flutterRoot = document.getElementById("flutter-root");
+      if (flutterRoot) flutterRoot.innerHTML = "";
 
       // Сброс ссылок/стилей
       flutterApp = null;
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, []);
 

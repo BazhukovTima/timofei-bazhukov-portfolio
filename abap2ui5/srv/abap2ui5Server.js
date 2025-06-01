@@ -5,7 +5,7 @@ import { cl_express_icf_shim } from "../output/cl_express_icf_shim.clas.mjs";
 await initializeABAP();
 
 const PORT = 3000;
-const APP = "z2ui5_cl_app_hello_world";
+const APP = "zcl_main_page";
 
 const app = express();
 app.disable("x-powered-by");
