@@ -15,7 +15,7 @@ CLASS zcl_main_page IMPLEMENTATION.
   METHOD z2ui5_if_app~main.
 
     DATA(view) = z2ui5_cl_xml_view=>factory( ).
-    DATA(object_page_layout) = view->object_page_layout( showtitleinheadercontent = `Title` uppercaseanchorbar = abap_false ).
+    DATA(object_page_layout) = view->object_page_layout( showtitleinheadercontent = 'Title' uppercaseanchorbar = abap_false ).
     DATA(sections) = object_page_layout->sections( ).
 
     " HEADER
