@@ -26,27 +26,27 @@ yarn-error.log*
 
 
 # Flutter
-/flutter_ui/.dart_tool/
-/flutter_ui/.packages
-/flutter_ui/build/
-/flutter_ui/web/.dart_tool/
-/flutter_ui/.flutter-plugins
-/flutter_ui/.flutter-plugins-dependencies
-/flutter_ui/.idea/
-/flutter_ui/android/
-/flutter_ui/ios/
-/flutter_ui/macos/
+/src/flutter_ui/.dart_tool/
+/src/flutter_ui/.packages
+/src/flutter_ui/build/
+/src/flutter_ui/web/.dart_tool/
+/src/flutter_ui/.flutter-plugins
+/src/flutter_ui/.flutter-plugins-dependencies
+/src/flutter_ui/.idea/
+/src/flutter_ui/android/
+/src/flutter_ui/ios/
+/src/flutter_ui/macos/
 
 # Flutter build moved to public
 /public/flutter/
 /public/assets/
 
-/abap2ui5/node_modules
-/abap2ui5/abap2UI5
-/abap2ui5/downport
-/abap2ui5/output
-/abap2ui5/build
-/abap2ui5/src
+/src/abap2ui5/node_modules
+/src/abap2ui5/abap2UI5
+/src/abap2ui5/downport
+/src/abap2ui5/output
+/src/abap2ui5/build
+/src/abap2ui5/src
 
 
 /public/abap2ui5/
