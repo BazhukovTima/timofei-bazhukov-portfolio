@@ -20,7 +20,7 @@ module.exports = ({ mode } = { mode: "development" }) => ({
     chunkFilename: 'chunk_[name].bundle.js',
     globalObject: "self",
     clean: true,
-    publicPath: (process.env.PUBLIC_URL || "") + "/abap2ui5/",
+    publicPath: (process.env.PUBLIC_URL || ""),
   },
   devServer: {
     open: true,
