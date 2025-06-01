@@ -30,7 +30,6 @@ CLASS zcl_about_section IMPLEMENTATION.
     sections->object_page_section( id            = 'aboutSection'
                                   importance     = 'Medium'
                                   title          = 'About'
-                                  titlelevel     = '2'
                                   titleuppercase = abap_false
         )->sub_sections(
             )->object_page_sub_section( id = 'aboutSectionSub1'

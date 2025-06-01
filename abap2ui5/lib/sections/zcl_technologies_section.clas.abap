@@ -22,7 +22,6 @@ CLASS zcl_technologies_section IMPLEMENTATION.
     sections->object_page_section(  id             = 'techSection'
                                     importance     = 'Medium'
                                     title          = 'Technologies and Frameworks'
-                                    titlelevel     = '2'
                                     titleuppercase = abap_false
         )->sub_sections(
             )->object_page_sub_section( id = 'techSectionSub1'

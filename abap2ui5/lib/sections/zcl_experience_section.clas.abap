@@ -23,7 +23,6 @@ CLASS zcl_experience_section IMPLEMENTATION.
                                   id             = 'experienceSection'
                                   importance     = 'Medium'
                                   title          = 'Experience'
-                                  titlelevel     = '2'
                                   titleuppercase = abap_false
         )->sub_sections(
             )->object_page_sub_section( id = 'experienceSectionSub1'
