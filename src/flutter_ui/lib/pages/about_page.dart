@@ -69,7 +69,6 @@ class _AboutPageContentState extends State<AboutPageContent> {
                 children: sections.map<Widget>((section) {
                   return SizedBox(
                     width: AboutStyles.cardWidth(context),
-                    // убираем фиксированную высоту, чтобы карточка подстраивалась под текст
                     child: Container(
                       decoration: AboutStyles.cardDecoration,
                       padding: AboutStyles.sectionPadding(context),

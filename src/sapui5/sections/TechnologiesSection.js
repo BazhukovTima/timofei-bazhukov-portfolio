@@ -24,7 +24,7 @@ const createTechnologiesSection = (sap) => {
                 width: "100%",
                 wrapping: true,
               }),
-              new sap.m.VBox({ height: "2rem" }), // отступ
+              new sap.m.VBox({ height: "2rem" }),
               skillBox,
             ],
           }),

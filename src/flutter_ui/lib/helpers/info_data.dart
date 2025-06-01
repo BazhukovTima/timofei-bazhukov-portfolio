@@ -42,7 +42,6 @@ class InfoData {
     );
   }
 
-  // Загрузка из assets/info.json
   static Future<InfoData> load() async {
     final data = await rootBundle.loadString('assets/info.json');
     final jsonResult = json.decode(data) as Map<String, dynamic>;

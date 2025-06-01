@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class AppStyles {
-  // Текстовые стили
   static TextStyle footerTextStyle(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return TextStyle(
       fontSize: width < 600 ? 12 : 14,
-      color: Colors.grey[500], // светло-серый
+      color: Colors.grey[500],
       fontFamily: 'Roboto',
       fontWeight: FontWeight.w400,
     );
@@ -17,7 +16,6 @@ class AppStyles {
 
   static const Color footerBackgroundColor = AppColors.backgroundLight;
 
-  // Navbar стили
   static const Color navbarBackgroundColor = AppColors.primaryDark;
 
   static const TextStyle navbarTextStyle = TextStyle(
@@ -32,7 +30,6 @@ class AppStyles {
     vertical: 16,
   );
 
-  // Общие текстовые стили для сайта
   static const TextStyle baseTextStyle = TextStyle(
     fontSize: 16,
     fontFamily: 'Roboto',

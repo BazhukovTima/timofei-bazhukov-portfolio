@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       onSecondary: AppColors.textPrimary,
       error: Colors.red,
       onError: Colors.white,
-      surface: AppColors.background,       // заменили background на surface
-      onSurface: AppColors.textPrimary,    // заменили onBackground на onSurface
+      surface: AppColors.background,
+      onSurface: AppColors.textPrimary,
     );
 
     return MaterialApp.router(

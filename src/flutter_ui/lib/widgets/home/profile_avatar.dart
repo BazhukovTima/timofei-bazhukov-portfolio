@@ -1,4 +1,3 @@
-// profile_avatar.dart
 import 'package:flutter/material.dart';
 import '../../styles/colors.dart';
 import '../../styles/home_styles.dart';
@@ -26,7 +25,7 @@ class ProfileAvatar extends StatelessWidget {
         color: AppColors.primaryLight,
         shape: BoxShape.circle,
         border: Border.all(
-          color: AppColors.primaryDark.withOpacity(0.15), // мягче обводка
+          color: AppColors.primaryDark.withOpacity(0.15),
           width: 1,
         ),
         image: DecorationImage(

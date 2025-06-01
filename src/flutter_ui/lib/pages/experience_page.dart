@@ -29,7 +29,7 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
   int _calculateColumns(double width) {
     if (width < 600) return 1;
     if (width < 900) return 2;
-    return 2; // два столбца и на большом экране
+    return 2;
   }
 
   List<Widget> _buildRows(
@@ -53,10 +53,8 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
                 rowItems
                     .map((item) {
                       if (rowItems.length == 1) {
-                        // Если в строке одна карточка — фиксированная ширина
                         return SizedBox(width: cardWidth, child: item);
                       } else {
-                        // Иначе равномерно расширяем
                         return Expanded(child: item);
                       }
                     })

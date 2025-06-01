@@ -26,7 +26,7 @@ const FloatingFrameworkIconSelector = () => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      if (!mobile) setExpanded(true); // always expanded on desktop
+      if (!mobile) setExpanded(true);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

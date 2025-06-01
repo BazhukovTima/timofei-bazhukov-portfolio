@@ -16,7 +16,6 @@ class ResponsiveLayout extends StatelessWidget {
         final width = constraints.maxWidth;
 
         if (width < 600) {
-          // Мобильная версия
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +26,6 @@ class ResponsiveLayout extends StatelessWidget {
             ],
           );
         } else if (width < 900) {
-          // Планшетная версия
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +36,6 @@ class ResponsiveLayout extends StatelessWidget {
             ],
           );
         } else {
-          // Десктопная версия
           return ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 1200),
             child: Row(

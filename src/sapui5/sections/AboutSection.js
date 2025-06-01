@@ -14,7 +14,7 @@ const createAboutSection = (sap) => {
                 width: "100%",
                 wrapping: true,
               }),
-              new sap.m.VBox({ height: "1rem" }), // небольшой отступ
+              new sap.m.VBox({ height: "1rem" }),
               new sap.ui.layout.BlockLayout({
                 content: [
                   new sap.ui.layout.BlockLayoutRow({

@@ -21,7 +21,7 @@ const createExperienceSection = (sap) => {
       expandable: false,
       headerText: title,
       width: "100%",
-      height: "15em", // например фиксированная высота, можно менять
+      height: "15em",
       content: [
         new sap.ui.layout.VerticalLayout({
           content: [

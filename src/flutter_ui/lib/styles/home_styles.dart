@@ -4,7 +4,6 @@ class HomeStyles {
   static double avatarSize(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) {
-      // на очень маленьких экранах делаем размер адаптивным, например, 40% ширины экрана
       return width * 0.8;
     }
     if (width < 900) return 280;
@@ -14,7 +13,6 @@ class HomeStyles {
   static double avatarSizeSmall(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) {
-      // мелкий аватар тоже масштабируем по ширине мобильника
       return width * 0.5;
     }
     if (width < 900) return 120;
@@ -42,7 +40,6 @@ class HomeStyles {
     return 600;
   }
 
-  // Размеры шрифта
   static double nameFontSize(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return 24;

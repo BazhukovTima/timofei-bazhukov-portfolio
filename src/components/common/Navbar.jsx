@@ -8,7 +8,6 @@ const Navbar = () => {
   const location = useLocation();
   const menuRef = useRef(null);
 
-  // Обработка скролла для изменения внешнего вида
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -17,7 +16,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Закрытие меню при клике вне
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -32,12 +30,10 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
-  // Закрытие меню при смене маршрута
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
-  // Сброс фокуса при закрытии меню
   useEffect(() => {
     if (!menuOpen && menuRef.current?.contains(document.activeElement)) {
       document.activeElement.blur();

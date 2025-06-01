@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class AboutStyles {
-  // Отступы для всего контента
   static EdgeInsets contentPadding(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return const EdgeInsets.symmetric(horizontal: 16, vertical: 24);
@@ -10,7 +9,6 @@ class AboutStyles {
     return const EdgeInsets.symmetric(horizontal: 48, vertical: 48);
   }
 
-  // Заголовок About
   static TextStyle mainHeader(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     double fontSize = 32;
@@ -24,7 +22,6 @@ class AboutStyles {
     );
   }
 
-  // Описание под заголовком
   static TextStyle expertiseDescription(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     double fontSize = 18;
@@ -83,7 +80,6 @@ class AboutStyles {
     );
   }
 
-  // Максимальная ширина основного контейнера с контентом
   static double maxContentWidth(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return width * 0.95;
@@ -91,7 +87,6 @@ class AboutStyles {
     return 900;
   }
 
-  // Максимальная ширина для текста описания (экспертизы)
   static double maxExpertiseTextWidth(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return width * 0.9;
@@ -99,10 +94,9 @@ class AboutStyles {
     return 600;
   }
 
-  // Размеры карточек
   static double cardWidth(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    if (width < 600) return width * 0.9; // почти весь экран на мобилках
+    if (width < 600) return width * 0.9;
     if (width < 900) return 380;
     return 420;
   }
@@ -114,7 +108,6 @@ class AboutStyles {
     return 220;
   }
 
-  // Отступы между карточками (Wrap)
   static double wrapSpacing(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return 20;
@@ -135,7 +128,6 @@ class AboutStyles {
 
   static String aboutHeaderText = 'About';
 
-  // Отступы между вертикальными элементами
   static double verticalSpacingSmall(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     if (width < 600) return 12;

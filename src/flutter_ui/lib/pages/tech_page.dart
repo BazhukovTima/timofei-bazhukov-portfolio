@@ -42,7 +42,7 @@ class _TechPageContentState extends State<TechPageContent> {
             maxWidth: TechStyles.maxContentWidth(context),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center, // <-- тут исправил
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Technologies and Frameworks',

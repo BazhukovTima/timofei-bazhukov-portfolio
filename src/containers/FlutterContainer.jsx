@@ -9,7 +9,6 @@ const FlutterContainer = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Берём текущий путь, добавляем завершающий слеш, если его нет
     let currentPath = window.location.pathname;
     if (!currentPath.endsWith("/")) {
       currentPath += "/";
@@ -39,23 +38,19 @@ const FlutterContainer = () => {
     document.body.appendChild(script);
 
     return () => {
-      // Удаляем flutter.js
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }
 
-      // Удаляем все возможные Flutter-элементы
       document
         .querySelectorAll(
           "flutter-view, flt-glass-pane, flt-scene-host, canvas, flt-semantics-host"
         )
         .forEach((el) => el.remove());
 
-      // Очищаем flutter-root
       const flutterRoot = document.getElementById("flutter-root");
       if (flutterRoot) flutterRoot.innerHTML = "";
 
-      // Сброс ссылок/стилей
       flutterApp = null;
       document.body.style.overflow = "";
     };

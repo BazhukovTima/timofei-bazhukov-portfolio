@@ -53,7 +53,6 @@ const createHeaderContent = (sap) => {
                           tooltip: item.platform,
                         });
 
-                        // Добавляем отступ только начиная со второй ссылки
                         if (index !== 0) {
                           link.addStyleClass("sapUiTinyMarginBegin");
                         }

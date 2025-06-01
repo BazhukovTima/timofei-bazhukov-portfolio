@@ -5,7 +5,7 @@ import "../sapui5/sapui5CustomStyles.css";
 const SapUi5Container = () => {
   const containerRef = useRef(null);
   const [ui5Initialized, setUi5Initialized] = useState(false);
-  const ui5ComponentRef = useRef(null); // Храним созданный SAPUI5 контрол
+  const ui5ComponentRef = useRef(null);
 
   useEffect(() => {
     if (!window.sap || !window.sap.ui || !window.sap.ui.getCore) {
@@ -20,19 +20,16 @@ const SapUi5Container = () => {
 
   useEffect(() => {
     if (ui5Initialized && containerRef.current) {
-      // Удалить предыдущий компонент, если он существует
       if (ui5ComponentRef.current?.destroy) {
         ui5ComponentRef.current.destroy();
         ui5ComponentRef.current = null;
       }
 
-      // Рендер новой страницы и сохранить ссылку
       const page = HomePage(containerRef.current);
       ui5ComponentRef.current = page;
     }
 
     return () => {
-      // При размонтировании — удалить компонент
       if (ui5ComponentRef.current?.destroy) {
         ui5ComponentRef.current.destroy();
         ui5ComponentRef.current = null;

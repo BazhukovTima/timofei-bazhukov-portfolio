@@ -68,12 +68,12 @@ class _SocialIconButtonState extends State<_SocialIconButton> {
         onTap: widget.onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),
-          curve: Curves.linear, // 👈 Плавно, без скачков
+          curve: Curves.linear,
           width: 44,
           height: 44,
           decoration: BoxDecoration(
             color: _isHovered
-                ? AppColors.socialHoverBg.withValues(alpha: 0.2) // 👈 Мягкий серый
+                ? AppColors.socialHoverBg.withValues(alpha: 0.2)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(10),
           ),
