@@ -2,34 +2,23 @@ import { initializeABAP } from "../output/_init.mjs";
 await initializeABAP();
 
 async function redirectFetch(url, options = {}) {
-  console.dir("redirectFetch");
 
   let data = "";
-
-  // имитация объекта res с методами, как в express
   const res = {
-    append: (d) => {
-      console.dir("append2: " + d);
-    },
+    append: (d) => {},
     send: (d) => {
-      console.dir("send2");
       data = Buffer.from(d).toString();
     },
     status: (status) => {
-      console.dir("status2: " + status);
       return res;
     },
   };
 
   const method = options.method || "GET";
   let body = options.body || "";
-
-  // Подготовим тело, как в express-сервере
+  
   if (method === "POST" && body) {
-    // Если тело — Buffer (в браузере, возможно, ArrayBuffer или string)
-    // в браузере Buffer может не быть, надо проверить, или использовать Uint8Array
     try {
-      // Преобразуем тело к строке и парсим JSON
       let parsedBody;
       if (body instanceof ArrayBuffer || ArrayBuffer.isView(body)) {
         parsedBody = JSON.parse(new TextDecoder().decode(body));
@@ -51,8 +40,6 @@ async function redirectFetch(url, options = {}) {
 
       body = Buffer.from(JSON.stringify(parsedBody), "utf8");
     } catch (err) {
-      console.error("Failed to parse or process JSON body:", err);
-      // Возвращаем ошибку в стиле fetch
       return {
         ok: false,
         status: 400,
@@ -64,7 +51,6 @@ async function redirectFetch(url, options = {}) {
     body = Buffer.from(body, "utf8");
   }
 
-  // Формируем объект запроса, как в express-сервере
   const req = {
     body: Buffer.from(body).toString("hex"),
     method: method,
@@ -72,12 +58,7 @@ async function redirectFetch(url, options = {}) {
     url: url,
   };
 
-  console.dir(req);
-
   await abap.Classes["CL_EXPRESS_ICF_SHIM"].run({ req, res, class: "ZCL_SICF" });
-
-  console.log("redirectFetch RESPONSE,");
-  console.dir(data);
 
   return {
     ok: true,
@@ -86,7 +67,5 @@ async function redirectFetch(url, options = {}) {
   };
 }
 
-console.dir("entry, web.mjs");
 globalThis.fetch = redirectFetch;
-
 std();

@@ -22,9 +22,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flutter-build": "cd flutter_ui && flutter build web --base-href /flutter/",
-    "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r flutter_ui/build/web/* public/flutter/ && cp -r flutter_ui/build/web/assets/* public/assets/",
-    "abap2ui5-build-prod": "cd abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio npm run wp-build",
+
+    "flutter-start-local": "cd src/flutter_ui && flutter run",
+    "flutter-build": "cd src/flutter_ui && flutter build web --base-href /flutter/",
+    "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r src/flutter_ui/build/web/* public/flutter/ && cp -r src/flutter_ui/build/web/assets/* public/assets/",
+    
+    "abap2ui5-start-local": "cd abap2ui5 && npm run all",
+    "abap2ui5-start-webpack": "cd abap2ui5 && npm run wp-all",
+    "abap2ui5-build-prod": "cd abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio/abap2ui5/ npm run wp-build",
     "abap2ui5-build": "cd abap2ui5 && npm run wp-build",
     "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r abap2ui5/build/* public/abap2ui5/",
     
