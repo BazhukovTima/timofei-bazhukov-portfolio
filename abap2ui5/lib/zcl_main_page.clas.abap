@@ -4,7 +4,6 @@ CLASS zcl_main_page DEFINITION
 
   PUBLIC SECTION.
     INTERFACES z2ui5_if_app.
-    DATA name TYPE string.
 
   PROTECTED SECTION.
   PRIVATE SECTION.
@@ -15,27 +14,23 @@ CLASS zcl_main_page IMPLEMENTATION.
 
   METHOD z2ui5_if_app~main.
 
-    IF client->check_on_init( ).
+    DATA(view) = z2ui5_cl_xml_view=>factory( ).
+    DATA(object_page_layout) = view->object_page_layout( showtitleinheadercontent = `Title` uppercaseanchorbar = abap_false ).
+    DATA(sections) = object_page_layout->sections( ).
 
-      client->view_display( z2ui5_cl_xml_view=>factory(
-        )->shell(
-        )->page( title = 'abap2UI5 - Hello World 12312312'
-        )->simple_form( editable = abap_true
-            )->content( ns = `form`
-                )->title( 'Make an input here and send it to the server...'
-                )->label( 'Name'
-                )->input( client->_bind_edit( name )
-                )->button( text  = 'post'
-                           press = client->_event( 'BUTTON_POST' )
-        )->stringify( ) ).
+    " HEADER
+    zcl_header_section=>get_section( CHANGING object_page_layout = object_page_layout ).
 
-    ENDIF.
+    " ABOUT
+    zcl_about_section=>get_section( CHANGING sections = sections ).
 
-    CASE client->get( )-event.
-      WHEN 'BUTTON_POST'.
-        client->message_box_display( |Your name is { name }| ).
-      WHEN OTHERS.
-    ENDCASE.
+    " TECHNOLOGIES
+    zcl_technologies_section=>get_section( CHANGING sections = sections ).
+
+    " EXPERIENCE
+    zcl_experience_section=>get_section( CHANGING sections = sections ).
+
+    client->view_display( view->stringify( ) ).
 
   ENDMETHOD.
 
