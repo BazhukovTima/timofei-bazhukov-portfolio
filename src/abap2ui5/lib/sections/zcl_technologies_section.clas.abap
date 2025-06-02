@@ -18,7 +18,10 @@ CLASS zcl_technologies_section IMPLEMENTATION.
 
     " TECHNOLOGIES
     DATA(tech_header) = zcl_info=>get_tech_header( ).
-    DATA(skills) = zcl_info=>get_skills( ).
+    DATA(skills_sap) = zcl_info=>get_skills_sap( ).
+    DATA(skills_mobile) = zcl_info=>get_skills_mobile( ).
+    DATA(skills_devops) = zcl_info=>get_skills_devops( ).
+    DATA(skills_other) = zcl_info=>get_skills_other( ).
     sections->object_page_section(  id             = 'techSection'
                                     importance     = 'Medium'
                                     title          = 'Technologies and Frameworks'
@@ -31,12 +34,18 @@ CLASS zcl_technologies_section IMPLEMENTATION.
                         )->simple_form( editable   = abap_false
                                         layout     = 'ColumnLayout'
                                         width      = '100%'
-                                        columnsm   = '1'
-                                        columnsl   = '1'
-                                        columnsxl  = '1'
+                                        columnsm   = '2'
+                                        columnsl   = '3'
+                                        columnsxl  = '4'
                                         labelspanl = '12'
-                            )->label( text = 'Skills'
-                            )->text( text = skills
+                            )->label( text = 'SAP'
+                            )->text( text = skills_sap
+                            )->label( text = 'Mobile and Frontend Development'
+                            )->text( text = skills_mobile
+                            )->label( text = 'DevOps, Security, and Cloud Integration'
+                            )->text( text = skills_devops
+                            )->label( text = 'Other Technologies and Tools'
+                            )->text( text = skills_other
                     )->get_parent(
                 )->get_parent(
             )->get_parent(

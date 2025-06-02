@@ -85,7 +85,7 @@
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 4rem 1rem 3rem; /* меньше паддингов */
+    padding: 4rem 1rem 3rem;
   }
 
   .about-title {
@@ -100,20 +100,20 @@
   }
 
   .about-grid {
-    flex-direction: column; /* колонки в ряд */
+    flex-direction: column;
     gap: 1.5rem;
     max-width: 100%;
     margin: 0 auto;
   }
 
   .about-block {
-    width: 100%; /* на всю ширину контейнера */
+    width: 100%;
     padding: 1.2rem;
   }
 
   .about-block h3 {
     font-size: 1.2rem;
-    min-height: auto; /* чтоб адаптировалось */
+    min-height: auto;
   }
 
   .about-block p {

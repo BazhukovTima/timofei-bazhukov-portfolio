@@ -1,22 +1,22 @@
 :root {
-  --color-background: #ECF0F1;         /* основной фон — светлый и спокойный */
-  --color-background-light: #D8DEE1;  /* чуть затемнённый фон */
+  --color-background: #ECF0F1;
+  --color-background-light: #D8DEE1;
 
-  --color-text-primary: #2C3E50;       /* основной текст — тёмный синий */
-  --color-text-secondary: #34495E;     /* подзаголовки и второстепенный текст */
-  --color-text-description: #7F8C8D;   /* описания и слабый текст */
-  --color-text-hover: #2C3E50;         /* при наведении — сохранить читаемость */
+  --color-text-primary: #2C3E50;
+  --color-text-secondary: #34495E;
+  --color-text-description: #7F8C8D;
+  --color-text-hover: #2C3E50;
 
-  --color-primary: #34495E;            /* основной акцент/цвет кнопок */
-  --color-primary-light: #BDC3C7;      /* заливка блоков, подсветка */
-  --color-primary-dark: #2C3E50;       /* альтернативный акцент/тени */
+  --color-primary: #34495E;
+  --color-primary-light: #BDC3C7;
+  --color-primary-dark: #2C3E50;
 
-  --color-border-default: #D8DEE1;     /* стандартные границы */
-  --color-border-hover: #7F8C8D;       /* при наведении */
+  --color-border-default: #D8DEE1;
+  --color-border-hover: #7F8C8D;
 
-  --color-button-bg: #BDC3C7;          /* фон кнопок */
-  --color-button-bg-hover: #7F8C8D;    /* при наведении */
-  --color-button-border: #34495E;      /* контур кнопок */
+  --color-button-bg: #BDC3C7;
+  --color-button-bg-hover: #7F8C8D;
+  --color-button-border: #34495E;
 
   --color-social-link: #34495E;
   --color-social-bg: #ECF0F1;

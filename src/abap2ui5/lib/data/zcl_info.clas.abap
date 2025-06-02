@@ -23,7 +23,10 @@ CLASS zcl_info DEFINITION
              get_location RETURNING VALUE(rv_location) TYPE string,
              get_social RETURNING VALUE(rt_social) TYPE ty_string,
              get_tech_header RETURNING VALUE(rv_line) TYPE string,
-             get_skills RETURNING VALUE(rv_skills) TYPE string,
+             get_skills_sap RETURNING VALUE(rv_skills) TYPE string,
+             get_skills_mobile RETURNING VALUE(rv_skills) TYPE string,
+             get_skills_devops RETURNING VALUE(rv_skills) TYPE string,
+             get_skills_other RETURNING VALUE(rv_skills) TYPE string,
              get_about_expertise RETURNING VALUE(rv_line) TYPE string,
              get_about_technical_stack RETURNING VALUE(rv_line) TYPE string,
              get_about_focus RETURNING VALUE(rv_line) TYPE string,
@@ -74,8 +77,20 @@ CLASS zcl_info IMPLEMENTATION.
     rv_line = 'Comprehensive expertise spanning SAP technologies, ABAP development, cloud platforms, and modern web/mobile frameworks. Skilled in delivering scalable solutions, integrating systems, and leveraging best practices across diverse technical stacks.'.
   ENDMETHOD.
 
-  METHOD get_skills.
-    rv_skills = |SAPUI5, Fiori, ABAP, CAP, RAP, OData, SOAP, RFC, HANA, CDS, AMDP, xsjs, xsodata, Flutter, Node.js, React Native, Redux, GraphQL, MongoDB, SQL, CI/CD, abapgit, abaplint, GitHub Actions, Tosca, BTP, Kyma, Event Mesh, Integration Suite, API Mgmt, OAuth2, OIDC, SAML, EntraID, AWS, Azure, Eclipse, BAS, QUnit, SmartForms, PDF Forms, PostSharp, Prism, WPF, .NET, MS Word, MS Excel, ECATT, Elastic, Kibana, PagerDuty, VSC, Launchpad, IMG, BCS, SAP SD, SAP MM, SAP SCM, SAP PE, SAP PLM, SAP ETD, SAP Basis|.
+  METHOD get_skills_sap.
+    rv_skills = |SAPUI5, Fiori, ABAP, CAP, RAP, OData, SOAP, RFC, HANA, CDS, AMDP, xsjs, xsodata, SmartForms, PDF Forms, abapgit, abaplint, BTP, Kyma, Event Mesh, Integration Suite, API Mgmt, ECATT, Launchpad, IMG, BCS, SAP SD, SAP MM, SAP SCM, SAP PE, SAP PLM, SAP ETD, SAP Basis, BAS|.
+  ENDMETHOD.
+
+  METHOD get_skills_mobile.
+    rv_skills = |Flutter, React Native, Redux, GraphQL, Node.js, QUnit, VSC|.
+  ENDMETHOD.
+
+  METHOD get_skills_devops.
+    rv_skills = |CI/CD, GitHub Actions, OAuth2, OIDC, SAML, EntraID, AWS, Azure, Tosca, Elastic, Kibana, PagerDuty|.
+  ENDMETHOD.
+
+  METHOD get_skills_other.
+    rv_skills = |PostSharp, Prism, WPF, .NET, MS Word, MS Excel, SQL, MongoDB, Eclipse|.
   ENDMETHOD.
 
 

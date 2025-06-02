@@ -19,7 +19,7 @@
 }
 
 .fixedHeightPanel {
-  min-height: 100px; /* или 250px, подстрой под свой дизайн */
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,7 +44,7 @@
 .info-line .sapUiIcon {
   color: var(--color-primary-dark);
   margin-right: 0.5rem;
-  vertical-align: middle; /* это добавим */
+  vertical-align: middle;
   position: relative;
-  top: -4px; /* и это для лёгкой коррекции */
+  top: -4px;
 }

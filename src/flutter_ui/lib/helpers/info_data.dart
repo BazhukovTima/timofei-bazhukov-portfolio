@@ -65,13 +65,36 @@ class SocialLink {
 
 class SkillsSection {
   final String description;
-  final List<String> skills;
+  final Map<String, SkillCategory> skills;
 
-  SkillsSection({required this.description, required this.skills});
+  SkillsSection({
+    required this.description,
+    required this.skills,
+  });
 
   factory SkillsSection.fromJson(Map<String, dynamic> json) {
+    final skillsMap = (json['skills'] as Map<String, dynamic>? ?? {})
+        .map((key, value) => MapEntry(key, SkillCategory.fromJson(value)));
+
     return SkillsSection(
       description: json['description'] ?? '',
+      skills: skillsMap,
+    );
+  }
+}
+
+class SkillCategory {
+  final String title;
+  final List<String> skills;
+
+  SkillCategory({
+    required this.title,
+    required this.skills,
+  });
+
+  factory SkillCategory.fromJson(Map<String, dynamic> json) {
+    return SkillCategory(
+      title: json['title'] ?? '',
       skills: List<String>.from(json['skills'] ?? []),
     );
   }

@@ -54,26 +54,40 @@
 }
 
 .tech-grid {
-  display: flex;
-  gap: 2rem;
   max-width: var(--max-grid-width);
   margin: 0 auto;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   flex-shrink: 0;
 }
 
 .skills-section {
+  display: block;
   max-width: var(--max-grid-width);
+  width: 100%;
   margin: 0 auto;
   padding: 0;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.skills-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center; /* ← Центрируем плашки */
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .skill-item {
@@ -81,18 +95,14 @@
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-default);
   border-radius: 0.75rem;
-  padding: 0.9rem 1.8rem;
-  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   box-shadow: 0 2px 6px rgba(44, 62, 80, 0.05);
   white-space: nowrap;
-  flex-grow: 0;
-  flex-shrink: 0;
+  text-align: center;
   box-sizing: border-box;
-  width: auto;
-  text-align: center; /* ← Центрируем текст в плашке */
 }
 
-/* === Адаптив === */
 @media (max-width: 768px) {
   .tech-section {
     padding: var(--tech-padding-mobile);
@@ -109,22 +119,15 @@
     margin-bottom: 2rem;
   }
 
-  .tech-grid {
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .skills-grid {
-    justify-content: center; /* чуть центрируем на мобилке */
+  .skills-category-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .skill-item {
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-    white-space: normal; /* переносим названия если длинные */
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    white-space: normal;
     max-width: 100%;
-    text-align: center;
   }
 }

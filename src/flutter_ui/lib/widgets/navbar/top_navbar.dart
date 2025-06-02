@@ -15,27 +15,45 @@ class TopNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentRoute = GoRouterState.of(context).uri.path;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // Пример логики:
+    // маленькие экраны — отступ 8,
+    // средние — 12,
+    // большие — 20
+    double horizontalPadding;
+    if (screenWidth < 600) {
+      horizontalPadding = 8;
+    } else if (screenWidth < 900) {
+      horizontalPadding = 20;
+    } else {
+      horizontalPadding = 30;
+    }
 
     return Container(
       color: AppStyles.navbarBackgroundColor,
       padding: AppStyles.navbarPadding,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: routes.map((route) {
-          final path = route['path']!;
-          final title = route['title']!;
-          final isActive = currentRoute == path;
-          final style = AppStyles.navbarTextStyle.copyWith(
-            color: isActive ? Colors.white : Colors.white70,
-            fontWeight: isActive ? FontWeight.w700 : FontWeight.w600,
-            fontSize: isActive ? 18 : 16,
-            decoration: TextDecoration.none,
-          );
-          return TextButton(
-            onPressed: () => context.go(path),
-            child: Text(title, style: style),
-          );
-        }).toList(),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:
+            routes.map((route) {
+              final path = route['path']!;
+              final title = route['title']!;
+              final isActive = currentRoute == path;
+              final style = AppStyles.navbarTextStyle.copyWith(
+                color: isActive ? Colors.white : Colors.white70,
+                fontWeight: isActive ? FontWeight.w700 : FontWeight.w600,
+                fontSize: isActive ? 18 : 16,
+                decoration: TextDecoration.none,
+              );
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                child: TextButton(
+                  onPressed: () => context.go(path),
+                  child: Text(title, style: style),
+                ),
+              );
+            }).toList(),
       ),
     );
   }

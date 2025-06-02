@@ -3,7 +3,6 @@
   --fw-icon-gap: 8px;
 }
 
-/* === Toggle button === */
 .floating-icon-toggle {
   position: fixed;
   right: 1rem;
@@ -22,14 +21,12 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Скрыть кнопку на десктопе */
 @media (min-width: 769px) {
   .floating-icon-toggle {
     display: none;
   }
 }
 
-/* === Icon list === */
 .floating-icon-selector {
   position: fixed;
   right: 1rem;
@@ -39,7 +36,6 @@
   z-index: 1000;
 }
 
-/* На десктопе — сбоку по центру */
 @media (min-width: 769px) {
   .floating-icon-selector {
     top: 50%;

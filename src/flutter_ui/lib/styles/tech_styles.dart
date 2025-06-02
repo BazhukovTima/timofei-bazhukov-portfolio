@@ -22,11 +22,6 @@ class TechStyles {
     );
   }
 
-  static TextAlign sectionTitleAlign(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return width < 600 ? TextAlign.left : TextAlign.center;
-  }
-
   static TextStyle descriptionText(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     double fontSize = 18;
@@ -56,6 +51,7 @@ class TechStyles {
       fontSize: fontSize,
       fontFamily: 'Roboto',
       color: AppColors.textPrimary,
+      height: 1.2,
     );
   }
 

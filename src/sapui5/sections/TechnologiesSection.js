@@ -1,14 +1,34 @@
 import info from "../../data/info.json";
 
 const createTechnologiesSection = (sap) => {
-  const skillBox = new sap.m.FlexBox({
-    wrap: sap.m.FlexWrap.Wrap,
-    justifyContent: "Start",
-    items: info.skills.skills.map((skill) =>
-      new sap.m.Label({
-        text: skill,
-      }).addStyleClass("sapui5SkillPill")
-    ),
+  const categoryColumns = Object.entries(info.skills.skills).map(([key, category]) => {
+    const skillWrapBox = new sap.m.FlexBox({
+      wrap: sap.m.FlexWrap.Wrap,
+      direction: sap.m.FlexDirection.Row,
+      items: category.skills.map((skill) =>
+        new sap.m.Label({
+          text: skill,
+        }).addStyleClass("sapui5SkillPill")
+      ),
+    });
+
+    return new sap.m.VBox({
+      items: [
+        new sap.m.Title({
+          text: category.title,
+          level: "H4",
+        }).addStyleClass("sapUiSmallMarginBottom"),
+        skillWrapBox,
+      ],
+      layoutData: new sap.ui.layout.GridData({
+        span: "L3 M6 S12",
+      }),
+    });
+  });
+
+  const skillGrid = new sap.ui.layout.Grid({
+    defaultSpan: "L3 M6 S12",
+    content: categoryColumns,
   });
 
   return new sap.uxap.ObjectPageSection({
@@ -25,7 +45,7 @@ const createTechnologiesSection = (sap) => {
                 wrapping: true,
               }),
               new sap.m.VBox({ height: "2rem" }),
-              skillBox,
+              skillGrid,
             ],
           }),
         ],

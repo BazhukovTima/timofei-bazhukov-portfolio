@@ -29,9 +29,9 @@
     
     "abap2ui5-start-local": "cd src/abap2ui5 && npm run all",
     "abap2ui5-start-webpack": "cd src/abap2ui5 && npm run wp-all",
-    "abap2ui5-build-prod": "cd abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio/abap2ui5/ npm run wp-build",
-    "abap2ui5-build": "cd abap2ui5 && npm run wp-build",
-    "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r abap2ui5/build/* public/abap2ui5/",
+    "abap2ui5-build-prod": "cd src/abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio/abap2ui5/ npm run wp-build",
+    "abap2ui5-build": "cd src/abap2ui5 && npm run wp-build",
+    "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r src/abap2ui5/build/* public/abap2ui5/",
     
     "build-prod": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build-prod && npm run abap2ui5-relocate && npm run build",
     "predeploy": "npm run build-prod",
