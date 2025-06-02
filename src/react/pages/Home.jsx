@@ -1,10 +1,9 @@
-import React from 'react';
-import profile from '../assets/profile-no-bg.png';
-import info from '../data/info.json';
 import SocialLinks from '../components/home/SocialLinks';
+import Footer from '../components/common/Footer';
 import '../styles/colors.css';
 import '../styles/ResponsiveHome.css';
-import Footer from '../components/common/Footer';
+import info from '../../data/info.json';
+import profile from '../../assets/profile-no-bg.png';
 
 const Home = () => {
   const { name, role, description, location, social } = info;

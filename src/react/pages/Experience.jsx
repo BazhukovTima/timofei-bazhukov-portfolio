@@ -1,10 +1,7 @@
-import React from "react";
-import info from "../data/info.json";
-
 import { FaBuilding, FaTools, FaFileAlt } from "react-icons/fa";
-
 import "../styles/colors.css";
 import "../styles/ResponsiveExperience.css";
+import info from "../../data/info.json";
 
 const Experience = () => {
   const projects = info.experience.projects;

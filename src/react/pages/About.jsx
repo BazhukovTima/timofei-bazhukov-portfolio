@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/colors.css";
 import "../styles/ResponsiveAbout.css";
-import info from "../data/info.json";
+import info from "../../data/info.json";
 
 const About = () => (
   <section id="about" className="about-section">

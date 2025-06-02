@@ -1,10 +1,10 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "../components/common/Navbar";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Experience from "../pages/Experience";
-import Tech from "../pages/Tech";
-import NotFound from "../pages/NotFound";
+import Navbar from "../react/components/common/Navbar";
+import Home from "../react/pages/Home";
+import About from "../react/pages/About";
+import Experience from "../react/pages/Experience";
+import Tech from "../react/pages/Tech";
+import NotFound from "../react/pages/NotFound";
 
 const ReactContainer = () => {
   return (

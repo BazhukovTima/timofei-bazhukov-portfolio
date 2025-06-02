@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useFramework } from "../../frameworkContext";
-import info from "../../data/info.json";
-import "./FloatingFrameworkIconSelector.css";
+import { useState, useEffect } from "react";
+import { useFramework } from "../../../frameworkContext";
+import info from "../../../data/info.json";
+import "../../styles/FloatingFrameworkIconSelector.css";
 
 const importLogo = (logoFileName) => {
   try {
-    return require(`../../assets/${logoFileName}`);
+    return require(`../../../assets/${logoFileName}`);
   } catch (error) {
     return null;
   }

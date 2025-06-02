@@ -1,6 +1,5 @@
-import React from "react";
 import "../../styles/ResponsiveTech.css";
-import info from "../../data/info.json";
+import info from "../../../data/info.json";
 
 const Skills = () => (
   <div className="skills-section">

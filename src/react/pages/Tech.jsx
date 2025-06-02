@@ -1,8 +1,7 @@
-import React from "react";
 import "../styles/colors.css";
 import "../styles/ResponsiveTech.css";
 import Skills from '../components/tech/Skills';
-import info from "../data/info.json";
+import info from "../../data/info.json";
 
 const Tech = () => (
   <section id="tech" className="tech-section">

@@ -3,7 +3,7 @@ import ReactContainer from "./containers/ReactContainer";
 import SapUi5Container from "./containers/SapUi5Container";
 import FlutterContainer from "./containers/FlutterContainer";
 import Abap2ui5Container from "./containers/Abap2ui5Container";
-import FloatingFrameworkIconSelector from "./components/common/FloatingFrameworkIconSelector";
+import FloatingFrameworkIconSelector from "./react/components/common/FloatingFrameworkIconSelector";
 import { useFramework } from "./frameworkContext";
 
 const App = () => {
