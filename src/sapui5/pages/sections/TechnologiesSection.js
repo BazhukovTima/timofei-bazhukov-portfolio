@@ -1,13 +1,17 @@
-import info from "../../data/info.json";
+const createTechnologiesSection = (sap, info) => {
+  if (!sap || !info || !info.skills || !info.skills.skills) {
+    throw new Error("Missing required parameters: sap or info.skills.skills");
+  }
 
-const createTechnologiesSection = (sap) => {
   const categoryColumns = Object.entries(info.skills.skills).map(([key, category]) => {
+    const skills = Array.isArray(category.skills) ? category.skills : [];
+
     const skillWrapBox = new sap.m.FlexBox({
       wrap: sap.m.FlexWrap.Wrap,
       direction: sap.m.FlexDirection.Row,
-      items: category.skills.map((skill) =>
+      items: skills.map((skill) =>
         new sap.m.Label({
-          text: skill,
+          text: skill || "",
         }).addStyleClass("sapui5SkillPill")
       ),
     });
@@ -15,7 +19,7 @@ const createTechnologiesSection = (sap) => {
     return new sap.m.VBox({
       items: [
         new sap.m.Title({
-          text: category.title,
+          text: category.title || "",
           level: "H4",
         }).addStyleClass("sapUiSmallMarginBottom"),
         skillWrapBox,
@@ -40,7 +44,7 @@ const createTechnologiesSection = (sap) => {
             width: "100%",
             content: [
               new sap.m.Text({
-                text: info.skills.description,
+                text: info.skills.description || "",
                 width: "100%",
                 wrapping: true,
               }),

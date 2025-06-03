@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import HomePage from "../sapui5/pages/HomePage";
 import "../sapui5/sapui5CustomStyles.css";
+import info from "../data/info.json";
+import profile from "../assets/profile-no-bg.png";
 
 const SapUi5Container = () => {
   const containerRef = useRef(null);
@@ -25,7 +27,7 @@ const SapUi5Container = () => {
         ui5ComponentRef.current = null;
       }
 
-      const page = HomePage(containerRef.current);
+      const page = HomePage(containerRef.current, info, profile);
       ui5ComponentRef.current = page;
     }
 

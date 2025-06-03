@@ -1,12 +1,12 @@
-import createAboutSection from "../sections/AboutSection";
-import createTechnologiesSection from "../sections/TechnologiesSection";
-import createHeaderContent from "../sections/HeaderContent";
-import createHeaderTitle from "../sections/HeaderTitle";
-import createExperienceSection from "../sections/ExperienceSection";
+import createAboutSection from "./sections/AboutSection.js";
+import createTechnologiesSection from "./sections/TechnologiesSection.js";
+import createHeaderContent from "./sections/HeaderContent.js";
+import createHeaderTitle from "./sections/HeaderTitle.js";
+import createExperienceSection from "./sections/ExperienceSection.js";
 
 let oPage = null;
 
-const HomePage = (container) => {
+const HomePage = (container, info, profile) => {
   const sap = window.sap;
 
   if (oPage && oPage.destroy) {
@@ -15,12 +15,12 @@ const HomePage = (container) => {
   }
 
   oPage = new sap.uxap.ObjectPageLayout({
-    headerTitle: createHeaderTitle(sap),
-    headerContent: createHeaderContent(sap),
+    headerTitle: createHeaderTitle(sap, info, profile),
+    headerContent: createHeaderContent(sap, info, profile),
     sections: [
-      createAboutSection(sap),
-      createTechnologiesSection(sap),
-      createExperienceSection(sap),
+      createAboutSection(sap, info),
+      createTechnologiesSection(sap, info),
+      createExperienceSection(sap, info),
     ],
   });
 
