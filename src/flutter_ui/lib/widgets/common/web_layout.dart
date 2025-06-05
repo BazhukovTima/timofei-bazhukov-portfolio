@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'navbar/navbar.dart';
-import 'footer/footer.dart';
+import '../navbar/navbar.dart';
+import '../footer/footer.dart';
 
 class WebLayout extends StatelessWidget {
   final Widget child;

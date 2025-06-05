@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/helpers/info_data.dart';
 import 'router.dart';
 import 'styles/colors.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final InfoData infoData;
+
+  const MyApp({super.key, required this.infoData});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,8 @@ class MyApp extends StatelessWidget {
       surface: AppColors.background,
       onSurface: AppColors.textPrimary,
     );
+
+    final router = createRouter(infoData);
 
     return MaterialApp.router(
       routerConfig: router,

@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../styles/colors.dart';
-import '../../styles/home_styles.dart';
 
 class ProfileAvatar extends StatelessWidget {
   final String imagePath;
-  final bool isLarge;
+  final double size;
 
-  const ProfileAvatar({
-    super.key,
-    required this.imagePath,
-    this.isLarge = false,
-  });
+  const ProfileAvatar({super.key, required this.imagePath, required this.size});
 
   @override
   Widget build(BuildContext context) {
-    final size = isLarge
-        ? HomeStyles.avatarSize(context)
-        : HomeStyles.avatarSizeSmall(context);
-
     return Container(
       width: size,
       height: size,
@@ -28,10 +19,7 @@ class ProfileAvatar extends StatelessWidget {
           color: AppColors.primaryDark.withOpacity(0.15),
           width: 1,
         ),
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
-        ),
+        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
       ),
     );
   }

@@ -11,6 +11,7 @@
     "build": "react-scripts build",
     "test-react": "react-scripts test --testPathPattern=src/react",
     "test-sapui5": "qunit 'src/sapui5/**/tests/**/*.test.js'",
+    "test-flutter": "cd src/flutter_ui && flutter test",
     "eject": "react-scripts eject",
     "flutter-start-local": "cd src/flutter_ui && flutter run",
     "flutter-build": "cd src/flutter_ui && flutter build web --base-href /flutter/",
