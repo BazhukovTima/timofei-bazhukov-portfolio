@@ -1,17 +1,19 @@
-import info from "../../data/info.json";
+const createExperienceSection = (sap, info) => {
+  if (!sap || !info || !info.experience) {
+    throw new Error("Missing required parameters: sap or info.experience");
+  }
 
-const createExperienceSection = (sap) => {
-  const projects = info.experience.projects;
-  const overviewText = info.experience.overview;
+  const projects = info.experience.projects || {};
+  const overviewText = info.experience.overview || "";
 
   const projectPanels = Object.entries(projects).map(([title, project]) => {
     const mainContent = [
-      new sap.m.Label({ text: `${project.role} @ ${project.company}`, design: "Bold" }),
-      new sap.m.ObjectStatus({ text: project.period, icon: "sap-icon://calendar" }),
+      new sap.m.Label({ text: `${project.role || ""} @ ${project.company || ""}`, design: "Bold" }),
+      new sap.m.ObjectStatus({ text: project.period || "", icon: "sap-icon://calendar" }),
     ];
 
     const detailsContent = [
-      new sap.m.Text({ text: project.details, wrapping: true }),
+      new sap.m.Text({ text: project.details || "", wrapping: true }),
     ];
     if (project.technologies) {
       detailsContent.push(new sap.m.Text({ text: `🔧 ${project.technologies}`, wrapping: true }));

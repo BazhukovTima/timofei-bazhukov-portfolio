@@ -2,10 +2,11 @@ import SocialLinks from '../components/home/SocialLinks';
 import Footer from '../components/common/Footer';
 import '../styles/colors.css';
 import '../styles/ResponsiveHome.css';
-import info from '../../data/info.json';
 import profile from '../../assets/profile-no-bg.png';
 
-const Home = () => {
+const Home = ({ info }) => {
+  if (!info || !info.name) return null;
+
   const { name, role, description, location, social } = info;
 
   return (

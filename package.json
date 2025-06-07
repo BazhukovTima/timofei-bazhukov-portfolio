@@ -4,43 +4,32 @@
   "private": true,
   "homepage": "https://BazhukovTima.github.io/timofei-bazhukov-portfolio",
   "description": "Timofei Bazhukov's Portfolio",
-  "dependencies": {
-    "gh-pages": "^6.3.0",
-    "lucide-react": "^0.510.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0",
-    "react-intersection-observer": "^9.16.0",
-    "react-router-dom": "^7.6.0",
-    "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.1",
-    "react-switch": "^7.1.0"
-  },
+  "type": "module",
   "scripts": {
     "start-clean": "react-scripts start",
     "start": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build && npm run abap2ui5-relocate && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run test-react && npm run test-sapui5 && npm run test-flutter && npm run test-abap2ui5",
+    "test-react": "react-scripts test --testPathPattern=src/react --watchAll=false",
+    "test-sapui5": "qunit 'src/sapui5/**/tests/**/*.test.js'",
+    "test-flutter": "cd src/flutter_ui && flutter test",
+    "test-abap2ui5": "cd src/abap2ui5 && npm run webpack:build && npx playwright test",
     "eject": "react-scripts eject",
-
     "flutter-start-local": "cd src/flutter_ui && flutter run",
     "flutter-build": "cd src/flutter_ui && flutter build web --base-href /flutter/",
     "flutter-relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r src/flutter_ui/build/web/* public/flutter/ && cp -r src/flutter_ui/build/web/assets/* public/assets/",
-    
     "abap2ui5-start-local": "cd src/abap2ui5 && npm run all",
     "abap2ui5-start-webpack": "cd src/abap2ui5 && npm run wp-all",
     "abap2ui5-build-prod": "cd src/abap2ui5 && cross-env PUBLIC_URL=/timofei-bazhukov-portfolio/abap2ui5/ npm run wp-build",
     "abap2ui5-build": "cd src/abap2ui5 && npm run wp-build",
     "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r src/abap2ui5/build/* public/abap2ui5/",
-    
     "build-prod": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build-prod && npm run abap2ui5-relocate && npm run build",
     "predeploy": "npm run build-prod",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -55,9 +44,26 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "lucide-react": "^0.510.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^5.3.4",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^5.0.1",
+    "react-switch": "^7.1.0"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
-    "postcss": "^8.5.3"
+    "esmock": "^2.7.0",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.5.3",
+    "qunit": "^2.24.1"
   }
 }

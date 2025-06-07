@@ -3,28 +3,10 @@ import '../helpers/info_data.dart';
 import '../styles/experience_styles.dart';
 import '../widgets/experience/experience_item.dart';
 
-class ExperiencePageContent extends StatefulWidget {
-  const ExperiencePageContent({super.key});
+class ExperiencePageContent extends StatelessWidget {
+  final InfoData info;
 
-  @override
-  State<ExperiencePageContent> createState() => _ExperiencePageContentState();
-}
-
-class _ExperiencePageContentState extends State<ExperiencePageContent> {
-  InfoData? info;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadInfo();
-  }
-
-  Future<void> _loadInfo() async {
-    final loadedInfo = await InfoData.load();
-    setState(() {
-      info = loadedInfo;
-    });
-  }
+  const ExperiencePageContent({super.key, required this.info});
 
   int _calculateColumns(double width) {
     if (width < 600) return 1;
@@ -49,18 +31,17 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
         IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children:
-                rowItems
-                    .map((item) {
-                      if (rowItems.length == 1) {
-                        return SizedBox(width: cardWidth, child: item);
-                      } else {
-                        return Expanded(child: item);
-                      }
-                    })
-                    .expand((widget) => [widget, SizedBox(width: spacing)])
-                    .toList()
-                  ..removeLast(),
+            children: rowItems
+                .map((item) {
+                  if (rowItems.length == 1) {
+                    return SizedBox(width: cardWidth, child: item);
+                  } else {
+                    return Expanded(child: item);
+                  }
+                })
+                .expand((widget) => [widget, SizedBox(width: spacing)])
+                .toList()
+              ..removeLast(),
           ),
         ),
       );
@@ -72,11 +53,7 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
 
   @override
   Widget build(BuildContext context) {
-    if (info == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-
-    final experience = info!.experience;
+    final experience = info.experience;
     final maxContentWidth = 1400.0;
     final width = MediaQuery.of(context).size.width;
     final effectiveWidth = width > maxContentWidth ? maxContentWidth : width;
@@ -86,20 +63,19 @@ class _ExperiencePageContentState extends State<ExperiencePageContent> {
 
     final cardWidth =
         (effectiveWidth - paddingHorizontal - (columns - 1) * spacing) /
-        columns;
+            columns;
 
-    final items =
-        experience.projects.entries.map((entry) {
-          final project = entry.value;
-          return ExperienceItem(
-            title: entry.key,
-            role: project.role,
-            company: project.company,
-            period: project.period,
-            details: project.details,
-            technologies: project.technologies,
-          );
-        }).toList();
+    final items = experience.projects.entries.map((entry) {
+      final project = entry.value;
+      return ExperienceItem(
+        title: entry.key,
+        role: project.role,
+        company: project.company,
+        period: project.period,
+        details: project.details,
+        technologies: project.technologies,
+      );
+    }).toList();
 
     return SingleChildScrollView(
       padding: ExperienceStyles.contentPadding(context),

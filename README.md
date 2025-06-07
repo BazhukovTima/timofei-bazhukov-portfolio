@@ -3,11 +3,10 @@
 ## Getting started
 
 ### Start local
-1. Create `.env.development.local` file with content:
 ``` 
+Create `.env.development.local` file with content:
 PUBLIC_URL=/
 ``` 
-2. 
 ``` 
 npm run start 
 ```
@@ -34,4 +33,11 @@ npm run abap2ui5-start-webpack
 #### Start local (express server)
 ```
 npm run flutter-start-local
+```
+
+
+### Tests
+
+```
+npm run test
 ```

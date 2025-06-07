@@ -26,7 +26,7 @@ CLASS zcl_header_section IMPLEMENTATION.
 
     DATA(header_title) = object_page_layout->header_title( )->object_page_dyn_header_title( ).
 
-    header_title->expanded_heading( )->title( text = name wrapping = abap_true ).
+    header_title->expanded_heading( )->title( id = 'id_name' text = name wrapping = abap_true ).
     header_title->snapped_heading( )->hbox(
             )->vbox(
                 )->avatar( src   = image_url
@@ -45,39 +45,48 @@ CLASS zcl_header_section IMPLEMENTATION.
                                      showdividers = abap_false ).
 
     header_content->hbox( class = 'sapUiSmallMarginEnd sapUiSmallMarginBottom'
-        )->avatar( src         = image_url
+        )->avatar( id          = 'id_image_url' 
+                   src         = image_url
                    class       = 'sapUiMediumMarginEnd sapUiSmallMarginBottom'
                    displaysize = 'L'
         )->vbox( class = 'sapUiSmallMarginEnd sapUiSmallMarginBottom'
-        )->title( text  = name
+        )->title( id    = 'id_name_title' 
+                  text  = name
                   class = 'sapUiTinyMarginBottom'
         )->hbox( class = 'sapUiTinyMarginBottom'
             )->icon( src = 'sap-icon://suitcase'
-            )->text( text  = role " role
+            )->text( id    = 'id_role' 
+                     text  = role " role
                      class = 'sapUiSmallMarginBegin'
             )->get_parent(
         )->hbox( class = 'sapUiTinyMarginBottom'
             )->icon( src = 'sap-icon://map'
-            )->text( text  = location " location
+            )->text( id    = 'id_location' 
+                     text  = location " location
                      class = 'sapUiSmallMarginBegin'
             )->get_parent(
         )->hbox( class = 'sapUiTinyMarginBottom'
             )->icon( src = 'sap-icon://hint'
-            )->text( text  = description
+            )->text( id    = 'id_description' 
+                     text  = description
                      class = 'sapUiSmallMarginBegin'
             )->get_parent(
         )->hbox( class = 'sapUiSmallMarginEnd sapUiSmallMarginBottom'
             )->icon( src = 'sap-icon://chain-link'
-            )->link( text  = 'LinkedIn'
+            )->link(  id    = 'id_linkedin' 
+                      text  = 'LinkedIn'
                       href  = social[ 1 ]
                       class = 'sapUiSmallMarginBegin'
-            )->link( text  = 'Facebook'
+            )->link(  id    = 'id_facebook' 
+                      text  = 'Facebook'
                       href  = social[ 2 ]
                       class = 'sapUiSmallMarginBegin'
-            )->link( text  = 'GitHub'
+            )->link(  id    = 'id_github' 
+                      text  = 'GitHub'
                       href  = social[ 3 ]
                       class = 'sapUiSmallMarginBegin'
-            )->link( text  = 'Email'
+            )->link(  id    = 'id_email' 
+                      text  = 'Email'
                       href  = social[ 4 ]
                       class = 'sapUiSmallMarginBegin'
           )->get_parent(

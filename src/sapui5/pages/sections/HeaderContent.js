@@ -1,8 +1,15 @@
-import profile from "../../assets/profile-no-bg.png";
-import info from "../../data/info.json";
+const createHeaderContent = (sap, info, profile) => {
+  if (!sap || !info) {
+    throw new Error("Missing required parameters: sap or info");
+  }
 
-const createHeaderContent = (sap) => {
-  const { name, role, location, description, social } = info;
+  const {
+    name = "",
+    role = "",
+    location = "",
+    description = "",
+    social = [],
+  } = info || {};
 
   return new sap.ui.layout.VerticalLayout({
     width: "100%",
@@ -14,11 +21,11 @@ const createHeaderContent = (sap) => {
               new sap.ui.layout.BlockLayoutCell({
                 content: [
                   new sap.m.Avatar({
-                    src: profile,
+                    src: profile || "",
                     displaySize: "Custom",
                     customDisplaySize: "15em",
                     displayShape: "Circle",
-                    backgroundColor: sap.m.AvatarColor.TileIcon,
+                    backgroundColor: sap.m.AvatarColor?.TileIcon || "Accent6",
                     showBorder: true,
                   }),
                 ],
@@ -44,7 +51,6 @@ const createHeaderContent = (sap) => {
                       new sap.m.ObjectStatus({
                         icon: "sap-icon://chain-link",
                       }),
-
                       ...social.map((item, index) => {
                         const link = new sap.m.Link({
                           text: item.platform,
@@ -52,11 +58,9 @@ const createHeaderContent = (sap) => {
                           target: "_blank",
                           tooltip: item.platform,
                         });
-
                         if (index !== 0) {
                           link.addStyleClass("sapUiTinyMarginBegin");
                         }
-
                         return link;
                       }),
                     ],

@@ -2,44 +2,20 @@ import 'package:flutter/material.dart';
 import '../../helpers/info_data.dart';
 import '../../styles/tech_styles.dart';
 
-class SkillsGrid extends StatefulWidget {
-  const SkillsGrid({super.key});
+class SkillsGrid extends StatelessWidget {
+  final InfoData infoData;
 
-  @override
-  State<SkillsGrid> createState() => _SkillsGridState();
-}
-
-class _SkillsGridState extends State<SkillsGrid> {
-  InfoData? _info;
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadInfo();
-  }
-
-  Future<void> _loadInfo() async {
-    final loadedInfo = await InfoData.load();
-    setState(() {
-      _info = loadedInfo;
-      _isLoading = false;
-    });
-  }
+  const SkillsGrid({super.key, required this.infoData});
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading || _info == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-
-    final categories = _info!.skills.skills;
+    final categories = infoData.skills.skills;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          _info!.skills.description,
+          infoData.skills.description,
           style: TechStyles.descriptionText(context),
           textAlign: TextAlign.center,
         ),

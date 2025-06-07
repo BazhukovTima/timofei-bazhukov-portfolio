@@ -1,34 +1,57 @@
 import React from "react";
 import "../styles/colors.css";
 import "../styles/ResponsiveAbout.css";
-import info from "../../data/info.json";
 
-const About = () => (
-  <section id="about" className="about-section">
-    <div className="about-background" />
-    <h2 className="about-title">{info.about.header}</h2>
+const About = ({ info }) => {
+  const about = info?.about;
 
-    <p className="about-intro">{info.about.expertise.description}</p>
+  if (!about) return null;
 
-    <div className="about-grid">
-      <div className="about-block">
-        <h3>{info.about.currentFocus.header}</h3>
-        <p>{info.about.currentFocus.description}</p>
+  const {
+    header,
+    expertise,
+    currentFocus,
+    technicalStack,
+    mobileDevelopment,
+    softSkills,
+  } = about;
+
+  return (
+    <section id="about" className="about-section">
+      <div className="about-background" />
+      {header && <h2 className="about-title">{header}</h2>}
+      {expertise?.description && (
+        <p className="about-intro">{expertise.description}</p>
+      )}
+
+      <div className="about-grid">
+        {currentFocus?.header && currentFocus?.description && (
+          <div className="about-block">
+            <h3>{currentFocus.header}</h3>
+            <p>{currentFocus.description}</p>
+          </div>
+        )}
+        {technicalStack?.header && technicalStack?.description && (
+          <div className="about-block">
+            <h3>{technicalStack.header}</h3>
+            <p>{technicalStack.description}</p>
+          </div>
+        )}
+        {mobileDevelopment?.header && mobileDevelopment?.description && (
+          <div className="about-block">
+            <h3>{mobileDevelopment.header}</h3>
+            <p>{mobileDevelopment.description}</p>
+          </div>
+        )}
+        {softSkills?.header && softSkills?.description && (
+          <div className="about-block">
+            <h3>{softSkills.header}</h3>
+            <p>{softSkills.description}</p>
+          </div>
+        )}
       </div>
-      <div className="about-block">
-        <h3>{info.about.technicalStack.header}</h3>
-        <p>{info.about.technicalStack.description}</p>
-      </div>
-      <div className="about-block">
-        <h3>{info.about.mobileDevelopment.header}</h3>
-        <p>{info.about.mobileDevelopment.description}</p>
-      </div>
-      <div className="about-block">
-        <h3>{info.about.softSkills.header}</h3>
-        <p>{info.about.softSkills.description}</p>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default About;

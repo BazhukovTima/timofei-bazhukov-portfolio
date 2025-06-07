@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import '../styles/tech_styles.dart';
 import '../widgets/tech/skills_grid.dart';
+import '../helpers/info_data.dart';
 
 class TechPageContent extends StatelessWidget {
-  const TechPageContent({super.key});
+  final InfoData info;
+
+  const TechPageContent({super.key, required this.info});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class TechPageContent extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
-              const SkillsGrid(),
+              SkillsGrid(infoData: info),
             ],
           ),
         ),

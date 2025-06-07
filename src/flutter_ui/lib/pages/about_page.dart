@@ -1,46 +1,23 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-
+import '../helpers/info_data.dart';
 import '../styles/about_styles.dart';
 
-class AboutPageContent extends StatefulWidget {
-  const AboutPageContent({super.key});
+class AboutPageContent extends StatelessWidget {
+  final InfoData info;
 
-  @override
-  State<AboutPageContent> createState() => _AboutPageContentState();
-}
-
-class _AboutPageContentState extends State<AboutPageContent> {
-  Map<String, dynamic>? aboutData;
-
-  @override
-  void initState() {
-    super.initState();
-    loadAboutData();
-  }
-
-  Future<void> loadAboutData() async {
-    final jsonString = await rootBundle.loadString('assets/info.json');
-    final Map<String, dynamic> jsonMap = json.decode(jsonString);
-    setState(() {
-      aboutData = jsonMap['about'];
-    });
-  }
+  const AboutPageContent({super.key, required this.info});
 
   @override
   Widget build(BuildContext context) {
-    if (aboutData == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
+    final aboutData = info.about;
 
-    final expertiseDescription = aboutData!['expertise']['description'] as String;
+    final expertiseDescription = aboutData.expertise.description;
 
     final sections = [
-      aboutData!['technicalStack'],
-      aboutData!['currentFocus'],
-      aboutData!['mobileDevelopment'],
-      aboutData!['softSkills'],
+      aboutData.technicalStack,
+      aboutData.currentFocus,
+      aboutData.mobileDevelopment,
+      aboutData.softSkills,
     ];
 
     return SingleChildScrollView(
@@ -77,13 +54,13 @@ class _AboutPageContentState extends State<AboutPageContent> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            section['header'],
+                            section.header,
                             style: AboutStyles.cardHeader(context),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            section['description'],
+                            section.description,
                             style: AboutStyles.cardDescription(context),
                             textAlign: TextAlign.center,
                           ),
