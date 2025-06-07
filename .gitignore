@@ -50,4 +50,6 @@ yarn-error.log*
 /src/abap2ui5/build
 /src/abap2ui5/src
 /src/abap2ui5/test_results
+src/abap2ui5/test-results/.last-run.json
 /public/abap2ui5/
+test
