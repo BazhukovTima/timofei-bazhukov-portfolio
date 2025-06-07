@@ -1,9 +1,7 @@
 import esmock from "esmock";
-import qunit from "qunit";
 import path from "path";
 import url from "url";
-
-const { test } = qunit;
+import QUnit from "qunit";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,7 +36,7 @@ const mockProfile = "mock-profile.png";
 
 let HomePage;
 
-test("HomePage creates page correctly", async (assert) => {
+QUnit.test("HomePage creates page correctly", async (assert) => {
   HomePage = await esmock(
     path.resolve(__dirname, "../HomePage.js"),
     {
@@ -64,7 +62,7 @@ test("HomePage creates page correctly", async (assert) => {
   );
 });
 
-test("HomePage destroys previous page on re-creation", async (assert) => {
+QUnit.test("HomePage destroys previous page on re-creation", async (assert) => {
   if (!HomePage) {
     HomePage = await esmock(
       path.resolve(__dirname, "../HomePage.js"),

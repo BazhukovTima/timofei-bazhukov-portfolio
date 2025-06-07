@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://BazhukovTima.github.io/timofei-bazhukov-portfolio",
   "description": "Timofei Bazhukov's Portfolio",
+  "type": "module",
   "scripts": {
     "start-clean": "react-scripts start",
     "start": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build && npm run abap2ui5-relocate && react-scripts start",
