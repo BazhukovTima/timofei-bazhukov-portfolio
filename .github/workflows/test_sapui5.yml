@@ -20,11 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Run tests
-      #   run: node --experimental-print-required-tla ./node_modules/.bin/qunit 'src/sapui5/**/tests/**/*.test.js'
-
       - name: Run tests
-        run: qunit 'src/sapui5/**/tests/**/*.test.js'
+        run: node --experimental-vm-modules ./node_modules/qunit/bin/qunit.js 'src/sapui5/**/tests/**/*.test.js'
 
       # - name: Run tests
       #   run: npx qunit 'src/sapui5/**/tests/**/*.test.js'
