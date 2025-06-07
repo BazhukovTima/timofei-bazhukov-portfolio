@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import HomePage from "../sapui5/pages/HomePage";
+import HomePage from "../sapui5/pages/HomePage.mjs";
 import "../sapui5/sapui5CustomStyles.css";
 import info from "../data/info.json";
 import profile from "../assets/profile-no-bg.png";

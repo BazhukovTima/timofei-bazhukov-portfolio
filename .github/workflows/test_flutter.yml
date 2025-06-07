@@ -1,4 +1,4 @@
-name: Run Full Test Suite
+name: Test Flutter
 
 on:
   pull_request:
@@ -12,23 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install Node dependencies
-        run: npm install
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'
+          flutter-version: '3.32.1'
 
       - name: Install Flutter dependencies
         run: |
           cd src/flutter_ui
           flutter pub get
+      - name: Install fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto fonts-roboto
 
-      - name: Run full test suite
-        run: npm run test
+      - name: Run flutter test
+        run: |
+          cd src/flutter_ui
+          flutter test --update-goldens

@@ -1,0 +1,30 @@
+name: Test abap2ui5
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Node dependencies abap2ui5
+        run: |
+          cd src/abap2ui5
+          npm install
+          npm run wp-build-prod
+          npx playwright install
+
+      - name: Run test
+        run: |
+          cd src/abap2ui5
+          npm run test

@@ -1,0 +1,25 @@
+name: Test sapui5
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: node --experimental-vm-modules --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("esmock", pathToFileURL("./"));' ./node_modules/qunit/bin/qunit.js 'src/sapui5/**/tests/**/*.test.*js'
+
