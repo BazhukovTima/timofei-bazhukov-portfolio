@@ -6,10 +6,11 @@
     "init": "rm -rf src && rm -rf abap2UI5 &&  mkdir src && git clone --depth=1 https://github.com/abap2UI5/abap2UI5.git && cp -r abap2UI5/src/* src/",
     "syfixes": "find . -type f -name '*.abap' -exec sed -i -e 's/ RAISE EXCEPTION TYPE cx_sy_itab_line_not_found/ ASSERT 1 = 0/g' {} + ",
     "syfixes-mac": "find . -type f -name '*.abap' -exec sed -i '' -e 's/ RAISE EXCEPTION TYPE cx_sy_itab_line_not_found/ ASSERT 1 = 0/g' {} +",
-    "downport2": "rm -rf downport && mkdir downport && cp -r src/* downport/ && cp -r lib/* downport/ && abaplint --fix ./ci/abaplint-downport.jsonc",
     "downport": "rm -rf downport && mkdir downport && cp -r src/* downport/ && cp -r lib/* downport/ && abaplint --fix ./ci/abaplint-downport.jsonc && npm run syfixes-mac",
+    "downport-lnx": "rm -rf downport && mkdir downport && cp -r src/* downport/ && cp -r lib/* downport/ && abaplint --fix ./ci/abaplint-downport.jsonc && npm run syfixes",
     "transpile": "rm -rf output && abap_transpile ./ci/abap_transpile.json",
     "build": "npm install && npm run downport && npm run transpile && rm -rf src && rm -rf downport && rm -rf abap2UI5",
+    "build-prod": "npm install && npm run downport-lnx && npm run transpile && rm -rf src && rm -rf downport && rm -rf abap2UI5",
     "build-dev": "npm run downport && npm run transpile",
     "clean": "rm -rf src && rm -rf abap2UI5 && rm -rf downport && rm -rf output && rm -rf node_modules",
     "start": "node srv/abap2ui5Server.js",
@@ -19,7 +20,8 @@
     "webpack:run": "webpack serve --mode development --env development",
     "wp-all": "npm run clean && npm install && npm run init && npm run build && npm run webpack:build && serve build",
     "wp-build": "npm run clean && npm run init && npm run build && npm run webpack:build",
-    "test": "npm run wp-build && npx playwright test",
+    "wp-build-prod": "npm run clean && npm run init && npm run build-prod && npm run webpack:build",
+    "test": "npm run wp-build-prod && npx playwright test",
     "serve-build": "serve build"
   },
   "dependencies": {
