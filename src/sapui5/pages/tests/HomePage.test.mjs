@@ -38,7 +38,7 @@ let HomePage;
 
 QUnit.test("HomePage creates page correctly", async (assert) => {
   HomePage = await esmock(
-    path.resolve(__dirname, "../HomePage.js"),
+    path.resolve(__dirname, "../HomePage.mjs"),
     {
       [path.resolve(__dirname, "../sections/AboutSection.js")]: mockCreateAboutSection,
       [path.resolve(__dirname, "../sections/TechnologiesSection.js")]: mockCreateTechnologiesSection,
