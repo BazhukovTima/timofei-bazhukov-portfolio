@@ -20,5 +20,13 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Check Node and NPM versions
+        run: |
+          node --version
+          npm --version
+          which node
+          which npm
+          npx qunit --version
+
       - name: Run test-sapui5
         run: npm run test-sapui5
