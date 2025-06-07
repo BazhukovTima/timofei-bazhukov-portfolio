@@ -20,6 +20,9 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Update npm to 11.3.0
+        run: npm install -g npm@11.3.0
+
       - name: Check Node and NPM versions
         run: |
           node --version
