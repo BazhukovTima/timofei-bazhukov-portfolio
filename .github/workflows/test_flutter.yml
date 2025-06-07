@@ -21,6 +21,7 @@ jobs:
         run: |
           cd src/flutter_ui
           flutter pub get
+          
       - name: Install fonts
         run: |
           sudo apt-get update
