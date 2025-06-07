@@ -1,5 +1,12 @@
 # timofei-bazhukov-portfolio
 
+[![ABAP2UI5 Tests](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_abap2ui5.yml/badge.svg)](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_abap2ui5.yml)
+[![Flutter Tests](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_flutter.yml/badge.svg)](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_flutter.yml)
+[![React Tests](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_react.yml/badge.svg)](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_react.yml)
+[![SAPUI5 Tests](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_sapui5.yml/badge.svg)](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/test_sapui5.yml)
+
+[![Deploy to ghp](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/BazhukovTima/timofei-bazhukov-portfolio/actions/workflows/deploy.yml)
+
 ## Getting started
 
 ### Start local

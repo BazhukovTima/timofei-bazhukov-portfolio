@@ -43,7 +43,9 @@ jobs:
           git config --global user.name "BazhukovTima"
 
       - name: Deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
-        
+
       - name: Confirm deployment
         run: echo "Deployed to GitHub Pages successfully!"
