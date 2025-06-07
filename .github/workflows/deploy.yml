@@ -31,6 +31,12 @@ jobs:
           cd src/flutter_ui
           flutter pub get
 
+      - name: Build
+        run: npm run build-ghp
+
+      - name: Add CNAME file for custom domain
+        run: echo "timofei-bazhukov.me" > build/CNAME
+
       - name: Deploy to GitHub Pages
         run: npm run deploy
 
