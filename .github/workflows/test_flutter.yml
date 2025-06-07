@@ -1,4 +1,4 @@
-name: Run Full Test Suite
+name: Run Test Flutter
 
 on:
   pull_request:
@@ -12,14 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Install Node dependencies
-        run: npm install
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -31,4 +23,6 @@ jobs:
           flutter pub get
 
       - name: Run full test suite
-        run: npm run test
+        run: |
+          cd src/flutter_ui
+          flutter test

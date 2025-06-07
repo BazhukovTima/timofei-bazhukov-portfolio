@@ -19,6 +19,7 @@
     "webpack:run": "webpack serve --mode development --env development",
     "wp-all": "npm run clean && npm install && npm run init && npm run build && npm run webpack:build && serve build",
     "wp-build": "npm run clean && npm run init && npm run build && npm run webpack:build",
+    "test": "npm run webpack:build && npx playwright test",
     "serve-build": "serve build"
   },
   "dependencies": {
