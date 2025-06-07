@@ -37,10 +37,10 @@ jobs:
       - name: Add CNAME file for custom domain
         run: echo "timofei-bazhukov.me" > build/CNAME
 
-      - name: Настроить Git пользователя
+      - name: Configure Git user
         run: |
           git config --global user.email "bazhukov.tima@gmail.com"
-          git config --global user.name "Timofei Bazhukov"
+          git config --global user.name "BazhukovTima"
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
