@@ -21,4 +21,5 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: node --loader=esmock --experimental-vm-modules ./node_modules/qunit/bin/qunit.js 'src/sapui5/**/tests/**/*.test.*js'
+        run: node --experimental-vm-modules --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("esmock", pathToFileURL("./"));' ./node_modules/qunit/bin/qunit.js 'src/sapui5/**/tests/**/*.test.*js'
+
