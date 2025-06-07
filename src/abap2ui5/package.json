@@ -21,7 +21,7 @@
     "wp-all": "npm run clean && npm install && npm run init && npm run build && npm run webpack:build && serve build",
     "wp-build": "npm run clean && npm run init && npm run build && npm run webpack:build",
     "wp-build-prod": "npm run clean && npm run init && npm run build-prod && npm run webpack:build",
-    "test": "npm run wp-build-prod && npx playwright test",
+    "test": "npx playwright test",
     "serve-build": "serve build"
   },
   "dependencies": {

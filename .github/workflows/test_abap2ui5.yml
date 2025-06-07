@@ -21,6 +21,8 @@ jobs:
         run: |
           cd src/abap2ui5
           npm install
+          npm run wp-build-prod
+          npx playwright install
 
       - name: Run test
         run: |
