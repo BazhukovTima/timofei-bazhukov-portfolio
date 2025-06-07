@@ -23,4 +23,6 @@ jobs:
           npm install
 
       - name: Run full test suite
-        run: npm run test
+        run: |
+          cd src/abap2ui5
+          npm run test
