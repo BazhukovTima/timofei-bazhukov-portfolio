@@ -1,10 +1,8 @@
 name: Run Full Test Suite
 
 on:
-  push:
-    branches-ignore: [main]  # Игнорируем прямые пуши в main
   pull_request:
-    branches: [main]         # Проверка PR в main из любой ветки
+    branches: [main]
 
 jobs:
   test:
