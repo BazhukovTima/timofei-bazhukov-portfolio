@@ -26,7 +26,8 @@
     "abap2ui5-relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r src/abap2ui5/build/* public/abap2ui5/",
     "build-prod": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build-prod && npm run abap2ui5-relocate && npm run build",
     "build-ghp": "npm run flutter-build && npm run flutter-relocate && npm run abap2ui5-build-ghp && npm run abap2ui5-relocate && npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy-local": "gh-pages -d build",
+    "deploy": "gh-pages -d build --repo https://x-access-token:${GH_TOKEN}@github.com/BazhukovTima/timofei-bazhukov-portfolio.git"
   },
   "eslintConfig": {
     "extends": [

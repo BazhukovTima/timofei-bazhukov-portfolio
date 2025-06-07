@@ -44,6 +44,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
-
+        
       - name: Confirm deployment
         run: echo "Deployed to GitHub Pages successfully!"
