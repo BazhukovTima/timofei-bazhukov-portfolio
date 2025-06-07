@@ -41,12 +41,14 @@ yarn-error.log*
 /public/flutter/
 /public/assets/
 
+
+# abap2ui5
 /src/abap2ui5/node_modules
 /src/abap2ui5/abap2UI5
 /src/abap2ui5/downport
 /src/abap2ui5/output
 /src/abap2ui5/build
 /src/abap2ui5/src
-
-
+/src/abap2ui5/test_results
 /public/abap2ui5/
+src/abap2ui5/test-results/.last-run.json

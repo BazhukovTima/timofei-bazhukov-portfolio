@@ -26,7 +26,7 @@ CLASS zcl_experience_section IMPLEMENTATION.
                                   titleuppercase = abap_false
         )->sub_sections(
             )->object_page_sub_section( id = 'experienceSectionSub1'
-                )->text( width = '100%' text = experience_header class = 'sapUiResponsiveMargin sapUiContentPadding'
+                )->text( id = 'id_experience_header' width = '100%' text = experience_header class = 'sapUiResponsiveMargin sapUiContentPadding'
                 )->get_parent(
             )->object_page_sub_section( id             = 'experienceSectionSub2'
                                         showtitle      = abap_false
@@ -36,6 +36,7 @@ CLASS zcl_experience_section IMPLEMENTATION.
 
     LOOP AT experience ASSIGNING FIELD-SYMBOL(<experience>).
       exp_section_blocks = exp_section_blocks->vbox(
+          id = |id_exp_{ sy-tabix }| 
           class = 'sapUiMediumMarginBottom sapUiContentPadding sapUiHcBorder'
         )->hbox(
           class = 'sapUiTinyMarginBottom sapUiSmallMargin'

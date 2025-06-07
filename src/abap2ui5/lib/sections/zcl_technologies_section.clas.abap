@@ -30,7 +30,7 @@ CLASS zcl_technologies_section IMPLEMENTATION.
             )->object_page_sub_section( id = 'techSectionSub1'
                 )->blocks(
                     )->vbox(
-                        )->text( text = tech_header class = 'sapUiResponsiveMargin sapUiContentPadding'
+                        )->text( id = 'id_tech_header' text = tech_header class = 'sapUiResponsiveMargin sapUiContentPadding'
                         )->simple_form( editable   = abap_false
                                         layout     = 'ColumnLayout'
                                         width      = '100%'
@@ -38,14 +38,14 @@ CLASS zcl_technologies_section IMPLEMENTATION.
                                         columnsl   = '3'
                                         columnsxl  = '4'
                                         labelspanl = '12'
-                            )->label( text = 'SAP'
-                            )->text( text = skills_sap
-                            )->label( text = 'Mobile and Frontend Development'
-                            )->text( text = skills_mobile
-                            )->label( text = 'DevOps, Security, and Cloud Integration'
-                            )->text( text = skills_devops
-                            )->label( text = 'Other Technologies and Tools'
-                            )->text( text = skills_other
+                            )->label( id = 'id_skills_sap_header' text = 'SAP'
+                            )->text( id = 'id_skills_sap' text = skills_sap
+                            )->label( id = 'id_skills_mobile_header' text = 'Mobile and Frontend Development'
+                            )->text( id = 'id_skills_mobile' text = skills_mobile
+                            )->label( id = 'id_skills_devops_header' text = 'DevOps, Security, and Cloud Integration'
+                            )->text( id = 'id_skills_devops' text = skills_devops
+                            )->label( id = 'id_skills_other_header' text = 'Other Technologies and Tools'
+                            )->text( id = 'id_skills_other' text = skills_other
                     )->get_parent(
                 )->get_parent(
             )->get_parent(
