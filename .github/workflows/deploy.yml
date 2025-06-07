@@ -45,7 +45,7 @@ jobs:
       - name: Deploy to GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+        run: npx gh-pages -d build --repo https://x-access-token:${GH_TOKEN}@github.com/BazhukovTima/timofei-bazhukov-portfolio.git
 
       - name: Confirm deployment
         run: echo "Deployed to GitHub Pages successfully!"
