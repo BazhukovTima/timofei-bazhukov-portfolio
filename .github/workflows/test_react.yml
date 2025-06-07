@@ -1,4 +1,4 @@
-name:  Run Test React
+name: Test React
 
 on:
   pull_request:
@@ -20,5 +20,5 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
-      - name: Run full test suite
+      - name: Run test-react
         run: npm run test-react

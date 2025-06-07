@@ -1,4 +1,4 @@
-name: Run Test sapui5
+name: Test sapui5
 
 on:
   pull_request:
