@@ -73,22 +73,30 @@ CLASS zcl_header_section IMPLEMENTATION.
             )->get_parent(
         )->hbox( class = 'sapUiSmallMarginEnd sapUiSmallMarginBottom'
             )->icon( src = 'sap-icon://chain-link'
-            )->link(  id    = 'id_linkedin' 
-                      text  = 'LinkedIn'
-                      href  = social[ 1 ]
-                      class = 'sapUiSmallMarginBegin'
-            )->link(  id    = 'id_facebook' 
-                      text  = 'Facebook'
-                      href  = social[ 2 ]
-                      class = 'sapUiSmallMarginBegin'
-            )->link(  id    = 'id_github' 
-                      text  = 'GitHub'
-                      href  = social[ 3 ]
-                      class = 'sapUiSmallMarginBegin'
-            )->link(  id    = 'id_email' 
-                      text  = 'Email'
-                      href  = social[ 4 ]
-                      class = 'sapUiSmallMarginBegin'
+            )->link(  id     = 'id_linkedin' 
+                      text   = 'LinkedIn'
+                      href   = social[ 1 ]
+                      target = '_blank'
+                      rel    = 'noopener noreferrer'
+                      class  = 'sapUiSmallMarginBegin'
+            )->link(  id     = 'id_facebook' 
+                      text   = 'Facebook'
+                      href   = social[ 2 ]
+                      target = '_blank'
+                      rel    = 'noopener noreferrer'
+                      class  = 'sapUiSmallMarginBegin'
+            )->link(  id     = 'id_github' 
+                      text   = 'GitHub'
+                      href   = social[ 3 ]
+                      target = '_blank'
+                      rel    = 'noopener noreferrer'
+                      class  = 'sapUiSmallMarginBegin'
+            )->link(  id     = 'id_email' 
+                      text   = 'Email'
+                      href   = social[ 4 ]
+                      target = '_blank'
+                      rel    = 'noopener noreferrer'
+                      class  = 'sapUiSmallMarginBegin'
           )->get_parent(
         )->get_parent(
       )->get_parent(
