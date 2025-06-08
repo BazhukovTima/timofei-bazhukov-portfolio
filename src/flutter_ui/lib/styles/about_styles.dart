@@ -103,9 +103,9 @@ class AboutStyles {
 
   static double cardHeight(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    if (width < 600) return 240;
-    if (width < 900) return 220;
-    return 220;
+    if (width < 600) return 200;
+    if (width < 900) return 240;
+    return 240;
   }
 
   static double wrapSpacing(BuildContext context) {

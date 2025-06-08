@@ -24,14 +24,21 @@ class AboutPageContent extends StatelessWidget {
       padding: AboutStyles.contentPadding(context),
       child: Center(
         child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: AboutStyles.maxContentWidth(context)),
+          constraints: BoxConstraints(
+            maxWidth: AboutStyles.maxContentWidth(context),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(AboutStyles.aboutHeaderText, style: AboutStyles.mainHeader(context)),
+              Text(
+                AboutStyles.aboutHeaderText,
+                style: AboutStyles.mainHeader(context),
+              ),
               SizedBox(height: AboutStyles.verticalSpacingSmall(context)),
               ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: AboutStyles.maxExpertiseTextWidth(context)),
+                constraints: BoxConstraints(
+                  maxWidth: AboutStyles.maxExpertiseTextWidth(context),
+                ),
                 child: Text(
                   expertiseDescription,
                   style: AboutStyles.expertiseDescription(context),
@@ -43,32 +50,39 @@ class AboutPageContent extends StatelessWidget {
                 spacing: AboutStyles.wrapSpacing(context),
                 runSpacing: AboutStyles.wrapRunSpacing(context),
                 alignment: AboutStyles.wrapAlignment,
-                children: sections.map<Widget>((section) {
-                  return SizedBox(
-                    width: AboutStyles.cardWidth(context),
-                    child: Container(
-                      decoration: AboutStyles.cardDecoration,
-                      padding: AboutStyles.sectionPadding(context),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            section.header,
-                            style: AboutStyles.cardHeader(context),
-                            textAlign: TextAlign.center,
+                children:
+                    sections.map<Widget>((section) {
+                      return SizedBox(
+                        width: AboutStyles.cardWidth(context),
+                        child: Container(
+                          constraints: BoxConstraints(
+                            minHeight: AboutStyles.cardHeight(context),
                           ),
-                          const SizedBox(height: 12),
-                          Text(
-                            section.description,
-                            style: AboutStyles.cardDescription(context),
-                            textAlign: TextAlign.center,
+                          decoration: AboutStyles.cardDecoration,
+                          padding: AboutStyles.sectionPadding(context),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: Alignment.topCenter,
+                                child: Text(
+                                  section.header,
+                                  style: AboutStyles.cardHeader(context),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                section.description,
+                                style: AboutStyles.cardDescription(context),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                  );
-                }).toList(),
+                        ),
+                      );
+                    }).toList(),
               ),
             ],
           ),
