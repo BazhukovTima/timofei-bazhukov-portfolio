@@ -1,0 +1,50 @@
+.sapui5SkillPill {
+  background-color: #f0f4f8;
+  color: #333;
+  border: 1px solid #d0d7de;
+  border-radius: 16px;
+  padding: 6px 14px;
+  margin: 4px;
+  font-size: 0.95rem;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.myVerticalLayoutSpacing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.fixedHeightPanel {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.alignTopLayout {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start !important;
+}
+
+.info-line {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.info-line .sapMObjStatusText {
+  color: var(--color-text-secondary);
+}
+
+.info-line .sapUiIcon {
+  color: var(--color-primary-dark);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+}

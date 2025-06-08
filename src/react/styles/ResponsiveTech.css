@@ -1,0 +1,133 @@
+:root {
+  --tech-padding-desktop: 6rem 2rem 4rem;
+  --tech-padding-mobile: 4rem 1rem 3rem;
+  --max-content-width: 800px;
+  --max-grid-width: 90vw;
+}
+
+.tech-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: var(--tech-padding-desktop);
+  box-sizing: border-box;
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+.tech-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.tech-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tech-intro {
+  font-size: 1.2rem;
+  max-width: var(--max-content-width);
+  margin: 0 auto 3rem;
+  color: var(--color-text-description);
+  text-align: center;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.tech-grid {
+  max-width: var(--max-grid-width);
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.skills-section {
+  display: block;
+  max-width: var(--max-grid-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.skills-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.skill-item {
+  background: var(--color-background-light);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(44, 62, 80, 0.05);
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .tech-section {
+    padding: var(--tech-padding-mobile);
+  }
+
+  .tech-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-intro {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .skills-category-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    white-space: normal;
+    max-width: 100%;
+  }
+}

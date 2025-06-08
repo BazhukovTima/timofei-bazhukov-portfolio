@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+.vscode
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Flutter
+/src/flutter_ui/.dart_tool/
+/src/flutter_ui/.packages
+/src/flutter_ui/build/
+/src/flutter_ui/web/.dart_tool/
+/src/flutter_ui/.flutter-plugins
+/src/flutter_ui/.flutter-plugins-dependencies
+/src/flutter_ui/.idea/
+/src/flutter_ui/android/
+/src/flutter_ui/ios/
+/src/flutter_ui/macos/
+
+# Flutter build moved to public
+/public/flutter/
+/public/assets/
+
+
+# abap2ui5
+/src/abap2ui5/node_modules
+/src/abap2ui5/abap2UI5
+/src/abap2ui5/downport
+/src/abap2ui5/output
+/src/abap2ui5/build
+/src/abap2ui5/src
+/src/abap2ui5/test_results
+src/abap2ui5/test-results/.last-run.json
+/public/abap2ui5/
+test
+src/abap2ui5/lib/*/*.*.abap-e
+src/abap2ui5/lib/*.*.abap-e

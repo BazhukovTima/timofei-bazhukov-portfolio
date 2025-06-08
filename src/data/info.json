@@ -1,0 +1,246 @@
+{
+  "name": "Timofei Bazhukov",
+  "role": "Senior IT Engineer at the LEGO Group",
+  "description": "Senior SAP Engineer and Integration Architect with 10+ years of progressive experience in SAP development, system architecture, and enterprise integration. Driving SAP innovation, governance, and ABAP best practices at scale, with a deep ability to bridge business needs and technical implementation.",
+  "location": "Based in Vejle, Denmark",
+  "social": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/bazhukov-timofei"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://facebook.com/bazhukov.tima"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/BazhukovTima"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:bazhukov.tima@gmail.com"
+    }
+  ],
+  "skills": {
+    "description": "Expert-level SAP professional focused on enterprise-grade solutions, integration architecture, and SAP Cloud development. Strong leadership in ABAP communities, fostering code quality, scalability, and cross-team collaboration. Secondary proficiency in mobile and web technologies used for prototyping and side-projects.",
+    "skills": {
+      "sap": {
+        "title": "SAP",
+        "skills": [
+          "SAPUI5",
+          "Fiori",
+          "ABAP",
+          "CAP",
+          "RAP",
+          "OData",
+          "SOAP",
+          "RFC",
+          "HANA",
+          "CDS",
+          "AMDP",
+          "xsjs",
+          "xsodata",
+          "SmartForms",
+          "PDF Forms",
+          "abapgit",
+          "abaplint",
+          "BTP",
+          "Kyma",
+          "Event Mesh",
+          "Integration Suite",
+          "API Mgmt",
+          "ECATT",
+          "Launchpad",
+          "IMG",
+          "BCS",
+          "SAP SD",
+          "SAP MM",
+          "SAP SCM",
+          "SAP PE",
+          "SAP PLM",
+          "SAP ETD",
+          "SAP Basis",
+          "BAS"
+        ]
+      },
+      "mobile": {
+        "title": "Mobile and Frontend Development",
+        "skills": [
+          "Flutter",
+          "React Native",
+          "Redux",
+          "GraphQL",
+          "Node.js",
+          "QUnit",
+          "VSC"
+        ]
+      },
+      "devops": {
+        "title": "DevOps, Security, and Cloud Integration",
+        "skills": [
+          "CI/CD",
+          "GitHub Actions",
+          "OAuth2",
+          "OIDC",
+          "SAML",
+          "EntraID",
+          "AWS",
+          "Azure",
+          "Tosca",
+          "Elastic",
+          "Kibana",
+          "PagerDuty"
+        ]
+      },
+      "other": {
+        "title": "Other Technologies and Tools",
+        "skills": [
+          "PostSharp",
+          "Prism",
+          "WPF",
+          ".NET",
+          "MS Word",
+          "MS Excel",
+          "SQL",
+          "MongoDB",
+          "Eclipse"
+        ]
+      }
+    }
+  },
+  "projects": [
+    {
+      "title": "Проект 1",
+      "description": "Описание проекта 1",
+      "url": "https://example.com/project1"
+    },
+    {
+      "title": "Проект 2",
+      "description": "Описание проекта 2",
+      "url": "https://example.com/project2"
+    }
+  ],
+  "about": {
+    "header": "About",
+    "expertise": {
+      "header": "Expertise",
+      "description": "Over a decade of experience in SAP engineering and integration, progressing from ABAP developer to architect-level responsibilities. Specialized in SAP BTP, cloud integration, and driving strategic initiatives within SAP landscapes, including ABAP best practices and internal community leadership."
+    },
+    "technicalStack": {
+      "header": "Technical Expertise",
+      "description": "In-depth expertise in ABAP (including RAP/CAP), SAP Fiori, SAPUI5, OData/SOAP, and SAP BTP. Strong architectural mindset with a focus on integration scenarios, security, extensibility, and clean enterprise design. Experienced in system migrations, cloud-native development, and cross-system communication within SAP ecosystems."
+    },
+    "currentFocus": {
+      "header": "Professional Focus",
+      "description": "Leading SAP integration architecture, enablement, and governance at the LEGO Group. Driving adoption of best practices in ABAP development, security compliance, and modern extensibility aligned with digital platform and data lifecycle strategies."
+    },
+    "mobileDevelopment": {
+      "header": "Cross-Platform Experience",
+      "description": "Capable of building cross-platform mobile apps using React Native and Flutter. These side-projects demonstrate fast learning, technical curiosity, and passion for modern development — though they remain a secondary focus to enterprise SAP work."
+    },
+    "softSkills": {
+      "header": "Soft Skills & Strategy",
+      "description": "A pragmatic and collaborative technologist with deep understanding of business processes and ability to connect technical execution with strategic goals. Strong communication skills, project leadership, and hands-on mentoring of teams and communities around SAP best practices."
+    }
+  },
+  "experience": {
+    "overview": "Key roles in enterprise SAP development and architecture, focusing on governance, integration, and extensibility. Proven track record in driving complex SAP initiatives, mentoring developers, and aligning systems with business needs and enterprise standards. Secondary experience includes side-projects in mobile and cross-platform development.",
+    "projects": {
+      "SAP Governance and Enablement": {
+        "company": "the LEGO Group",
+        "role": "Senior engineer",
+        "period": "July 2024 – Present",
+        "details": "Governing authority in SAP Product enablement, Architecture, Development, Cyber security, Access control, Integration/Extensibility, Automation, and Data Lifecycle Management. Proactively embracing the latest advancements in SAP technology aligned with company Digital Platform principles and Data Security governance. Designing and developing cutting-edge solutions that drive business success.",
+        "technologies": "SAP ecosystem and all connected to integration SAP with other applications technologies."
+      },
+      "S4 Hana conversion": {
+        "company": "the LEGO Group",
+        "role": "Senior engineer",
+        "period": "July 2024 – Present",
+        "details": "Governing authority in SAP Product enablement, Architecture, Development, Cyber security, Access control, Integration/Extensibility, Automation, and Data Lifecycle Management. Proactively embracing the latest advancements in SAP technology aligned with company Digital Platform principles and Data Security governance. Designing and developing cutting-edge solutions that drive business success.",
+        "technologies": "SAP ecosystem and all connected to integration SAP with other applications technologies."
+      },
+      "Supply Chain Foundation": {
+        "company": "the LEGO Group",
+        "role": "Senior engineer",
+        "period": "August 2021 – June 2024",
+        "details": "Optimizing and governing the handling and maintenance of master data for the supply chain, enabling supply chain planning and execution according to the operating model, global and local requirements.",
+        "technologies": "ABAP Workbench, ABAP BTP environment, SAP Cloud Connector, RAP, CAP, Process Chains framework, Fiori, SAPUI5, CDS artifacts, ABAP Development tools for Eclipse, abapgit, OData, Web-services"
+      },
+      "SAP Customer Conversion to X/4 (cbc)": {
+        "company": "LeverX(SAP Standard development)",
+        "role": "Middle ABAP developer",
+        "period": "July 2019 – February 2020",
+        "details": "SAP Customer Conversion ensures that customer system are successfully converted from solution-builder based configuration content to the new X/4 server context.",
+        "technologies": "ABAP Workbench, ABAP OO, ABAP 7.5, Web-services, Solution Builder, IMG, BCS, ECATT."
+      },
+      "SAP Enterprise Threat Detection": {
+        "company": "LeverX(SAP Standard development)",
+        "role": "Middle full stack developer",
+        "period": "April 2019 – February 2020",
+        "details": "SAP ETD is a real-time Security Event Management and –Monitoring solution",
+        "technologies": "Fiori, Launchpad, all SAPUI5 packages, HANA AMDP, CDS artifacts, xsjs, js, UNIT tests, xsodata, CDS services, Databases: HANA"
+      },
+      "PLM Core Developments": {
+        "company": "LeverX(SAP Standard development)",
+        "role": "Middle ABAP developer",
+        "period": "April 2019 – June 2019",
+        "details": "Standard developments for PLM module",
+        "technologies": "ABAP Workbench, ABAP OO, ABAP 7.5, Web-services, OData via ABAP, CDS"
+      },
+      "LBG PE Localization Developments": {
+        "company": "LeverX(SAP Standard development)",
+        "role": "Middle ABAP developer",
+        "period": "February 2019 – April 2019",
+        "details": "Localization payment engine for LBG",
+        "technologies": "ABAP Workbench, ABAP OO, ABAP 7.4"
+      },
+      "Cross-platform Mobile Application (Video Conversations)": {
+        "company": "Stroitel'nyy Dvor OOO",
+        "role": "JS(React Native) developer",
+        "period": "February 2018 – June 2018",
+        "details": "Application for video conversations between two people",
+        "technologies": "React Native, NodeJS, MongoDB, Redux, graphql, react-native-webrtc"
+      },
+      "Cross-platform Mobile Application (Music Bands)": {
+        "company": "Stroitel'nyy Dvor OOO",
+        "role": "JS(React Native) developer",
+        "period": "November 2018 – June 2019",
+        "details": "Application to search for music bands",
+        "technologies": "React Native, NodeJS, MongoDB, Redux, graphql"
+      },
+      "SAP SCM APO Support": {
+        "company": "Stroitel'nyy Dvor OOO",
+        "role": "SAP SCM APO Support Developer",
+        "period": "September 2016 – January 2019",
+        "details": "Support and development of the SAP SCM APO system implemented at the enterprise. Major Responsibilities: Developing custom applications in ABAP/4. Integration of SAP SCM and SAP ERP. Writing backend for ABAP microservices using architectures such as SOAP and REST. The project included: Technical support and refinement of existing solutions.",
+        "technologies": "SAP SCM, SAP ERP"
+      },
+      "Developer (.NET platform)": {
+        "company": "Stroitel'nyy Dvor OOO",
+        "role": "Developer (.NET platform)",
+        "period": "September 2015 – September 2016",
+        "details": "Development and support of the project on the .net platform. Major responsibilities: Development and improvement of the program for cashiers.",
+        "technologies": ""
+      }
+    }
+  },
+  "frameworks": [
+    {
+      "name": "React",
+      "logo": "react-logo.png"
+    },
+    {
+      "name": "Flutter",
+      "logo": "flutter-logo.png"
+    },
+    {
+      "name": "SAPUI5",
+      "logo": "sap-ui5-logo.svg"
+    },
+    {
+      "name": "abap2ui5",
+      "logo": "abap2ui5-logo.png"
+    }
+  ]
+}

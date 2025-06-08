@@ -1,0 +1,150 @@
+.experience-section {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow-y: auto;
+  padding: 6rem 2rem 4rem;
+  box-sizing: border-box;
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-background);
+  z-index: 0;
+}
+
+.experience-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.experience-intro {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-description);
+  text-align: center;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 90vw;
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: stretch;
+}
+
+.experience-item {
+  position: relative;
+  background: var(--color-background-light);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(44, 62, 80, 0.05);
+  border: 1px solid var(--color-border-default);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project-header {
+  margin-bottom: 0.7rem;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.project-details {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.project-company {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  color: var(--color-text-description);
+}
+
+.project-tech {
+  font-size: 0.95rem;
+  color: var(--color-text-description);
+  line-height: 1.4;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .experience-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-intro {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .experience-item {
+    padding: 1.8rem 1.2rem 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-details {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-company {
+    font-size: 0.9rem;
+  }
+
+  .project-tech {
+    font-size: 0.9rem;
+  }
+}
+.project-company,
+.project-tech,
+.project-details {
+  display: inline;
+  line-height: 1.4;
+}
+
+.project-company .icon,
+.project-tech .icon,
+.project-details .icon {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 0.6rem;
+  color: var(--color-text-description);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  min-width: 18px;
+  min-height: 18px;
+}

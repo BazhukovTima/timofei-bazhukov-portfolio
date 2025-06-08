@@ -1,0 +1,27 @@
+name: Test Flutter
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.1'
+
+      - name: Install Flutter dependencies
+        run: |
+          cd src/flutter_ui
+          flutter pub get
+          cd ../..
+
+      - name: Run flutter test
+        run: npm run flutter:test

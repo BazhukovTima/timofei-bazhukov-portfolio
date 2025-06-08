@@ -1,0 +1,71 @@
+{
+  "name": "timofei-bazhukov-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://BazhukovTima.github.io/timofei-bazhukov-portfolio",
+  "description": "Timofei Bazhukov's Portfolio",
+  "type": "module",
+  "scripts": {
+    "init": "npm install",
+    
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test --testPathPattern=src/react --watchAll=false",
+    
+    "flutter:start": "cd src/flutter_ui && flutter run",
+    "flutter:build": "cd src/flutter_ui && flutter build web --base-href /flutter/",
+    "flutter:relocate": "rm -rf public/flutter && mkdir -p public/flutter && cp -r src/flutter_ui/build/web/* public/flutter/ && rm -rf public/assets && mkdir -p public/assets && cp -r src/flutter_ui/build/web/assets/* public/assets/",
+    "flutter:test": "cd src/flutter_ui && flutter test --update-goldens",
+    
+    "abap:start:local": "cd src/abap2ui5 && npm run start:all",
+    "abap:start:webpack": "cd src/abap2ui5 && npm run wp:all && npm run serve:build",
+    "abap:build": "cd src/abap2ui5 && cross-env PUBLIC_URL=/abap2ui5/ npm run wp:build:prod",
+    "abap:relocate": "rm -rf public/abap2ui5 && mkdir -p public/abap2ui5 && cp -r src/abap2ui5/build/* public/abap2ui5/",
+    "abap:test": "cd src/abap2ui5 && npm install && npm run wp:build:prod && npm run test",
+    
+    "build": "npm run init && npm run flutter:build && npm run flutter:relocate && npm run abap:build && npm run abap:relocate && npm run react:build",
+    "start": "npm run init && npm run flutter:build && npm run flutter:relocate && npm run abap:build && npm run abap:relocate && npm run react:start",
+    
+    "test": "npm run init && npm run react:test && npm run test:sapui5 && npm run flutter:test && npm run abap:test",
+    "test:sapui5": "qunit 'src/sapui5/**/tests/**/*.test.*js'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "lucide-react": "^0.510.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^5.3.4",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^5.0.1",
+    "react-switch": "^7.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "esmock": "^2.7.0",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.5.3",
+    "qunit": "^2.24.1"
+  }
+}
