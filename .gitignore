@@ -52,6 +52,5 @@ yarn-error.log*
 /src/abap2ui5/test_results
 src/abap2ui5/test-results/.last-run.json
 /public/abap2ui5/
-test
 src/abap2ui5/lib/*/*.*.abap-e
 src/abap2ui5/lib/*.*.abap-e
