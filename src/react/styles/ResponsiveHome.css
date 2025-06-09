@@ -1,53 +1,65 @@
 .home-section {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
   background: var(--color-background);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  z-index: 0;
 }
 
 .container-home {
-  width: 100%;
+  flex-grow: 1;
   max-width: 1100px;
-  padding: 3rem 2rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   flex-direction: row;
   justify-content: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  /* min-height: calc(100dvh - 70px - 3rem); использование dvh устраняет баги с адресной строкой на мобилках */
+  box-sizing: border-box;
 }
 
 .intro {
-  flex: 1 1 auto;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
   order: 2;
+  min-width: 280px;
+  text-align: left;
+  align-items: flex-start;
 }
 
 .intro h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   margin: 0;
   color: var(--color-text-primary);
 }
 
 .role {
-  font-size: 1.8rem;
+  font-size: clamp(0.95rem, 2vw, 1.5rem);
   color: var(--color-text-secondary);
   margin: 0;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   color: var(--color-text-description);
   max-width: 600px;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 .avatar-container {
@@ -57,30 +69,39 @@
   margin-left: 2rem;
   border-radius: 50%;
   box-shadow: 0 3px 1px rgba(44, 62, 80, 0.1);
+  order: 1;
+  box-sizing: border-box;
 }
 
 .avatar {
-  width: 30em;
-  height: 30em;
+  width: clamp(12em, 25vw, 22em);
+  height: clamp(12em, 25vw, 22em);
   border-radius: 50%;
   object-fit: cover;
 }
 
+@media (min-width: 1440px) {
+  .avatar {
+    width: 26em;
+    height: 26em;
+  }
+}
+
 .social-links {
   display: flex;
-  gap: 1.5rem;
-  font-size: 1.5rem;
-  justify-content: center;
-  padding-top: 1rem;
-  width: fit-content;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  width: 100%;
 }
 
 .social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: transparent;
   color: var(--color-social-link);
@@ -95,63 +116,82 @@
 }
 
 .social-link svg {
-  font-size: 22px;
+  font-size: 20px;
 }
 
-@media (max-width: 768px) {
+/* Адаптация для широких экранов с низким соотношением сторон */
+@media (max-aspect-ratio: 16/9) {
+  .container-home {
+    gap: 1.5rem;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .avatar {
+    width: clamp(14em, 20vw, 20em);
+    height: clamp(14em, 20vw, 20em);
+  }
+
+  .intro h1 {
+    font-size: clamp(1.6rem, 3vw, 2.7rem);
+  }
+
+  .social-links {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Адаптация для экранов с высокой высотой */
+@media (max-aspect-ratio: 3/2) {
   .container-home {
     flex-direction: column;
-    padding: 2rem 1rem;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    gap: 1.2rem;
+    min-height: auto;
+  }
+
+  .avatar-container {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .intro {
     align-items: center;
     text-align: center;
     gap: 1rem;
   }
 
-  .intro {
-    gap: 0.75rem;
+  .social-links {
+    justify-content: center;
   }
+}
 
-  .intro h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .role {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .description {
-    font-size: 0.9rem;
-    margin-top: 0;
-    margin-bottom: 0.3rem;
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .container-home {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem 2.5rem;
+    gap: 1rem;
+    min-height: auto;
   }
 
   .avatar-container {
     margin-left: 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
-  .avatar {
-    width: 12em;
-    height: 12em;
+  .intro {
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
   }
 
   .social-links {
     justify-content: center;
-    flex-wrap: nowrap;
     gap: 0.5rem;
-    margin-top: 1.5rem;
-    width: auto;
-  }
-
-  .social-link {
-    width: 44px;
-    height: 44px;
-  }
-
-  .social-link svg {
-    font-size: 22px;
   }
 }
-
