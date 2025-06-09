@@ -1,10 +1,10 @@
 import '../../styles/Footer.css';
 
-const Footer = ({ fixed = true }) => {
+const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={`footer ${fixed ? 'fixed' : 'static'}`}>
+    <footer className="footer">
       <p>© {year} Timofei Bazhukov. All rights reserved.</p>
     </footer>
   );
